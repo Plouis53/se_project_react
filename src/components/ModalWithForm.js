@@ -1,0 +1,1 @@
+className={`modal modal_type_${name}`} 
