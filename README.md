@@ -1,4 +1,4 @@
-# WTWR (What to Wear?)
+# WTWR (What to Wear?) By Phil. Louis
 
 ## About the project
 
