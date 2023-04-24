@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <div> Name</div>
         <div>
-          <img src="/images/avatar.svg" alt="logo" />
+          <img src="Images/avatar.svg" alt="avatar" />
         </div>
       </div>
     </header>

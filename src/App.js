@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
+import Logo from "./Images/logo.svg";
 import "./App.css";
-import ItemModal from "./ItemModal/ItemModal";
+// import ItemModal from "./ItemModal/ItemModal";
 import Header from "./Header/Header";
 import WeatherCard from "./WeatherCard/WeatherCrad";
 
