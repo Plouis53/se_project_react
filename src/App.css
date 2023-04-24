@@ -1,3 +1,18 @@
 .header {
   background-color: lightseagreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+}
+
+.header__logo{
+display: flex;
+gap: 20px;
+}
+
+
+.header__avatar-logo{
+display: flex;
+gap: 20px;
 }
