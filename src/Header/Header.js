@@ -1,3 +1,4 @@
+import React from "react";
 import "./Header.css";
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src="/images/logo.svg" alt="logo" />
+          <img src="logo.svg" alt="logo" />
         </div>
         <div>Date</div>
       </div>

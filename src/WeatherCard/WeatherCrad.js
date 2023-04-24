@@ -43,8 +43,8 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
     console.log(i);
     return i.day === day && i.type === type;
   });
-  //   console.log(imageSrc);
-  //   console.log(imageSrc[0].url);
+  // console.log(imageSrc);
+  // console.log(imageSrc[0].url);
 
   const imageSrcUrl = imageSrc[0].url || "";
   return (
