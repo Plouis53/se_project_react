@@ -12,7 +12,7 @@ function App() {
           <div>75F</div>
           <div>
             {" "}
-            <img />{" "}
+            <img src="./Images/day/sunny" />
           </div>
         </section>
 
