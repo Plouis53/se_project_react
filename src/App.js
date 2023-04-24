@@ -17,7 +17,9 @@ function App() {
             <button type="text"> Add New Clothes </button>
           </div>
           <div> Name</div>
-          <div>Avatar Logo</div>
+          <div>
+            <img src="/images/avatar.svg" alt="logo" />
+          </div>
         </div>
       </header>
     </div>
