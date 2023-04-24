@@ -7,15 +7,11 @@ function App() {
   return (
     <div>
       <Header />
-      <main>
-        <section id="weather">
-          <div>75F</div>
-          <div>
-            {" "}
-            <img src="./Images/day/sunny" />
-          </div>
+      <main className="main">
+        <section className="weather" id="weather">
+          <div className="weather_info">75F</div>
+          <img src="/Images/day/sunny.svg" className="weather_image" />
         </section>
-
         <section id="card-section">Card Section </section>
       </main>
     </div>
