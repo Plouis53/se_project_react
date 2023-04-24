@@ -1,27 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import ItemModal from "./ItemModal/ItemModal";
+import Header from "./Header/Header";
 
 function App() {
   return (
     <div>
-      <header className="header">
-        <div className="header__logo">
-          <div>
-            <img src="/images/logo.svg" alt="logo" />
-          </div>
-          <div>Date</div>
-        </div>
-        <div className="header__avatar-logo">
-          <div>
-            <button type="text"> Add New Clothes </button>
-          </div>
-          <div> Name</div>
-          <div>
-            <img src="/images/avatar.svg" alt="logo" />
-          </div>
-        </div>
-      </header>
+      <Header />
     </div>
   );
 }
