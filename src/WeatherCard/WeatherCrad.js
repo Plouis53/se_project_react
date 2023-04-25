@@ -43,13 +43,11 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
     console.log(i);
     return i.day === day && i.type === type;
   });
-  // console.log(imageSrc);
-  // console.log(imageSrc[0].url);
 
   const imageSrcUrl = imageSrc[0].url || "";
   return (
     <section className="weather" id="weather">
-      <div className="weather_info">{weatherTemp} F</div>
+      <div className="weather_info">{weatherTemp} </div>
       <img src={imageSrcUrl} className="weather_image" />
     </section>
   );
