@@ -1,3 +1,5 @@
+import React from "react";
+
 const ItemModal = ({ selectedCard }) => {
   console.log("item modal");
   return (
