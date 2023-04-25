@@ -1,6 +1,7 @@
 import { defaultClothingItems } from "../Util/Constants";
 import WeatherCard from "../WeatherCard/WeatherCrad";
 import ItemCard from "../ItemCard/ItemCard";
+import React from "react";
 
 function Main({ weatherTemp }) {
   return (
