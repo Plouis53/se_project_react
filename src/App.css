@@ -19,10 +19,7 @@
 }
 
 .card_section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 17px;
-  justify-content: center;
+  margin-top: 20px;
 }
 
 .card_name {
@@ -33,4 +30,12 @@
   width: 328px;
   height: 328px;
   border-radius: 10px;
+}
+
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: center;
+  margin-top: 20px;
 }
