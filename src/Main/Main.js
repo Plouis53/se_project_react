@@ -1,4 +1,4 @@
-import { defaultClothingItems } from "../Util/Constants";
+import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCrad";
 import ItemCard from "../ItemCard/ItemCard";
 import React, { useMemo } from "react";
