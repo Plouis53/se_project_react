@@ -5,6 +5,7 @@ import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import React, { useState } from "react";
+import ItemModal from "./ItemModal/ItemModal";
 
 function App() {
   const weatherTemp = "75°F";
@@ -54,15 +55,7 @@ function App() {
           </div>
         </ModalWithForm>
       )}
-      {activeModal === "preview" && (
-        <div className={`modal`}>
-          <div className="modal_content">
-            <img />
-            <div>Text for the item name</div>
-            <div>Weather Type</div>
-          </div>
-        </div>
-      )}
+      {activeModal === "preview" && <ItemModal selectedCard={selectedCard} />}
     </div>
   );
 }
