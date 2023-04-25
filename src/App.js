@@ -34,7 +34,6 @@ function App() {
     });
   }, []);
 
-  console.log(temp);
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
@@ -43,10 +42,10 @@ function App() {
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
           <label>
-            Name <input type="text" name="name" minLength="1" maxLength="30" />
+            Name <input type="text" name="name" miniLength="1" maxLength="30" />
           </label>
           <label>
-            Image <input type="url" name="link" minLength="1" maxLength="30" />
+            Image <input type="url" name="link" miniLength="1" maxLength="30" />
           </label>
           <p>Select the weather type:</p>
           <div>

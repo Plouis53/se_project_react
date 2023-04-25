@@ -2,8 +2,6 @@ import React from "react";
 import "./Header.css";
 
 const Header = ({ onCreateModal }) => {
-  console.log("Header");
-
   return (
     <header className="header">
       <div className="header__logo">
@@ -14,9 +12,11 @@ const Header = ({ onCreateModal }) => {
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button 
-// @ts-ignore
-          type="text" onClick={onCreateModal}>
+          <button
+            // @ts-ignore
+            type="text"
+            onClick={onCreateModal}
+          >
             Add New Clothes
           </button>
         </div>

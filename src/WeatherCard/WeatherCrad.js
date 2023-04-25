@@ -1,3 +1,5 @@
+import React from "react";
+
 const weatherOptions = [
   { url: require("../Images/day/sunny.svg").default, day: true, type: "sunny" },
   { url: require("../Images/day/storm.svg").default, day: true, type: "storm" },
@@ -38,9 +40,7 @@ const weatherOptions = [
 ];
 
 const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
-  console.log("weather card");
   const imageSrc = weatherOptions.filter((i) => {
-    console.log(i);
     return i.day === day && i.type === type;
   });
 

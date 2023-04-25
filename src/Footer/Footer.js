@@ -1,7 +1,6 @@
 import React from "react";
 
 const Footer = () => {
-  console.log(Footer);
   return (
     <footer className="footer">
       <div>Developed By Phillippe Louis</div>
