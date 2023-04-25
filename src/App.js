@@ -21,6 +21,7 @@ function App() {
   };
 
   const handleselectedCard = (card) => {
+    setActiveModal("preview");
     setSelectedCard(card);
   };
 
