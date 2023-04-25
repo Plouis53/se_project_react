@@ -1,8 +1,8 @@
-import Logo from "./Images/logo.svg";
 import "./App.css";
 import ItemModal from "./ItemModal/ItemModal";
 import Header from "./Header/Header";
 import WeatherCard from "./WeatherCard/WeatherCrad";
+import ItemCard from "./ItemCard/ItemCard";
 import React from "react";
 
 const defaultClothingItems = [
@@ -50,18 +50,10 @@ function App() {
       <Header />
       <main className="main">
         <WeatherCard day={false} type="cloudy" />
-        <section id="card-section">
-          {defaultClothingItems.map((x) => {
-            console.log(x);
-            return (
-              <div>
-                <div>
-                  <img src="{x.link}" />
-                </div>
-                <div>{x.name} </div>
-              </div>
-            );
-          })}
+        <section className="card_section" id="card-section">
+          {defaultClothingItems.map((item) => (
+            <ItemCard item={item} />
+          ))}
         </section>
       </main>
     </div>
