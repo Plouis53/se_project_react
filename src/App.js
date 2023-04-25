@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={weatherTemp} onSelectCard={handleselectedCard} />
+      <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
