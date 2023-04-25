@@ -1,1 +1,8 @@
-className={`modal modal_type_${name}`} 
+const ModalWithForm = () => {
+
+    console.log("ModalWithForm");
+  return <div>ModalWithForm </div>
+  
+};
+
+export default ModalWithForm;
