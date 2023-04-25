@@ -13,7 +13,7 @@ function App() {
       <Header onCreateModal={undefined} />
       <Main weatherTemp={weatherTemp} />
       <Footer />
-      <ModalWithForm /> 
+      <ModalWithForm title="New Garment">These are the children</ModalWithForm>
     </div>
   );
 }
