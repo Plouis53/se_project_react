@@ -9,6 +9,7 @@ import React, { useState } from "react";
 function App() {
   const weatherTemp = "75°F";
   const [activeModal, setActiveModal] = useState("");
+  const [selectedCard, setSelectedCard] = useState({});
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -17,10 +18,16 @@ function App() {
   const handleCloseModal = () => {
     setActiveModal("");
   };
+
+  const handleselectedCard = (card) => {
+    setSelectedCard(card);
+  };
+
+  console.log(selectedCard);
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={weatherTemp} />
+      <Main weatherTemp={weatherTemp} onSelectCard={handleselectedCard} />
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
@@ -46,6 +53,15 @@ function App() {
             </div>
           </div>
         </ModalWithForm>
+      )}
+      {activeModal === "preview" && (
+        <div className={`modal`}>
+          <div className="modal_content">
+            <img />
+            <div>Text for the item name</div>
+            <div>Weather Type</div>
+          </div>
+        </div>
       )}
     </div>
   );
