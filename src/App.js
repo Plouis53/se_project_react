@@ -9,7 +9,7 @@ function App() {
   const weatherTemp = "75°F";
   return (
     <div>
-      <Header />
+      <Header onCreateModal={undefined} />
       <Main weatherTemp={weatherTemp} />
       <Footer />
     </div>
