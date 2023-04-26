@@ -1,6 +1,6 @@
 import React from "react";
 import "./ModalWithForm.css";
-import Close Icon 
+// import closeIcon from "./Images/Union:close.svg";
 
 const ModalWithForm = ({
   children,
@@ -12,10 +12,12 @@ const ModalWithForm = ({
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal_content">
-
-        <button type="button" className="popup__button"  aria-label="Close" onClick={onClose}>
-          Close
-          <img className="popup__close" alt="Close Button Image" src=""
+        <button
+          type="button"
+          className="modal__close"
+          aria-label="Close"
+          onClick={onClose}
+        >
         </button>
         <h3 className="popup__header">New Garment</h3>
         <form>{children}</form>
