@@ -6,14 +6,16 @@ const currentDate = new Date().toLocaleString("default", {
   day: "numeric",
 });
 
-const Header = ({ onCreateModal, temp }) => {
+function Header({ onCreateModal, temp }) {
   return (
     <header className="header">
       <div className="header__logo">
         <div>
           <img src={require("../Images/logo.svg").default} alt="logo" />
         </div>
-        <div>Date</div>
+        <div className="header_date" id="currentDate">
+          {currentDate}, Atlanta 
+        </div>
       </div>
       <div className="header__avatar-logo">
         <div>
@@ -32,6 +34,6 @@ const Header = ({ onCreateModal, temp }) => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
