@@ -12,3 +12,11 @@
   margin-top: 70px;
   padding: 0 40px;
 } */
+
+.footer_author {
+  margin: 0 0 0 20px;
+}
+
+.footer_year {
+  margin: 0 20px 0 0;
+}

@@ -14,7 +14,7 @@ function Header({ onCreateModal, temp }) {
           <img src={require("../Images/logo.svg").default} alt="logo" />
         </div>
         <div className="header_date" id="currentDate">
-          {currentDate}, Atlanta 
+          {currentDate}, Atlanta
         </div>
       </div>
       <div className="header__avatar-logo">
@@ -24,10 +24,10 @@ function Header({ onCreateModal, temp }) {
             type="text"
             onClick={onCreateModal}
           >
-            Add New Clothes
+            + Add Clothes
           </button>
         </div>
-        <div> Name</div>
+        <div className="header_name"> Phillippe Louis</div>
         <div>
           <img src={require("../Images/avatar.svg").default} alt="avatar" />
         </div>
