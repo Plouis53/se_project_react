@@ -2,6 +2,7 @@ import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCrad";
 import ItemCard from "../ItemCard/ItemCard";
 import React, { useMemo } from "react";
+import "../Main/Main.css";
 
 function Main({ weatherTemp, onSelectCard }) {
   const weatherType = useMemo(() => {

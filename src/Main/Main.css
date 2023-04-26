@@ -1,8 +1,11 @@
 .main_clothing {
-  margin: 40px 0 0;
+  font-family: "CabinetGrotesk-Regular";
 }
 
 .main_text {
-  font-size: 20px;
+  /* font-family: "CabinetGrotesk-Regular";
+  font-style: normal; */
   font-weight: 700;
+  font-size: 20px;
+  /* line-height: 25px; */
 }
