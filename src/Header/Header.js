@@ -20,11 +20,12 @@ function Header({ onCreateModal, temp }) {
       <div className="header__avatar-logo">
         <div>
           <button
-            // @ts-ignore
-            type="text"
+            type="button"
             onClick={onCreateModal}
+            className="header__add"
+            aria-label="Add"
           >
-            + Add Clothes
+            + Add clothes
           </button>
         </div>
         <div className="header_name"> Phillippe Louis</div>

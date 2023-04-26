@@ -19,7 +19,7 @@
 }
 
 .header_date {
-  font-family: Cabinet Grotesk, Arial, Helvetica, sans-serif;
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -27,4 +27,23 @@
   grid-row: 1/1;
   line-height: 24px;
   margin: 13px 0 0;
+}
+
+.header__add {
+  background-color: white;
+  border: none;
+  font-family: Cabinet Grotesk, Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  grid-column: 2/2;
+  grid-row: 1/1;
+  line-height: 24px;
+  margin: 2px 0 0;
+  padding: 0;
+}
+
+.header__add:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
