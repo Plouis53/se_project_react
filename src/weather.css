@@ -1,0 +1,7 @@
+.weather {
+  margin: 0;
+}
+
+.weather__container {
+  position: relative;
+}

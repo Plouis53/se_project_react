@@ -9,3 +9,7 @@
   font-size: 20px;
   /* line-height: 25px; */
 }
+
+.main__button {
+  display: none;
+}

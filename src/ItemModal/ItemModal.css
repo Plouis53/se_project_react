@@ -1,0 +1,53 @@
+.itemModal_photo {
+  background-color: #fff;
+  border-radius: 16px;
+  height: 610px;
+}
+
+.itemModal__popup-image {
+  align-content: center;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  display: flex;
+  height: 498px;
+  justify-content: center;
+  max-height: 75vh;
+  max-width: 75vw;
+}
+
+.itemModal__popup-button {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  padding: 0;
+}
+
+.itemModal__subcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup__title {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin: 20px 0 0 32px;
+  width: -webkit-fit-content;
+}
+
+.popup__weather {
+  margin: 12px 0 0 32px;
+  color: black;
+  font-size: 20px;
+  font-weight: 700px;
+}
+
+.itemModal__popup-close {
+  height: 14px;
+  position: absolute;
+  right: 26px;
+  top: 26px;
+  width: 14px;
+}
