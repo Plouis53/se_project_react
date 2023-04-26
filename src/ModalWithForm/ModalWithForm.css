@@ -23,3 +23,15 @@
   /* padding: 0;
   border: none; */
 }
+
+.popup__header {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #000;
+  font-size: 16px;
+  /* font-weight: 700;
+  margin: 28px 0 0 28px;
+  width: 330px; */
+}
+
+
