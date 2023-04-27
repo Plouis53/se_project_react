@@ -10,9 +10,10 @@ const ModalWithForm = ({ children, onClose, name }) => {
         <form className="modal__form" name="add">
           <fieldset className="modal__fieldset">
             <button
-              type="button"
               className="modal__close"
+              type="button"
               aria-label="Close"
+              id="modal-close-button"
               onClick={onClose}
             >
               {/* <img

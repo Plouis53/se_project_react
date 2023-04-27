@@ -1,30 +1,32 @@
 import React from "react";
+import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, closeIcon }) => {
   return (
-    <div className={`itemModal__container-image`}>
-      <div className="itemModal_photo">
-        <img className="itemModal__popup-image" src={selectedCard.link} />
+    <div className={`popup__container-image`}>
+      <div className="popup__photo">
+        <img className="popup__image" src={selectedCard.link} alt="/" />
         <button
-          className="itemModal__popup-button"
+          className="popup__button"
           type="button"
           aria-label="Close"
-          id="itemModal-popup-button"
+          id="popup-button"
           onClick={onClose}
         >
-          Close
+          <img
+            className="popup-close"
+            alt="Close button image"
+            src={closeIcon}
+            id="image-popup-close"
+          ></img>
         </button>
-        <img
-          className="itemModal__popup-close"
-          alt="Close button image"
-          src={closeIcon}
-          id="popup-close"
-        ></img>
-        <div className="itemModal__subcontainer">
-          {/* <h2 className="popup__title">"/"</h2> */}
-          {/* <img src={selectedCard.link} /> */}
-          <h2 className="popup__title">{selectedCard.name}</h2>
-          <p className="popup__weather">Weather Type: {selectedCard.weather}</p>
+        <div className="popupl__subcontainer">
+          <div>
+            <h2 className="popup__title">{selectedCard.name}</h2>
+            <p className="popup__weather">
+              Weather Type: {selectedCard.weather}
+            </p>
+          </div>
         </div>
       </div>
     </div>
