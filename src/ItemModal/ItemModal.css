@@ -33,9 +33,10 @@
   border: none;
   height: 16px;
   position: absolute;
-  right: 0px;
+  right: 10px;
   top: 22px;
   width: 16px;
+  margin-right: 20px;
 }
 
 .popup__close:hover {
@@ -64,6 +65,10 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
+  .popup__photo {
+    background-color: white;
+  }
+
   .popup__title {
     margin: 20px 0 0 20px;
   }
