@@ -67,11 +67,19 @@
 }
 
 .modal__close {
-  height: 14px;
+  background-image: url(../Images/Union.svg);
+  border: none;
+  background-color: white;
+  height: 16px;
   position: absolute;
   right: 26px;
   top: 26px;
-  width: 14px;
+  width: 16px;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 .modal__header {
