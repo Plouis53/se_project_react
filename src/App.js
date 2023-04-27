@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div id="root" className="page">
+    <div>
       <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
       <Footer />
