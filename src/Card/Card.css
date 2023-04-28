@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.card__name {
+/* .card__name {
   margin: 16px auto 0 auto;
   color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
@@ -20,7 +20,10 @@
   background-color: #fff;
   border-radius: 4px;
   width: fit-content;
-}
+} */
+
+
+
 
 @media screen and (min-width: 320px) and (max-width: 1500px) {
   .card {

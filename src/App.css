@@ -18,27 +18,44 @@
   padding: 0 20px;
 }
 
-.card_section {
-  margin-top: 20px;
+.card {
+  background-color: #e9e9e9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
+  width: 328px;
+  height: 328px;
+  background: center no-repeat;
+  background-size: 328px;
 }
 
-.card_name {
+.card:hover {
+  cursor: pointer;
+}
+
+.card__name {
+  margin: 16px auto 0 auto;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #fff;
+  border-radius: 4px;
+  width: fit-content;
   text-align: center;
 }
 
-.card_image {
+.card__image {
   width: 328px;
   height: 328px;
   border-radius: 10px;
 }
 
-.card_items {
+/* .card_items {
   display: flex;
   flex-wrap: wrap;
   gap: 17px;
   justify-content: center;
   margin-top: 20px;
-}
+} */
 
 /* .footer {
   display: flex;

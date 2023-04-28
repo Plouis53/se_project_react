@@ -1,5 +1,5 @@
 import React from "react";
-import "../"
+import "./Card";
 
 const ItemCard = ({ item, onSelectCard }) => {
   return (
@@ -7,11 +7,11 @@ const ItemCard = ({ item, onSelectCard }) => {
       <div className="card">
         <img
           src={item.link}
-          className="card_image"
+          className="card__image"
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <p className="card_name"> {item.name} </p>
+      <p className="card__name"> {item.name} </p>
     </div>
   );
 };

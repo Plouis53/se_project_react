@@ -1,6 +1,6 @@
 import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCrad";
-import ItemCard from "../ItemCard/ItemCard";
+import Card from "../Card/Card";
 import React, { useMemo } from "react";
 import "../Main/Main.css";
 
@@ -31,7 +31,7 @@ function Main({ weatherTemp, onSelectCard }) {
               </p>
               <ul className="main__cards">
                 {filteredCards.map((item) => (
-                  <ItemCard item={item} onSelectCard={onSelectCard} />
+                  <Card item={item} onSelectCard={onSelectCard} />
                 ))}
               </ul>
             </section>
