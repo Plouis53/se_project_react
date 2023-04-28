@@ -1,6 +1,6 @@
 import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../WeatherCard/WeatherCrad";
-import Card from "../Card/Card";
+import Card from "../components/Card";
 import React, { useMemo } from "react";
 import "../Main/Main.css";
 

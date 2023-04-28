@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card";
+import "../blocks/Card.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
   return (
