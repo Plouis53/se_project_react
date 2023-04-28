@@ -17,6 +17,7 @@
   background-color: white;
   border-radius: 16px;
   position: relative;
+  height: 610px;
 }
 
 .popup__image {
@@ -49,10 +50,10 @@
 
 .popup__title {
   margin: 12px 0 0 32px;
-  color: black;
+  font-style: normal;
   font-size: 20px;
   font-weight: 700;
-  line-height: 1.2em;
+  line-height: 24px;
   width: fit-content;
 }
 
