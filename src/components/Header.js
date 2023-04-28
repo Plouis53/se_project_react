@@ -17,7 +17,7 @@ function Header({ onCreateModal, temp }) {
             alt=" WTWR logo"
           />
         </a>
-        <p className="header_date" id="currentDate">
+        <p className="header__date" id="currentDate">
           {currentDate}, Atlanta
         </p>
       </div>
