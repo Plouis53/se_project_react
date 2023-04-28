@@ -16,9 +16,7 @@
 .popup__photo {
   background-color: white;
   border-radius: 16px;
-  height: 463px;
   position: relative;
-  width: 343px;
 }
 
 .popup__image {
