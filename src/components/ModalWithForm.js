@@ -1,5 +1,5 @@
 import React from "react";
-import "./ModalWithForm.css";
+import "../blocks/ModalWithForm.css";
 
 // import closeIcon from "../Images/Union.svg";
 

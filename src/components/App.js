@@ -1,12 +1,12 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import "./blocks/Card.css";
-import Header from "./components/Header";
-import Main from "./Main/Main";
-import Footer from "./components/Footer";
-import ModalWithForm from "./ModalWithForm/ModalWithForm";
-import ItemModal from "./ItemModal/ItemModal";
-import { getForecastWeather, parseWeatherData } from "./utils/weatherApi";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import ModalWithForm from "./ModalWithForm";
+import ItemModal from "./ItemModal";
+import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import React, { useEffect, useState } from "react";
 import "./blocks/page.css";
 

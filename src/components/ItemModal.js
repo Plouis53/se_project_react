@@ -1,6 +1,6 @@
 import React from "react";
-import "./ItemModal.css";
-import "../ModalWithForm/ModalWithForm";
+import "../blocks/ItemModal.css";
+import "./ModalWithForm";
 
 const ItemModal = ({ selectedCard, onClose, closeIcon }) => {
   return (
