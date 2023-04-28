@@ -6,10 +6,20 @@
   padding: 0 20px;
 }
 
+.header__left {
+  grid-gap: 24px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: auto;
+  grid-template-rows: 40px;
+  margin: 0 0 0 40px;
+}
+
 .header__logo {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+  grid-column: 1/1;
+  grid-row: 1/1;
+  height: 40px;
+  width: 89px;
 }
 
 .header__avatar-logo {
