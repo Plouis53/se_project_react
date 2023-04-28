@@ -3,10 +3,14 @@ import React from "react";
 const ItemCard = ({ item, onSelectCard }) => {
   return (
     <div>
-      <div>
-        <img src={item.link} className="card_image" onClick={()=>onSelectCard (item)}/>
+      <div className="card">
+        <img
+          src={item.link}
+          className="card_image"
+          onClick={() => onSelectCard(item)}
+        />
       </div>
-      <div className="card_name"> {item.name} </div>
+      <p className="card_name"> {item.name} </p>
     </div>
   );
 };

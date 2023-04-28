@@ -13,19 +13,24 @@
   margin: 0 40px;
 }
 
-.main_clothing {
-  font-family: "CabinetGrotesk-Regular";
+.main__clothing {
+  margin: 40px 0 0;
 }
 
-.main_text {
-  font-family: "CabinetGrotesk-Regular";
-  font-style: normal;
-  font-weight: 700;
+.main__text {
   font-size: 20px;
-  line-height: 25px;
-  width: 330px;
+  font-weight: 700;
 }
 
 .main__button {
   display: none;
+}
+
+.main__cards {
+  grid-gap: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 328px);
+  margin: 34px 0 0;
+  padding: 0;
 }
