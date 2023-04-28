@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "../blocks/App.css";
-import "./blocks/Card.css";
+import "../blocks/Card.css";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
@@ -8,7 +8,7 @@ import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import React, { useEffect, useState } from "react";
-import "./blocks/page.css";
+import "../blocks/page.css";
 
 function App() {
   const weatherTemp = "75°F";
