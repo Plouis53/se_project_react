@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import "./Card/Card.css";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
