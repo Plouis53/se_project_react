@@ -10,7 +10,7 @@ function Header({ onCreateModal, temp }) {
   return (
     <header className="header">
       <div className="header__left">
-        <a href="/">
+        <a href="#/">
           <img
             className="header__logo"
             src={require("../Images/logo.svg").default}

@@ -5,16 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-        "command": "npm start",
-        "name": "Run npm start",
-        "request": "launch",
-        "type": "node-terminal"
+      "command": "npm start",
+      "name": "Run npm start",
+      "request": "launch",
+      "type": "node-terminal"
     },
     {
       "name": "Launch Chrome",
       "request": "launch",
       "type": "chrome",
-      "url": "http://localhost:8080",
+      "url": "https://PLouis53.github.io/se_project_react",
       "webRoot": "${workspaceFolder}"
     }
   ]
