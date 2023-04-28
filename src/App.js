@@ -1,7 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import "./blocks/Card.css";
-import Header from "./Header/Header";
+import Header from "./components/Header";
 import Main from "./Main/Main";
 import Footer from "./components/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";

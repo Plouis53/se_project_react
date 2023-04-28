@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "../blocks/Header.css";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
