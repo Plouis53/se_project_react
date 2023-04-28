@@ -8,7 +8,6 @@ import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import React, { useEffect, useState } from "react";
-import "../blocks/page.css";
 
 function App() {
   const weatherTemp = "75°F";

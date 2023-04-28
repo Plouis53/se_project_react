@@ -1,21 +1,12 @@
 @import url(./blocks/App.css);
+@import url(./blocks/Body.css);
 @import url(./blocks/Card.css);
 @import url(./blocks/Footer.css);
 @import url(./blocks/Header.css);
 @import url(./blocks/ItemModal.css);
 @import url(./blocks/Main.css);
 @import url(./blocks/ModalWithForm.css);
-@import url(./blocks/page.css);
 @import url(./blocks/WeatherCard.css);
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
 code {
   font-family: "Cabinet Grotesk", source-code-pro, Menlo, Monaco, Consolas,
