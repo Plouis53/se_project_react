@@ -3,7 +3,7 @@ import "./App.css";
 import "./blocks/Card.css";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
-import Footer from "./Footer/Footer";
+import Footer from "./components/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import ItemModal from "./ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "./utils/weatherApi";
