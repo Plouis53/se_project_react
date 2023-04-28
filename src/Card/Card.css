@@ -1,11 +1,7 @@
 .card {
-  background-color: #e9e9e9;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 19px;
   width: 328px;
   height: 328px;
-  background: center no-repeat;
-  background-size: 328px;
+  border-radius: 10px;
 }
 
 .card:hover {
@@ -13,23 +9,30 @@
 }
 
 .card__name {
-  margin: 16px auto 0 auto;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 12px;
+  position: absolute;
+  width: 53px;
+  height: 24px;
+  left: 128px;
+  top: 195px;
+  background: #ffffff;
   border-radius: 4px;
-  width: fit-content;
-} 
-
- .card__image {
-  width: 328px;
-  height: 328px;
-  border-radius: 10px;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 700;
 }
 
+.card__image {
+  background: 50% no-repeat;
+  background-size: 328px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
+  height: 328px;
+}
 
-@media screen and (min-width: 320px) and (max-width: 1500px) {
+@media screen and (min-width: 360px) and (max-width: 1200px) {
   .card {
     width: 164px;
     height: 164px;
