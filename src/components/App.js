@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import Header from "../components/Header";

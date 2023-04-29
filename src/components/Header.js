@@ -1,5 +1,6 @@
 import React from "react";
 import "../blocks/Header.css";
+import "../blocks/Page.css";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
@@ -22,22 +23,22 @@ function Header({ onCreateModal, temp }) {
         </p>
       </div>
       <div className="header__right">
-      <div className="header__avatar">
-        <div>
-          <button
-            type="button"
-            onClick={onCreateModal}
-            className="header__add"
-            aria-label="Add"
-          >
-            + Add clothes
-          </button>
+        <div className="header__avatar">
+          <div>
+            <button
+              type="button"
+              onClick={onCreateModal}
+              className="header__add"
+              aria-label="Add"
+            >
+              + Add clothes
+            </button>
+          </div>
+          <div className="header__name"> Phillippe Louis</div>
+          <div>
+            <img src={require("../Images/avatar.svg").default} alt="avatar" />
+          </div>
         </div>
-        <div className="header__name"> Phillippe Louis</div>
-        <div>
-          <img src={require("../Images/avatar.svg").default} alt="avatar" />
-        </div>
-      </div>
       </div>
     </header>
   );
