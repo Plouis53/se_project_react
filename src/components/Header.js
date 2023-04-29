@@ -22,6 +22,7 @@ function Header({ onCreateModal, temp }) {
         </p>
       </div>
       <div className="header__right">
+      <div className="header__avatar">
         <div>
           <button
             type="button"
@@ -32,10 +33,11 @@ function Header({ onCreateModal, temp }) {
             + Add clothes
           </button>
         </div>
-        <p className="header__name"> Phillippe Louis</p>
-        <div className="header__avatar">
-          <img  src={require("../Images/avatar.svg").default} alt="avatar" />
+        <div className="header__name"> Phillippe Louis</div>
+        <div>
+          <img src={require("../Images/avatar.svg").default} alt="avatar" />
         </div>
+      </div>
       </div>
     </header>
   );
