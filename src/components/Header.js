@@ -33,11 +33,9 @@ function Header({ onCreateModal, temp }) {
           </button>
         </div>
         <p className="header__name"> Phillippe Louis</p>
-        <img
-          className="header__avatar-logo"
-          src={require("../Images/avatar.svg").default}
-          alt="avatar"
-        />
+        <div className="header__avatar">
+          <img  src={require("../Images/avatar.svg").default} alt="avatar" />
+        </div>
       </div>
     </header>
   );
