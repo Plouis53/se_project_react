@@ -63,7 +63,7 @@
   font-weight: 700;
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+@media screen and (min-width: 375px) and (max-width: 975px) {
   .popup__photo {
     background-color: white;
   }
