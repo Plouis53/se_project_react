@@ -86,5 +86,18 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 975px) {
-  
+  .header {
+    margin: 0 auto;
+    max-width: 375px;
+    padding-top: 20px;
+  }
+
+  .header__left {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 16px;
+  }
+}
+
+@media screen and (min-width: 976px) and (max-width: 1440px) {
 }

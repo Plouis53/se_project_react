@@ -32,10 +32,13 @@
   height: 328px;
 }
 
-@media screen and (min-width: 360px) and (max-width: 1200px) {
+@media screen and (min-width: 367px) and (max-width: 975px) {
   .card {
     width: 164px;
     height: 164px;
     background-size: 164px;
   }
+}
+
+@media screen and (min-width: 976px) and (max-width: 1440px) {
 }

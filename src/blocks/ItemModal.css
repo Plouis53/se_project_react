@@ -88,3 +88,6 @@
     right: 12px;
   }
 }
+
+@media screen and (min-width: 976px) and (max-width: 1440px) {
+}
