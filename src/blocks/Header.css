@@ -80,7 +80,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 25px;
-  /* margin: 8px 12px 0 8px; */
 }
 
 .header__avatar {
@@ -96,17 +95,16 @@
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .header {
-    margin: 0 auto;
     max-width: 375px;
   }
 
   .header__left {
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 16px;
+    margin: 0 0 0 12px;
   }
 
-  .header__right{
+  .header__right {
     display: none;
   }
 

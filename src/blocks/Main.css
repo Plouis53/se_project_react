@@ -51,8 +51,11 @@
   }
 
   .main__text {
-    font-size: 20px;
     width: 340px;
+  }
+
+  .main__cards {
+    grid-template-columns: repeat(2, 164px);
   }
 }
 

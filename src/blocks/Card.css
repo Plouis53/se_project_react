@@ -29,35 +29,22 @@
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 12px;
-  position: absolute;
-  width: 53px;
-  height: 24px;
-  left: 128px;
-  top: 195px;
-  background: #ffffff;
-  border-radius: 4px;
-  color: rgba(0, 0, 0, 0.6);
-  font-weight: 700; */
 }
 
 .card__image {
   background: 50% no-repeat;
   background-size: 328px;
-  /* border: 1px solid rgba(0, 0, 0, 0.3); */
   border-radius: 19px;
   height: 328px;
 }
 
 @media screen and (min-width: 367px) and (max-width: 822px) {
   .card {
-    width: 164px;
-    height: 164px;
     background-size: 164px;
+  }
+
+  .card__image{
+    display: flex;
   }
 }
 
