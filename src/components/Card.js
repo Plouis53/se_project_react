@@ -1,5 +1,6 @@
 import React from "react";
 import "../blocks/Card.css";
+import "../blocks/Page.css";
 
 const Card = ({ item, onSelectCard }) => {
   console.log(Card.name);
@@ -17,6 +18,6 @@ const Card = ({ item, onSelectCard }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Card;
