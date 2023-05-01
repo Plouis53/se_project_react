@@ -63,9 +63,13 @@
   font-weight: 700;
 }
 
-@media screen and (min-width: 375px) and (max-width: 975px) {
+@media screen and (min-width: 375px) and (max-width: 822px) {
   .popup__photo {
     background-color: white;
+    border-radius: 16px;
+    height: 463px;
+    position: relative;
+    width: 343px;
   }
 
   .popup__title {
