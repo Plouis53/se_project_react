@@ -28,9 +28,9 @@
 }
 
 .weather__image {
-  width: 100%;
-  /* width: 1360px;
-  height: 80px; */
+  /* width: 100%; */
+  width: 1360px;
+  height: 80px;
 }
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
@@ -38,11 +38,14 @@
     max-width: 768px;
   }
 
+  .weather__container {
+    width: 100%;
+  }
+
   .weather__image {
     border-radius: 20px;
     object-fit: none;
     object-position: 100% 0;
-    width: 343px;
   }
 
   .weather__info {
