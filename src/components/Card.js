@@ -17,6 +17,6 @@ const Card = ({ item, onSelectCard }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Card;

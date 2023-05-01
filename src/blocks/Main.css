@@ -37,6 +37,7 @@
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .main {
+    display: flex;
     margin: 16px auto 0;
     max-width: 375px;
   }
