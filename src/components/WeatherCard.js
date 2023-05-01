@@ -46,10 +46,10 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
 
   const imageSrcUrl = imageSrc[0].url || "";
   return (
-    <section className="weather" id="weather">
+    <section className="weather">
       <div className="weather__container">
-        <img src={imageSrcUrl} className="weather_image" />
-        <h2 className="weather_info">{weatherTemp}°F </h2>
+        <img src={imageSrcUrl} className="weather__image" />
+        <h2 className="weather__info">{weatherTemp}°F </h2>
       </div>
     </section>
   );

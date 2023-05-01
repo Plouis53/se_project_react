@@ -1,7 +1,15 @@
 .card {
-  width: 328px;
+  background-color: #e9e9e9;
+  background: 50% no-repeat;
+  background-size: 328px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
   height: 328px;
-  border-radius: 10px;
+  width: 328px;
+
+  /* width: 328px;
+  height: 328px;
+  border-radius: 10px; */
 }
 
 .card:hover {
@@ -9,7 +17,17 @@
 }
 
 .card__name {
-  display: flex;
+  background-color: #fff;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 16px auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+
+  /* display: flex;
   justify-content: center;
   align-items: center;
   padding: 2px 12px;
@@ -21,7 +39,7 @@
   background: #ffffff;
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.6);
-  font-weight: 700;
+  font-weight: 700; */
 }
 
 .card__image {

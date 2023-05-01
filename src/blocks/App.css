@@ -18,6 +18,8 @@
   padding: 0 20px;
 }
 
+
+
 /* .footer {
   display: flex;
   align-items: flex-end;
@@ -33,7 +35,9 @@
   padding: 0 40px;
 } */
 
+
 @media screen and (min-width: 375px) and (max-width: 975px) {
+  
 }
 
 @media screen and (min-width: 976px) and (max-width: 1440px) {

@@ -41,8 +41,17 @@
     max-width: 375px;
   }
 
+  .main__clothing {
+    margin: 16px 0 0;
+  }
+
   .main__container {
     margin: 0 16px;
+  }
+
+  .main__text {
+    font-size: 20px;
+    width: 340px;
   }
 }
 

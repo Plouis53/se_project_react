@@ -1,4 +1,4 @@
-import "../blocks/App.css";
+// import "../blocks/App.css";
 import "../blocks/Card.css";
 import Header from "../components/Header";
 import Main from "../components/Main";
@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
+import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 
 function App() {
@@ -99,14 +100,6 @@ function App() {
                 <label className="modal__temp-ranges">Cold</label>
               </div>
             </div>
-            {/* <button
-            className="modal__save"
-            type="submit"
-            aria-label="Save"
-            id="add-save"
-          >
-            Add garment
-          </button> */}
           </fieldset>
         </ModalWithForm>
       )}
