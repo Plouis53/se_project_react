@@ -30,7 +30,10 @@
   height: 80px; */
 }
 
-@media screen and (min-width: 375px) and (max-width: 975px) {
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .weather {
+    max-width: 768px;
+  }
 }
 
 @media screen and (min-width: 976px) and (max-width: 1440px) {

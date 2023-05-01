@@ -35,7 +35,15 @@
   padding: 0;
 }
 
-@media screen and (min-width: 375px) and (max-width: 975px) {
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .main {
+    margin: 16px auto 0;
+    max-width: 375px;
+  }
+
+  .main__container {
+    margin: 0 16px;
+  }
 }
 
 @media screen and (min-width: 976px) and (max-width: 1440px) {
