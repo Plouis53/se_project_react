@@ -18,8 +18,11 @@
 }
 
 .main__text {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
   font-size: 20px;
   font-weight: 700;
+  line-height: 25px;
 }
 
 .main__button {
