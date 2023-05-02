@@ -2,25 +2,22 @@ import React from "react";
 import "../blocks/ItemModal.css";
 import "../components/ModalWithForm";
 
-const ItemModal = ({ selectedCard, onClose, closeIcon }) => {
+const ItemModal = ({ selectedCard, onClose }) => {
   return (
     <div className={`popup__container-image`}>
       <div className="popup__photo">
-        <img className="popup__image" src={selectedCard.link} alt="/" />
+        <img
+          className="popup__image"
+          src={selectedCard.link}
+          alt={selectedCard.name}
+        />
         <button
           className="popup__close"
           type="button"
           aria-label="Close"
           id="popup-button"
           onClick={onClose}
-        >
-          {/* <img
-            className="popup__close"
-            alt="Close button image"
-            src={closeIcon}
-            id="image-popup-close"
-          ></img> */}
-        </button>
+        ></button>
         <div className="popup__subcontainer">
           <div>
             <h2 className="popup__title">{selectedCard.name}</h2>

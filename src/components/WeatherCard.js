@@ -1,4 +1,5 @@
 import React from "react";
+import "../blocks/WeatherCard.css";
 
 const weatherOptions = [
   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
@@ -48,7 +49,11 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   return (
     <section className="weather">
       <div className="weather__container">
-        <img src={imageSrcUrl} className="weather__image" alt="weather-image" />
+        <img
+          src={imageSrcUrl}
+          className="weather__image"
+          alt="weather type-image"
+        />
         <h2 className="weather__info">{weatherTemp}°F </h2>
       </div>
     </section>
