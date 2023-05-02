@@ -1,6 +1,7 @@
 import React from "react";
 import "../blocks/Header.css";
-import "../blocks/Page.css";
+import headerLogo from "../images/logo.svg";
+import headerAvatar from "../images/avatar.svg";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
@@ -11,13 +12,7 @@ function Header({ onCreateModal, temp }) {
   return (
     <header className="header">
       <div className="header__left">
-        <a href="#/">
-          <img
-            className="header__logo"
-            src={require("../images/logo.svg").default}
-            alt=" WTWR logo"
-          />
-        </a>
+        <img className="header__logo" src={headerLogo} alt=" WTWR logo"></img>
         <p className="header__date" id="currentDate">
           {currentDate}, Atlanta
         </p>
@@ -42,7 +37,11 @@ function Header({ onCreateModal, temp }) {
           </div>
           <div className="header__name"> Phillippe Louis</div>
           <div>
-            <img src={require("../images/avatar.svg").default} alt="avatar" />
+            <img
+              className="header__avatar-image"
+              src={headerAvatar}
+              alt="avatar"
+            />
           </div>
         </div>
       </div>
