@@ -10,7 +10,7 @@ import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  // const weatherTemp = "75°F";
+  const weatherTemp = "75°F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
@@ -29,21 +29,23 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const temperature = parseWeatherData(data);
-      setTemp(temperature);
-    });
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
     <div>
-      <Header onCreateModal={handleCreateModal} temp={undefined} />
+      <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
       <Footer />
       {activeModal === "create" && (
-        <
-// @ts-ignore
-        ModalWithForm title="New Garment" onClose={handleCloseModal}>
+        <ModalWithForm title="New Garment" onClose={handleCloseModal}>
           <fieldset className="modal__fieldset">
             <label className="modal__label">
               Name
@@ -54,8 +56,8 @@ function App() {
                 required
                 name="name"
                 id="input-name"
-                mini-Length="1"
-                max-Length="30"
+                miniLength="1"
+                maxLength="30"
               />
             </label>
             <label className="modal__label">
@@ -106,12 +108,7 @@ function App() {
         </ModalWithForm>
       )}
       {activeModal === "preview" && (
-        <ItemModal
-          selectedCard={selectedCard}
-          onClose={handleCloseModal}
-          // @ts-ignore
-          closeIcon={undefined}
-        />
+        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
       )}
     </div>
   );

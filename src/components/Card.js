@@ -2,7 +2,6 @@ import React from "react";
 import "../blocks/Card.css";
 
 const Card = ({ item, name, onSelectCard, weather, _id, id, link }) => {
-  console.log(Card.name);
   return (
     <div className="card">
       <div className="card__container">
