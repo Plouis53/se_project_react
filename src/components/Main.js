@@ -36,8 +36,7 @@ function Main({ weatherTemp, onSelectCard }) {
                 name={item.name}
                 weather={item.weather}
                 id={item.id}
-                link={item.link}
-              />
+                link={item.link} _id={undefined}              />
             ))}
           </ul>
         </section>

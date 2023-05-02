@@ -1,6 +1,5 @@
 import React from "react";
 import "../blocks/Card.css";
-import "../blocks/Page.css";
 
 const Card = ({ item, name, onSelectCard, weather, _id, id, link }) => {
   console.log(Card.name);

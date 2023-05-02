@@ -10,7 +10,7 @@ import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 
 function App() {
-  const weatherTemp = "75°F";
+  // const weatherTemp = "75°F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
@@ -37,11 +37,13 @@ function App() {
 
   return (
     <div>
-      <Header onCreateModal={handleCreateModal} />
+      <Header onCreateModal={handleCreateModal} temp={undefined} />
       <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
       <Footer />
       {activeModal === "create" && (
-        <ModalWithForm title="New Garment" onClose={handleCloseModal}>
+        <
+// @ts-ignore
+        ModalWithForm title="New Garment" onClose={handleCloseModal}>
           <fieldset className="modal__fieldset">
             <label className="modal__label">
               Name
@@ -107,6 +109,7 @@ function App() {
         <ItemModal
           selectedCard={selectedCard}
           onClose={handleCloseModal}
+          // @ts-ignore
           closeIcon={undefined}
         />
       )}
