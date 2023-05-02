@@ -56,8 +56,8 @@ function App() {
                 required
                 name="name"
                 id="input-name"
-                miniLength="1"
-                maxLength="30"
+                // miniLength="1"
+                // maxLength="30"
               />
             </label>
             <label className="modal__label">
