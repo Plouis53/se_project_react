@@ -24,7 +24,7 @@ const ModalWithForm = ({
             ></button>
             <h2 className="modal__header">{title}</h2>
             {children}
-            <button className="modal__footer" type="submit" id="modal-add">
+            <button className="modal__footer" id="modal-add">
               {buttonText}
             </button>
           </fieldset>
