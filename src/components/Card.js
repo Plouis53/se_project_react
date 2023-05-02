@@ -2,7 +2,7 @@ import React from "react";
 import "../blocks/Card.css";
 import "../blocks/Page.css";
 
-const Card = ({ item, onSelectCard }) => {
+const Card = ({ item, name, onSelectCard, weather, _id, id, link }) => {
   console.log(Card.name);
   return (
     <div>
@@ -12,7 +12,7 @@ const Card = ({ item, onSelectCard }) => {
           <img
             src={item.link}
             className="card__image"
-            onClick={() => onSelectCard(item)}
+            onClick={() => onSelectCard(item, name, weather, _id, id, link)}
           />
         </div>
       </div>
