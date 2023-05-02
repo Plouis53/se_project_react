@@ -17,12 +17,6 @@ function Header({ onCreateModal, temp }) {
           {currentDate}, Atlanta
         </p>
       </div>
-      {/* <button
-        className="header__button"
-        type="button"
-        aria-label="mobile-menu"
-      ></button>
-      <img src={require("../Images/header-button.svg").default}></img> */}
       <div className="header__right">
         <div className="header__avatar">
           <div>
