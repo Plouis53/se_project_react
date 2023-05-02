@@ -14,16 +14,6 @@
   z-index: 1;
 }
 
-/* .modal_content {
-  background-color: white;
-  max-width: 496px;
-  width: 100%;
-  border-radius: 10px;
-  padding: 34px 36px;
-  padding: 0;
-  border: none;
-} */
-
 .modal__container-form {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
@@ -67,7 +57,7 @@
 }
 
 .modal__close {
-  background-image: url(../Images/Union.svg);
+  background-image: url(../images/Union.svg);
   border: none;
   background-color: white;
   height: 16px;
@@ -150,5 +140,5 @@
 @media screen and (min-width: 375px) and (max-width: 822px) {
 }
 
-@media screen and (min-width: 976px) and (max-width: 1440px) {
+@media screen and (min-width: 823px) and (max-width: 1440px) {
 }

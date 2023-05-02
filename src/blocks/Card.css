@@ -38,15 +38,15 @@
   height: 328px;
 }
 
-@media screen and (min-width: 367px) and (max-width: 822px) {
+@media screen and (min-width: 375px) and (max-width: 822px) {
   .card {
     background-size: 164px;
   }
 
-  .card__image{
+  /* .card__image {
     display: flex;
-  }
+  } */
 }
 
-@media screen and (min-width: 823px) and (max-width: 1440px) {
-}
+/* @media screen and (min-width: 823px) and (max-width: 1440px) {
+} */

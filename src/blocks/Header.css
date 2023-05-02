@@ -117,12 +117,12 @@
 }
 
 @media screen and (min-width: 823px) and (max-width: 1440px) {
-  .header {
+  /* .header {
     max-width: 768px;
     padding-top: 20px;
-  }
+  } */
 
-  .header__left {
+  /* .header__left {
     margin: 0 0 0 20px;
-  }
+  } */
 }
