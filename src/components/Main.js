@@ -1,9 +1,9 @@
 import { ClothingItems } from "../utils/Constants";
 import WeatherCard from "../components/WeatherCard";
-import Card from "./ClothingCard";
 import React, { useMemo } from "react";
 import "../blocks/Main.css";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import ClothingCard from "../components/ClothingCard";
 
 function Main({ weatherTemp, onSelectCard }) {
   const weatherType = useMemo(() => {
@@ -30,14 +30,16 @@ function Main({ weatherTemp, onSelectCard }) {
           </p>
           <ul className="main__cards">
             {filteredCards.map((item) => (
-              <Card
+              <ClothingCard
                 key={item._id}
                 item={item}
                 onSelectCard={onSelectCard}
                 name={item.name}
                 weather={item.weather}
                 id={item.id}
-                link={item.link} _id={undefined}              />
+                link={item.link}
+                _id={undefined}
+              />
             ))}
           </ul>
         </section>

@@ -40,6 +40,8 @@ const weatherOptions = [
   },
 ];
 
+
+
 const weatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   const imageSrc = weatherOptions.filter((i) => {
     return i.day === day && i.type === type;

@@ -1,4 +1,4 @@
-// https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}
+import { } from "./Constants";
 
 const latitude = "33.7490";
 const longitude = "-84.386330";

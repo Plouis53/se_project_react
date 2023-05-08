@@ -9,7 +9,7 @@ import { getForecastWeather, weatherData } from "../utils/weatherApi";
 import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import{Route} from "react-dom";
+// import{Route} from "react-dom";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
@@ -71,7 +71,7 @@ const App = () => {
           forcastData={forcastData}
           onCreateModal={handleCreateModal}
         />
-        <Route exact path="/">
+        {/* <Route exact path="/"> */}
           <Main
             forcastData={forcastData}
             cards={clothingItems}
@@ -80,7 +80,7 @@ const App = () => {
             weatherTemp={temp}
             onSelectCard={handleselectedCard}
           />
-        </Route>
+        {/* </Route> */}
         <Footer />
         {activeModal === "create" && (
           <ModalWithForm title="New Garment" onClose={handleCloseModal}>
