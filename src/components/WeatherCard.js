@@ -1,4 +1,5 @@
 import React from "react";
+import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 
 const weatherOptions = [
   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
