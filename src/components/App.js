@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 
 const App = () => {
+  const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const weatherTemp = "75°F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});

@@ -1,4 +1,4 @@
-import { defaultClothingItems } from "../utils/Constants";
+import { ClothingItems } from "../utils/Constants";
 import WeatherCard from "../components/WeatherCard";
 import Card from "../components/Card";
 import React, { useMemo } from "react";
@@ -16,7 +16,7 @@ function Main({ weatherTemp, onSelectCard }) {
     }
   }, [weatherTemp]);
 
-  const filteredCards = defaultClothingItems.filter((item) => {
+  const filteredCards = ClothingItems.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
   });
 
