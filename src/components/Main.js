@@ -3,7 +3,7 @@ import WeatherCard from "../components/WeatherCard";
 import React, { useMemo } from "react";
 import "../blocks/Main.css";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import ClothingCard from "../components/ClothingCard";
+import ClothingCard from "./ClothingCard";
 
 function Main({ weatherTemp, onSelectCard }) {
   const weatherType = useMemo(() => {

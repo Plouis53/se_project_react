@@ -2,7 +2,7 @@ import React from "react";
 import "../blocks/Header.css";
 import headerLogo from "../images/logo.svg";
 import headerAvatar from "../images/avatar.svg";
-
+import { Link } from "react-router-dom";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
@@ -30,7 +30,9 @@ function Header({ onCreateModal, temp }) {
               + Add clothes
             </button>
           </div>
-          <div className="header__name"> Phillippe Louis</div>
+          <Link className="header__link">
+            <div className="header__name"> Phillippe Louis</div>
+          </Link>
           <div>
             <img
               className="header__avatar-image"
