@@ -9,16 +9,23 @@ import { getForecastWeather, weatherData } from "../utils/weatherApi";
 import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import{Route} from "react-dom";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [forcastData, setForcastData] = useState([]);
+  const [weatherImage, setWeatherImage] = React.useState("");
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [activePopup, setActivePopup] = useState("");
   const weatherTemp = "75°F";
   const [temp, setTemp] = useState(0);
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setActivePopup("image");
+  };
 
   const handleAddClick = () => {
     setActivePopup("add");
@@ -64,11 +71,16 @@ const App = () => {
           forcastData={forcastData}
           onCreateModal={handleCreateModal}
         />
-        {/* <Routes>
-
-        <Routes exact path={} element={forcastData.temperature &&} >  */}
-
-        <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
+        <Route exact path="/">
+          <Main
+            forcastData={forcastData}
+            cards={clothingItems}
+            onCardClick={handleCardClick}
+            banner={weatherImage}
+            weatherTemp={temp}
+            onSelectCard={handleselectedCard}
+          />
+        </Route>
         <Footer />
         {activeModal === "create" && (
           <ModalWithForm title="New Garment" onClose={handleCloseModal}>
