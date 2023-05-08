@@ -37,7 +37,6 @@ export const defaultClothingItems = [
   },
 ];
 
-
 // import dayCloudy from "../images/day/cloudy.svg";
 // import dayFog from "../images/day/fog.svg";
 // import dayRain from "../images/day/rain.svg";
@@ -56,7 +55,6 @@ export const defaultClothingItems = [
 // export const longitude = "-84.386330";
 // export const APIkey = "09023fcd88dfb33405b9fe95d5351e01";
 
-
 // export const dayBanners = {
 //   cloudy: dayCloudy,
 //   fog: dayFog,
@@ -74,3 +72,5 @@ export const defaultClothingItems = [
 //   storm: nightStorm,
 //   sunny: nightSunny,
 // };
+
+// export const baseUrl = "http://localhost:3000";
