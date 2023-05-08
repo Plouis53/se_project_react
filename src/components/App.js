@@ -5,17 +5,24 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
-import { getForecastWeather, WeatherData } from "../utils/weatherApi";
+import { getForecastWeather, weatherData } from "../utils/weatherApi";
 import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
-  const weatherTemp = "75°F";
+  const [forcastData, setForcastData] = useState([]);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [activePopup, setActivePopup] = useState("");
+  const weatherTemp = "75°F";
   const [temp, setTemp] = useState(0);
+
+  const handleAddClick = () => {
+    setActivePopup("add");
+  };
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -33,7 +40,7 @@ const App = () => {
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
-        const temperature = WeatherData(data);
+        const temperature = weatherData(data);
         setTemp(temperature);
       })
       .catch((error) => {
@@ -42,17 +49,24 @@ const App = () => {
   }, []);
 
   const handleToggleSwitch = () => {
-    // CurrentTempUnitContext==="F"
-    // ? setCurrentTempUnit('C')
-    // : setCurrentTempUnit('F');
+    CurrentTempUnitContext === "F"
+      ? setCurrentTempUnit("C")
+      : setCurrentTempUnit("F");
   };
 
   return (
     <div className="page">
       <CurrentTempUnitContext.Provider
-      // value={{ currentTempUnit, handleToggleSwitch }}
+        value={{ currentTempUnit, handleToggleSwitch }}
       >
-        <Header onCreateModal={handleCreateModal} />
+        <Header
+          handleClick={() => setActiveModal("create")}
+          forcastData={forcastData}
+          onCreateModal={handleCreateModal}
+        />
+        {/* <Routes>
+
+        <Routes exact path={} element={forcastData.temperature &&} >  */}
 
         <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
         <Footer />

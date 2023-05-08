@@ -8,10 +8,7 @@ const Switch = () => {
   );
 
   const [isChecked, setIsChecked] = useState(currentTempUnit === "C");
-  useEffect(
-    () => setIsChecked(currentTempUnit === "C"),
-    [CurrentTempUnitContext]
-  );
+  useEffect(() => setIsChecked(currentTempUnit === "C"), [currentTempUnit]);
 
   return (
     <div className="switch">
@@ -21,7 +18,7 @@ const Switch = () => {
             className="switch__input"
             type="checkbox"
             name="switch-checkbox"
-            value={CurrentTempUnitContext}
+            value={currentTempUnit}
             id="switch"
             onChange={handleToggleSwitch}
             checked={isChecked}

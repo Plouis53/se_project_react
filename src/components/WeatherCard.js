@@ -40,7 +40,7 @@ const weatherOptions = [
   },
 ];
 
-const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
+const weatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   const imageSrc = weatherOptions.filter((i) => {
     return i.day === day && i.type === type;
   });
@@ -56,4 +56,4 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   );
 };
 
-export default WeatherCard;
+export default weatherCard;

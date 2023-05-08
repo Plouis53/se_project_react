@@ -3,6 +3,7 @@ import "../blocks/Header.css";
 import headerLogo from "../images/logo.svg";
 import headerAvatar from "../images/avatar.svg";
 
+
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
   day: "numeric",
