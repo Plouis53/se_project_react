@@ -36,3 +36,41 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
+
+
+// import dayCloudy from "../images/day/cloudy.svg";
+// import dayFog from "../images/day/fog.svg";
+// import dayRain from "../images/day/rain.svg";
+// import daySnow from "../images/day/snow.svg";
+// import dayStorm from "../images/day/storm.svg";
+// import daySunny from "../images/day/sunny.svg";
+
+// import nightCloudy from "../images/night/cloudy.svg";
+// import nightFog from "../images/night/fog.svg";
+// import nightRain from "../images/night/rain.svg";
+// import nightSnow from "../images/night/snow.svg";
+// import nightStorm from "../images/night/storm.svg";
+// import nightSunny from "../images/night/sunny.svg";
+
+// export const latitude = "33.7490";
+// export const longitude = "-84.386330";
+// export const APIkey = "09023fcd88dfb33405b9fe95d5351e01";
+
+
+// export const dayBanners = {
+//   cloudy: dayCloudy,
+//   fog: dayFog,
+//   rain: dayRain,
+//   snow: daySnow,
+//   storm: dayStorm,
+//   sunny: daySunny,
+// };
+
+// export const nightBanners = {
+//   cloudy: nightCloudy,
+//   fog: nightFog,
+//   rain: nightRain,
+//   snow: nightSnow,
+//   storm: nightStorm,
+//   sunny: nightSunny,
+// };

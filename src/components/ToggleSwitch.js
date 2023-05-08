@@ -12,4 +12,25 @@ const Switch = () => {
     () => setIsChecked(currentTempUnit === "C"),
     [CurrentTempUnitContext]
   );
+
+  return (
+    <div className="switch">
+      <div className="switch__container">
+        <label className="switch__label">
+          <input
+            className="switch__input"
+            type="checkbox"
+            name="switch-checkbox"
+            value={CurrentTempUnitContext}
+            id="switch"
+            onChange={handleToggleSwitch}
+            checked={isChecked}
+          />
+          <span className="switch__button" />
+        </label>
+      </div>
+    </div>
+  );
 };
+
+export default Switch;
