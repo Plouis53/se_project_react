@@ -5,7 +5,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
-import { getForecastWeather, weatherData } from "../utils/weatherApi";
+import { getForecastWeather, weather } from "../utils/weatherApi";
 import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
@@ -14,7 +14,7 @@ import AddItemModal from "../components/AddItemModal";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
-  const [forcastData, setForcastData] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
   const [weatherImage, setWeatherImage] = useState("");
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
@@ -48,7 +48,7 @@ const App = () => {
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
-        const temperature = weatherData(data);
+        const temperature = weather(data);
         setTemp(temperature);
       })
       .catch((error) => {
@@ -69,12 +69,12 @@ const App = () => {
       >
         <Header
           handleClick={() => setActiveModal("create")}
-          forcastData={forcastData}
+          weatherData={weatherData}
           onCreateModal={handleCreateModal}
         />
         <Route exact path="/">
           <Main
-            forcastData={forcastData}
+            weatherData={weatherData}
             cards={clothingItems}
             onCardClick={handleCardClick}
             banner={weatherImage}
