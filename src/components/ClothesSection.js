@@ -3,21 +3,21 @@ import ClothingCard from "./ClothingCard";
 
 const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
   const currentUser = useContext();
-
   return (
-    <div className="profile">
-      <div className="profile__container">
-        <p className="profile__sidebar">Your items</p>
+    <div className="clothes">
+      <div className="clothes__container">
+        <div className="clothes__title">Your items</div>
         <button
+          className="clothes__button"
           type="button"
-          className="profile__add"
           aria-label="Add"
           onClick={onAddClick}
         >
-          + Add New
+          + Add new
         </button>
       </div>
       <ul className="profile__cards">
+        //{" "}
         {cards
           .filter(
             (card) =>

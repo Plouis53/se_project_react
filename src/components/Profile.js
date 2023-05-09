@@ -1,6 +1,5 @@
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
-import "../blocks/Profile.css";
 
 export function Profile({ item, ClothingCard, onSelectCard }) {
   return (
