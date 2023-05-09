@@ -5,7 +5,7 @@ import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
-import { getForecastWeather, weather } from "../utils/weatherApi";
+import { getWeather, weather } from "../utils/weatherApi";
 import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
@@ -46,10 +46,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    getForecastWeather()
+    getWeather()
       .then((data) => {
         const temperature = weather(data);
-        setTemp(temperature);
+        setTemp(temp);
       })
       .catch((error) => {
         console.log(error);
