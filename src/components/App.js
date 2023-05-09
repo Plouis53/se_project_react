@@ -10,11 +10,12 @@ import "../blocks/WeatherCard.css";
 import React, { useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import { Route } from "react-router-dom";
+import AddItemModal from "../components/AddItemModal";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [forcastData, setForcastData] = useState([]);
-  const [weatherImage, setWeatherImage] = React.useState("");
+  const [weatherImage, setWeatherImage] = useState("");
   const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
