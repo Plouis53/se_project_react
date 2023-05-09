@@ -1,8 +1,7 @@
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import Switch from "../blocks/Switch.css";
 import { useContext, useEffect, useState } from "react";
 
-const Switch = () => {
+const ToggleSwitch = () => {
   const { currentTempUnit, handleToggleSwitch } = useContext(
     CurrentTempUnitContext
   );
@@ -46,7 +45,7 @@ const Switch = () => {
   );
 };
 
-export default Switch;
+export default ToggleSwitch;
 
 //   return (
 //     <div className="switch">

@@ -2,24 +2,28 @@ import React from "react";
 import "../blocks/Header.css";
 import headerLogo from "../images/logo.svg";
 import headerAvatar from "../images/avatar.svg";
-import { Link } from "react-router-dom";
+import ToggleSwitch from "../components/ToggleSwitch";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
   day: "numeric",
 });
 
-function Header({ onCreateModal, temp }) {
+const Header = ({ onCreateModal }) => {
   return (
     <header className="header">
       <div className="header__left">
-        <img className="header__logo" src={headerLogo} alt=" WTWR logo"></img>
+        <NavLink exact to="/">
+          <img className="header__logo" src={headerLogo} alt=" WTWR logo"></img>
+        </NavLink>
         <p className="header__date" id="currentDate">
           {currentDate}, Atlanta
         </p>
       </div>
       <div className="header__right">
         <div className="header__avatar">
+          <ToggleSwitch />
           <div>
             <button
               type="button"
@@ -30,20 +34,22 @@ function Header({ onCreateModal, temp }) {
               + Add clothes
             </button>
           </div>
-          <Link className="header__link">
+          <NavLink to="/profile" className="header__link">
             <div className="header__name"> Phillippe Louis</div>
-          </Link>
-          <div>
-            <img
-              className="header__avatar-image"
-              src={headerAvatar}
-              alt="avatar"
-            />
-          </div>
+          </NavLink>
+          <NavLink to="/profile">
+            <div>
+              <img
+                className="header__avatar-image"
+                src={headerAvatar}
+                alt="avatar"
+              />
+            </div>
+          </NavLink>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header;
