@@ -5,9 +5,9 @@ const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
   const currentUser = useContext();
 
   return (
-    <div className="profile__container">
-      <div className="profile__subcontainer">
-        <p className="profile__title">Your items</p>
+    <div className="profile">
+      <div className="profile__container">
+        <p className="profile__sidebar">Your items</p>
         <button
           type="button"
           className="profile__add"
@@ -27,7 +27,7 @@ const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
           .map((card) => (
             <ClothingCard
               key={card._id}
-              card={card}
+              item={card}
               onCardClick={onCardClick}
             />
           ))}

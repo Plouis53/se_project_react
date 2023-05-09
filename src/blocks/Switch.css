@@ -1,77 +1,72 @@
 .switch {
-  background-image: url(../images/Switch.svg);
   display: flex;
-  grid-column: 1/1;
-  grid-row: 1/1;
-}
-
-.switch__container {
   position: relative;
-  z-index: 1;
-  height: 100%;
-  font-size: 14px;
-  font-weight: 700;
 }
 
-.switch__label {
-  display: flex;
-  cursor: pointer;
-  width: 56px;
-  height: 28px;
-  background: #fff;
-  border-radius: 20px;
-  position: relative;
-  transition: background-color 0.2s;
-  border: 2px solid #7e7e7e;
-  margin: 5px 0 0 0;
-}
+/* .switch__container{
 
-.switch__input {
-  height: 0px;
-  width: 0px;
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.switch__button {
-  position: absolute;
-  z-index: 0;
-  left: 1px;
-  width: 28px;
-  height: 28px;
-  border-radius: 45px;
-  transition: 0.2s;
-  background: #000;
-  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
-}
-
-/* .switch__input:checked + .switch__label .switch__button {
-  left: calc(100% - 1px);
-  transform: translateX(-100%);
-}
-
-.switch__label:active .switch__button {
-  width: 56px;
 } */
 
-.switch__F {
-  left: 15px;
-  position: absolute;
+.switch__box {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100%;
+  border-radius: 20px;
+  appearance: none;
+  cursor: pointer;
+  border: 2px solid #7e7e7e;
+  width: 40px;
+  height: 20px;
+  outline: none;
 }
 
-.switch__C {
-  left: 41px;
+.switch__slider-F {
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  color: pink;
+  text-align: center;
+  cursor: pointer;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100%;
+  left: 3px;
+  top: 2px;
+}
+
+.switch__slider-C {
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  color: pink;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: 23px;
+  top: 2px;
+}
+
+.switch__slider::after {
+  right: 24px;
+}
+
+.switch__temp-F {
+  z-index: 100;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.switch__temp-C {
+  z-index: 100;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+}
+
+.switch__active {
+  z-index: 100;
+  color: pink;
+  top: -14px;
+  right: 2px;
+  font-size: 15px;
+  position: absolute;
 }

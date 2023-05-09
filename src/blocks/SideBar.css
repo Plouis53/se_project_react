@@ -1,0 +1,23 @@
+.sidebar {
+    background-color: pink;
+    display: flex;
+    flex-flow: row;
+    align-self: flex-start;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .sidebar__avatar {
+    width: 56px;
+    height: 56px;
+    padding: 47px 16px 0 40px;
+    align-self: center;
+  }
+  
+  .sidebar__name {
+    font-size: 20px;
+    margin: 0;
+    padding: 47px 0 0 0;
+    align-self: center;
+    max-width: 150px;
+    white-space: nowrap;
+  }
