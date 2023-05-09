@@ -1,6 +1,6 @@
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import { useContext, useEffect, useState } from "react";
-
+import Switch from "../blocks/ToggleSwitch.css";
 const ToggleSwitch = () => {
   const { currentTempUnit, handleToggleSwitch } = useContext(
     CurrentTempUnitContext

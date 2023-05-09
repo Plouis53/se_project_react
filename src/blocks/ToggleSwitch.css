@@ -3,9 +3,18 @@
   position: relative;
 }
 
-/* .switch__container{
+.switch__container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 700;
+}
 
-} */
+.switch__input {
+  left: calc(100% - 1px);
+  transform: translateX(-100%);
+}
 
 .switch__box {
   display: flex;
