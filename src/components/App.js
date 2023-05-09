@@ -1,16 +1,16 @@
-// import "../blocks/App.css";
-import "../blocks/Card.css";
+import React, { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
+import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
-import { getWeather, weather } from "../utils/weatherApi";
-import "../blocks/WeatherCard.css";
-import React, { useEffect, useState } from "react";
-import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import { Route } from "react-router-dom";
 import AddItemModal from "../components/AddItemModal";
+import "../blocks/App.css";
+import "../blocks/Card.css";
+import "../blocks/WeatherCard.css";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
@@ -20,7 +20,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [activePopup, setActivePopup] = useState("");
-  const weatherTemp = "75°F";
+  // const weatherTemp = "75°F";
   const [temp, setTemp] = useState(0);
 
   const handleCardClick = (card) => {
@@ -46,10 +46,10 @@ const App = () => {
   };
 
   useEffect(() => {
-    getWeather()
+    getForecastWeather()
       .then((data) => {
-        const temperature = weather(data);
-        setTemp(temp);
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
       })
       .catch((error) => {
         console.log(error);
