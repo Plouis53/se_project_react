@@ -63,6 +63,21 @@
   font-weight: 700;
 }
 
+.popup__delete {
+  color: #ff4d00;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 32px 0 0;
+  height: fit-content;
+  border: none;
+  background-color: #fff;
+}
+
+.popup__delete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .popup__photo {
     background-color: white;

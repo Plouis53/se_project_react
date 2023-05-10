@@ -15,9 +15,9 @@ import "../blocks/WeatherCard.css";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
   // const [weatherData, setWeatherData] = useState([]);
   const [weatherImage, setWeatherImage] = useState("");
-  // const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   // const [activePopup, setActivePopup] = useState("");
@@ -67,8 +67,19 @@ const App = () => {
   //   ? setCurrentTempUnit("C")
   //   : setCurrentTempUnit("F");
 
-  const handleAddItemSubmit = () => {
-    setActiveModal("addItem");
+  const handleAddItemSubmit = (name, link, weather) => {
+    const newItem = {
+      id: Date.now(),
+      name,
+      link,
+      weather,
+    };
+    setClothingItems((prevItems) => [...prevItems, newItem]);
+    handleCloseModal();
+  };
+
+  const handleCardDelete = (id) => {
+    setClothingItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
@@ -151,7 +162,7 @@ const App = () => {
           {activeModal === "preview" && (
             <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
           )}
-           {activeModal === "addItem" && (
+          {activeModal === "addItem" && (
             <AddItemModal
               onClose={handleCloseModal}
               isOpen={handleCreateModal}
