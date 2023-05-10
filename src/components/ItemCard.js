@@ -1,6 +1,7 @@
 import React from "react";
 import "../blocks/Card.css";
 
+
 const ItemCard = ({ item, name, onSelectCard, weather, _id, id, link }) => {
   return (
     <div className="card">
