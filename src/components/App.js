@@ -4,7 +4,6 @@ import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import {
   getForecastWeather,
   parseWeatherData,
-  temperature,
 } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";
