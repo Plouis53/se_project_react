@@ -4,6 +4,7 @@ import headerLogo from "../images/logo.svg";
 import headerAvatar from "../images/avatar.svg";
 import ToggleSwitch from "./TempSwitch";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import headerButton from "../images/header-button.svg";
 
 const currentDate = new Date().toLocaleString("default", {
   month: "long",
@@ -21,6 +22,9 @@ const Header = ({ onCreateModal }) => {
           {currentDate}, Atlanta
         </p>
       </div>
+      <button className="header__button" type="button" aria-label="mobile menu">
+        <img src={headerButton}></img>
+      </button>
       <div className="header__right">
         <div className="header__avatar">
           <ToggleSwitch />
