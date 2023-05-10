@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 
-const AddItemModal = ({ isOpen, onAddItem, closePopups }) => {
+const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
@@ -20,7 +20,7 @@ const AddItemModal = ({ isOpen, onAddItem, closePopups }) => {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e) => {
+  const handleAddItemSubmit = (e) => {
     e.preventDefault();
     const card = {
       name: name,
@@ -31,7 +31,7 @@ const AddItemModal = ({ isOpen, onAddItem, closePopups }) => {
   };
 
   return (
-    <ModalWithForm title="New Garment" name="add" onClose={closePopups}>
+    <ModalWithForm title="New Garment" name="add" onClose={handleCloseModal}>
       <fieldset className="modal__fieldset">
         <label className="modal__label">
           Name

@@ -12,6 +12,7 @@
 @import url(./blocks/SideBar.css);
 @import url(./blocks/Profile.css);
 @import url(./blocks/ClothesSection.css);
+@import url(./components/AddItemModal.js);
 
 
 code {

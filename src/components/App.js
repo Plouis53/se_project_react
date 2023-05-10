@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import {
-  getForecastWeather,
-  parseWeatherData,
-} from "../utils/weatherApi";
+import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
+import AddItemModal from "./AddItemModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -68,6 +66,10 @@ const App = () => {
   // CurrentTempUnitContext === "F"
   //   ? setCurrentTempUnit("C")
   //   : setCurrentTempUnit("F");
+
+  const handleAddItemSubmit = () => {
+    setActiveModal("addItem");
+  };
 
   return (
     <div className="page">
@@ -148,6 +150,13 @@ const App = () => {
           )}
           {activeModal === "preview" && (
             <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+          )}
+           {activeModal === "addItem" && (
+            <AddItemModal
+              onClose={handleCloseModal}
+              isOpen={handleCreateModal}
+              onAddItem={handleAddItemSubmit}
+            />
           )}
         </CurrentTempUnitContext.Provider>
       </BrowserRouter>
