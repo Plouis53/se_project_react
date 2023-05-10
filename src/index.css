@@ -10,6 +10,8 @@
 @import url(./blocks/WeatherCard.css);
 @import url(./blocks/Switch.css);
 @import url(./blocks/SideBar.css);
+@import url(./blocks/Profile.css);
+@import url(./blocks/ClotheSection.css);
 
 
 code {
