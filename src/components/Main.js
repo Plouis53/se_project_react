@@ -25,8 +25,6 @@ function Main({ weatherTemp, onSelectCard }) {
     return item.weather.toLowerCase() === weatherType;
   });
 
-  console.log(filteredCards);
-
   return (
     <main className="main">
       <div className="main__container">
