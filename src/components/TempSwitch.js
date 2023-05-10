@@ -12,7 +12,6 @@ const ToggleSwitch = () => {
 
   return (
     <div className="switch">
-      {/* <div className="switch__container"> */}
       <input
         className="switch__input"
         type="checkbox"
@@ -26,22 +25,61 @@ const ToggleSwitch = () => {
         <span className="switch__button">
           <div className="switch__container">
             <span
-              className={currentTempUnit === "F" ? "switch__F" : "switch__C"}
+              className={
+                currentTempUnit === "F"
+                  ? "switch__slider-F"
+                  : "switch__slider-C"
+              }
             ></span>
             <p
-              className={`switch__temp-F ${
-                currentTempUnit === "F" ? "switch__active" : ""
+              className={`switch__F ${
+                currentTempUnit === "F" ? "switch__active-F" : ""
               }`}
             >
               F
             </p>
+            <span
+              className={
+                currentTempUnit === "C"
+                  ? "switch__slider-F"
+                  : "switch__slider-C"
+              }
+            ></span>
             <p
-              className={`switch__temp-C ${
-                currentTempUnit === "C" ? "switch__active" : ""
+              className={`switch__C ${
+                currentTempUnit === "C" ? "switch__active-C" : ""
               }`}
             >
               C
             </p>
+            {/* <span
+              className={
+                currentTempUnit === "F"
+                  ? "switch__slider-F"
+                  : "switch__slider-C"
+              }
+            ></span>
+            <p
+              className={`switch__temp-F ${
+                currentTempUnit === "F" ? "switch__active-F" : ""
+              }`}
+            >
+              F
+            </p>
+            <span
+              className={
+                currentTempUnit === "C"
+                  ? "switch__slider-F"
+                  : "switch__slider-C"
+              }
+            ></span>
+            <p
+              className={`switch__temp-C ${
+                currentTempUnit === "C" ? "switch__active-C" : ""
+              }`}
+            >
+              C
+            </p> */}
           </div>
         </span>
       </label>
