@@ -73,86 +73,84 @@ const App = () => {
 
   return (
     <div className="page">
-      <BrowserRouter>
-        <CurrentTempUnitContext.Provider
-          value={{ currentTempUnit, handleToggleSwitch }}
-        >
-          <Header onCreateModal={handleCreateModal} />
-          <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Footer />
-          {activeModal === "create" && (
-            <ModalWithForm title="New Garment" onClose={handleCloseModal}>
-              <fieldset className="modal__fieldset">
-                <label className="modal__label">
-                  Name
+      <CurrentTempUnitContext.Provider
+        value={{ currentTempUnit, handleToggleSwitch }}
+      >
+        <Header onCreateModal={handleCreateModal} />
+        <Route exact path="/">
+          <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Footer />
+        {activeModal === "create" && (
+          <ModalWithForm title="New Garment" onClose={handleCloseModal}>
+            <fieldset className="modal__fieldset">
+              <label className="modal__label">
+                Name
+                <input
+                  className="modal__input"
+                  type="text"
+                  placeholder="Name"
+                  required
+                  name="name"
+                  id="input-name"
+                  // miniLength="1"
+                  // maxLength="30"
+                />
+              </label>
+              <label className="modal__label">
+                Image
+                <input
+                  className="modal__input"
+                  type="url"
+                  placeholder="Image Link"
+                  required
+                  name="Image link"
+                  id="input-link"
+                />
+              </label>
+              <p className="modal__text">Select the weather type:</p>
+              <div className="modal__input-container">
+                <div>
                   <input
-                    className="modal__input"
-                    type="text"
-                    placeholder="Name"
-                    required
-                    name="name"
-                    id="input-name"
-                    // miniLength="1"
-                    // maxLength="30"
+                    className="modal__input-button"
+                    type="radio"
+                    id="hot"
+                    value="hot"
+                    name="rangeOfTemp"
                   />
-                </label>
-                <label className="modal__label">
-                  Image
-                  <input
-                    className="modal__input"
-                    type="url"
-                    placeholder="Image Link"
-                    required
-                    name="Image link"
-                    id="input-link"
-                  />
-                </label>
-                <p className="modal__text">Select the weather type:</p>
-                <div className="modal__input-container">
-                  <div>
-                    <input
-                      className="modal__input-button"
-                      type="radio"
-                      id="hot"
-                      value="hot"
-                      name="rangeOfTemp"
-                    />
-                    <label className="modal__temp-ranges">Hot</label>
-                  </div>
-                  <div>
-                    <input
-                      className="modal__input-button"
-                      type="radio"
-                      id="warm"
-                      value="warm"
-                      name="rangeOfTemp"
-                    />
-                    <label className="modal__temp-ranges">Warm</label>
-                  </div>
-                  <div>
-                    <input
-                      className="modal__input-button"
-                      type="radio"
-                      id="cold"
-                      value="cold"
-                      name="rangeOfTemp"
-                    />
-                    <label className="modal__temp-ranges">Cold</label>
-                  </div>
+                  <label className="modal__temp-ranges">Hot</label>
                 </div>
-              </fieldset>
-            </ModalWithForm>
-          )}
-          {activeModal === "preview" && (
-            <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
-          )}
-        </CurrentTempUnitContext.Provider>
-      </BrowserRouter>
+                <div>
+                  <input
+                    className="modal__input-button"
+                    type="radio"
+                    id="warm"
+                    value="warm"
+                    name="rangeOfTemp"
+                  />
+                  <label className="modal__temp-ranges">Warm</label>
+                </div>
+                <div>
+                  <input
+                    className="modal__input-button"
+                    type="radio"
+                    id="cold"
+                    value="cold"
+                    name="rangeOfTemp"
+                  />
+                  <label className="modal__temp-ranges">Cold</label>
+                </div>
+              </div>
+            </fieldset>
+          </ModalWithForm>
+        )}
+        {activeModal === "preview" && (
+          <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+        )}
+      </CurrentTempUnitContext.Provider>
     </div>
   );
 };
