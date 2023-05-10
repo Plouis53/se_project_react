@@ -55,8 +55,10 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   return (
     <section className="weather">
       <div className="weather__temp-container">{currentTempString}</div>
-      <img src={imageSrcUrl} className="weather__image" alt={type} />
-      <h2 className="weather__info">{weatherTemp}°F </h2>
+      <div>
+        <img src={imageSrcUrl} className="weather__image" />
+      </div>
+      <section id="weather__info"></section>
     </section>
   );
 };
