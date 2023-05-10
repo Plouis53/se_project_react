@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import {
   getForecastWeather,
@@ -15,8 +15,7 @@ import AddItemModal from "../components/AddItemModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-import { Profile } from "./Profile";
+import Profile from "./Profile";
 
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");

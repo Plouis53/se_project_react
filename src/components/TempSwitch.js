@@ -1,6 +1,6 @@
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import { useContext, useEffect, useState } from "react";
-import Switch from "../blocks/ToggleSwitch.css";
+
 const ToggleSwitch = () => {
   const { currentTempUnit, handleToggleSwitch } = useContext(
     CurrentTempUnitContext
@@ -23,7 +23,7 @@ const ToggleSwitch = () => {
         ></input>
         <span
           className={
-            currentTempUnit === "F" ? "switch__slider-F" : "switch__slider-C"
+            currentTempUnit === "F" ? "switch__F" : "switch__C"
           }
         ></span>
         <p

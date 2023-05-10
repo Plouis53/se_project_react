@@ -1,7 +1,7 @@
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
 
-export function Profile({ item, ClothingCard, onSelectCard }) {
+const Profile = ({ item, ClothingCard, onSelectCard }) => {
   return (
     <div className="profile">
       <div className="profile__container">
@@ -29,4 +29,6 @@ export function Profile({ item, ClothingCard, onSelectCard }) {
       </div>
     </div>
   );
-}
+};
+
+export default Profile;

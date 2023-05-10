@@ -2,7 +2,7 @@ import React from "react";
 import "../blocks/Header.css";
 import headerLogo from "../images/logo.svg";
 import headerAvatar from "../images/avatar.svg";
-import ToggleSwitch from "../components/ToggleSwitch";
+import ToggleSwitch from "./TempSwitch";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const currentDate = new Date().toLocaleString("default", {
