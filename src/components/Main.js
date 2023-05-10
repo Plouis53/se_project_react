@@ -3,7 +3,7 @@ import WeatherCard from "../components/WeatherCard";
 import React, { useMemo, useContext } from "react";
 import "../blocks/Main.css";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import ClothingCard from "./ClothingCard";
+import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 
 function Main({ weatherTemp, onSelectCard }) {
@@ -37,7 +37,7 @@ function Main({ weatherTemp, onSelectCard }) {
           </p>
           <ul className="main__cards">
             {filteredCards.map((item) => (
-              <ClothingCard
+              <ItemCard
                 key={item._id}
                 item={item}
                 onSelectCard={onSelectCard}

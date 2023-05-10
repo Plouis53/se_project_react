@@ -1,7 +1,7 @@
 import React from "react";
 import "../blocks/Card.css";
 
-const ClothingCard = ({ item, name, onSelectCard, weather, _id, id, link }) => {
+const ItemCard = ({ item, name, onSelectCard, weather, _id, id, link }) => {
   return (
     <div className="card">
       <div className="card__container">
@@ -17,4 +17,4 @@ const ClothingCard = ({ item, name, onSelectCard, weather, _id, id, link }) => {
   );
 };
 
-export default ClothingCard;
+export default ItemCard;

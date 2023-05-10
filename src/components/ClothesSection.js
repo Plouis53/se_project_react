@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ClothingCard from "./ClothingCard";
+import ClothingCard from "./ItemCard";
 
 const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
   const currentUser = useContext();
