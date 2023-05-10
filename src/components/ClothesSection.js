@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCard from "../components/ItemCard"
 
+
 const ClothesSection = ({ cards, onCardClick, onAddClick}) => {
   return (
     <div className="clothes">
