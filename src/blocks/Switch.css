@@ -1,6 +1,7 @@
 .switch {
   display: flex;
-  position: relative;
+  grid-column: 1/1;
+  grid-row: 1/1;
 }
 
 /* .switch__container {
