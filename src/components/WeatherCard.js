@@ -50,7 +50,7 @@ const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   });
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTempUnit];
-  console.log(currentTemp);
+  
   const imageSrcUrl = imageSrc[0].url || "";
   return (
     <section className="weather">
