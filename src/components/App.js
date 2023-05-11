@@ -16,6 +16,8 @@ import "../blocks/WeatherCard.css";
 const App = () => {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [newItem, setNewItem] = useState({});
+  const [prevItems, setPrevItems] = useState([]);
   // const [weatherData, setWeatherData] = useState([]);
   const [weatherImage, setWeatherImage] = useState("");
   const [activeModal, setActiveModal] = useState("");
@@ -39,6 +41,9 @@ const App = () => {
 
   const handleCloseModal = () => {
     setActiveModal("");
+    setClothingItems(prevItems);
+    setPrevItems([]);
+    setNewItem({});
   };
 
   const handleselectedCard = (card) => {
@@ -63,10 +68,6 @@ const App = () => {
     });
   };
 
-  // CurrentTempUnitContext === "F"
-  //   ? setCurrentTempUnit("C")
-  //   : setCurrentTempUnit("F");
-
   const handleAddItemSubmit = (name, link, weather) => {
     const newItem = {
       id: Date.now(),
@@ -74,6 +75,7 @@ const App = () => {
       link,
       weather,
     };
+
     setClothingItems((prevItems) => [...prevItems, newItem]);
     handleCloseModal();
   };
@@ -108,8 +110,6 @@ const App = () => {
                     required
                     name="name"
                     id="input-name"
-                    // miniLength="1"
-                    // maxLength="30"
                   />
                 </label>
                 <label className="modal__label">
