@@ -1,41 +1,14 @@
 import React from "react";
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
-import "../blocks/ClothesSection.css";
-import "../blocks/Profile.css";
 import ItemCard from "./ItemCard";
+import "../blocks/Profile.css";
 
-const Profile = (clothingItems) => {
-  const items = [
-    {
-      id: 1,
-      name: "Red Jacket",
-      weather: "cold",
-      link: "https://example.com/image1.jpg",
-      owner: "user1",
-    },
-    {
-      id: 2,
-      name: "Summer Dress",
-      weather: "hot",
-      link: "https://example.com/image2.jpg",
-      owner: "user1",
-    },
-    {
-      id: 3,
-      name: "Blue Sweater",
-      weather: "warm",
-      link: "https://example.com/image3.jpg",
-      owner: "user2",
-    },
-  ];
-
+const Profile = ({ items, onSelectCard }) => {
   const handleCardClick = (item) => {
-    console.log(`Clicked on item with ID ${item.id}`);
-  };
+    onSelectCard(item);
 
-  const handleAddClick = () => {
-    console.log("Add button clicked");
+    console.log("Selected item:", item);
   };
 
   return (
@@ -45,11 +18,7 @@ const Profile = (clothingItems) => {
           <SideBar />
         </div>
         <div className="profile__clothes-section">
-          <ClothesSection
-            cards={items}
-            onCardClick={handleCardClick}
-            onAddClick={handleAddClick}
-          />
+          <ClothesSection cards={items} onCardClick={handleCardClick} />
         </div>
       </div>
     </div>

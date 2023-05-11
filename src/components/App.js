@@ -32,9 +32,9 @@ const App = () => {
     // setActivePopup("image");
   };
 
-  // const handleAddClick = () => {
-  //   setActivePopup("add");
-  // };
+  const handleAddClick = () => {
+    // setActivePopup("add");
+  };
 
   const handleCreateModal = () => {
     setActiveModal("create");
