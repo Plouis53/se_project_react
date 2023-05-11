@@ -3,7 +3,9 @@ import "../blocks/Card.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
   const handleCardClick = () => {
-    onSelectCard(item);
+    if (typeof onSelectCard === "function") {
+      onSelectCard(item);
+    }
   };
 
   return (

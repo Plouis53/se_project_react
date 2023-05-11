@@ -3,6 +3,7 @@ import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
 import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
+import "../blocks/Page.css";
 
 const Profile = ({ items, onSelectCard }) => {
   const handleCardClick = (item) => {
