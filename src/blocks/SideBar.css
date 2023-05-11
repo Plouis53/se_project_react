@@ -5,6 +5,19 @@
   flex-wrap: nowrap;
   max-width: 100%;
 }
+
+.sidebar__container {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  padding: 0 0 0 40px;
+  margin: 0 0 0 150px;
+  align-content: center;
+}
+
 .sidebar__avatar {
   padding: 7px 16px 0 0;
   box-sizing: border-box;
@@ -18,7 +31,7 @@
   position: absolute;
   width: 157px;
   height: 25px;
-  left: 270px;
+  left: 150px;
   top: 120px;
   font-family: "Cabinet Grotesk";
   font-style: normal;

@@ -26,13 +26,13 @@
 }
 
 .clothes__button {
-  /* margin: 0 0 2px 20px; */
+  margin: 0 0 2px 20px;
   border: none;
   background-color: white;
   font-size: 20px;
   font-weight: 700;
   position: absolute;
-  left: 560px;
+  left: 440px;
   top: 118px;
   font-family: "Cabinet Grotesk";
   font-style: normal;
