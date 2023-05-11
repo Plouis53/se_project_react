@@ -1,27 +1,39 @@
 const baseUrl = "http://localhost:3001";
 
-export const fetchClothingItems = async () => {
+// Get all clothing items
+export const getAllItems = async () => {
   const response = await fetch(`${baseUrl}/items`);
-  const data = await response.json();
-  return data;
+  if (!response.ok) {
+    throw new Error(`Failed to get items: ${response.status}`);
+  }
+  const items = await response.json();
+  return items;
 };
 
-export const addClothingItem = async (item) => {
+// Add a new clothing item
+export const addItem = async (newItem) => {
   const response = await fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(item),
+    body: JSON.stringify(newItem),
   });
-  const data = await response.json();
-  return data;
+  if (!response.ok) {
+    throw new Error(`Failed to add item: ${response.status}`);
+  }
+  const addedItem = await response.json();
+  return addedItem;
 };
 
-export const deleteClothingItem = async (itemId) => {
-  const response = await fetch(`${baseUrl}/items/${itemId}`, {
+// Delete a clothing item by ID
+export const deleteItem = async (id) => {
+  const response = await fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
   });
-  const data = await response.json();
-  return data;
+  if (!response.ok) {
+    throw new Error(`Failed to delete item: ${response.status}`);
+  }
+  const deletedItemId = await response.json();
+  return deletedItemId;
 };
