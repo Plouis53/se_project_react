@@ -16,7 +16,7 @@
   position: absolute;
   width: 94px;
   height: 25px;
-  left: 385px;
+  /* left: 385px; */
   top: 120px;
   font-family: "Cabinet Grotesk";
   font-style: normal;
@@ -32,7 +32,7 @@
   font-size: 20px;
   font-weight: 700;
   position: absolute;
-  left: 499px;
+  left: 560px;
   top: 118px;
   font-family: "Cabinet Grotesk";
   font-style: normal;
