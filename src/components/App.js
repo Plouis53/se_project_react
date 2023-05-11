@@ -9,6 +9,7 @@ import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
+import { defaultClothingItems } from "../utils/Constants";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -18,7 +19,7 @@ const App = () => {
   const [clothingItems, setClothingItems] = useState([]);
   const [newItem, setNewItem] = useState({});
   const [prevItems, setPrevItems] = useState([]);
-  // const [weatherData, setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState([]);
   const [weatherImage, setWeatherImage] = useState("");
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -95,7 +96,7 @@ const App = () => {
             <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile />
+            <Profile items={defaultClothingItems} />
           </Route>
           <Footer />
           {activeModal === "create" && (

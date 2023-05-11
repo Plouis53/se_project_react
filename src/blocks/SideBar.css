@@ -6,16 +6,24 @@
   max-width: 100%;
 }
 .sidebar__avatar {
-  width: 56px;
+  padding: 7px 16px 0 0;
+  box-sizing: border-box;
+  position: absolute;
   height: 56px;
-  /* padding: 47px 16px 0 40px; */
-  align-self: center;
+  left: 60px;
+  top: 100px;
 }
 
 .sidebar__name {
+  position: absolute;
+  width: 157px;
+  height: 25px;
+  left: 130px;
+  top: 120px;
+  font-family: "Cabinet Grotesk";
+  font-style: normal;
+  font-weight: 700;
   font-size: 20px;
-  padding: 0 0 0 20px;
-  align-self: center;
-  max-width: 150px;
-  white-space: nowrap;
+  line-height: 25px;
+  color: #000000;
 }
