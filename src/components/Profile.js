@@ -1,8 +1,10 @@
 import React from "react";
 import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
+import "../blocks/Profile.css";
+import ItemCard from "./ItemCard";
 
-const Profile = () => {
+const Profile = (clothingItems, ) => {
   const items = [
     {
       id: 1,
@@ -53,8 +55,4 @@ const Profile = () => {
   );
 };
 
-export default Profile
-
-
-
-
+export default Profile;
