@@ -77,12 +77,12 @@ const App = () => {
       weather,
     };
 
-    setClothingItems((prevItems) => [...prevItems, newItem]);
-    handleCloseModal();
+    // setClothingItems((prevItems) => [...prevItems, newItem]);
+    // handleCloseModal();
   };
 
-  const handleCardDelete = (id) => {
-    setClothingItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  const handleCardDelete = () => {
+    // setClothingItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   return (
