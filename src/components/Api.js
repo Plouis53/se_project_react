@@ -1,4 +1,5 @@
-const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  "https://my-json-server.typicode.com/Plouis53/se_project_react";
 
 // Get all clothing items
 export const getAllItems = async () => {
