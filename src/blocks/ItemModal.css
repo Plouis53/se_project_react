@@ -138,6 +138,18 @@
   cursor: pointer;
 }
 
+.popup__confirmation-close {
+  background-image: url(../images/Union.svg);
+  background: silver;
+  border: none;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  width: 16px;
+  margin-right: 20px;
+}
+
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .popup__photo {
     background-color: white;

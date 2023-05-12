@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
@@ -87,7 +87,7 @@ const App = () => {
 
   return (
     <div className="page">
-      <BrowserRouter>
+      <HashRouter>
         <CurrentTempUnitContext.Provider
           value={{ currentTempUnit, handleToggleSwitch }}
         >
@@ -96,7 +96,7 @@ const App = () => {
             <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile items={defaultClothingItems} />
+            <Profile items={defaultClothingItems} onSelectCard={handleselectedCard} />
           </Route>
           <Footer />
           {activeModal === "create" && (
@@ -171,7 +171,7 @@ const App = () => {
             />
           )}
         </CurrentTempUnitContext.Provider>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 };

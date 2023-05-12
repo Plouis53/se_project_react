@@ -5,6 +5,7 @@ import ItemCard from "./ItemCard";
 import "../blocks/Profile.css";
 import "../blocks/Page.css";
 
+
 const Profile = ({ items, onSelectCard }) => {
   const handleCardClick = (item) => {
     onSelectCard(item);

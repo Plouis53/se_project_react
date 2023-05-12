@@ -49,7 +49,13 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
           {showConfirmationModal && (
             <div className="popup__confirmation">
               <p>Are you sure you want to delete this item?</p>
-              <p className="popup__text_confirm">This action is irreversible.</p>
+              <p className="popup__text_confirm">
+                This action is irreversible.
+              </p>
+              <button
+                className="popup__confirmation-close"
+                onClick={onClose}
+              ></button>
               <div className="popup__confirmation-buttons">
                 <button
                   className="popup__button_confirm"
