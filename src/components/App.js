@@ -96,11 +96,19 @@ const App = () => {
             <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile items={defaultClothingItems} onSelectCard={handleselectedCard} />
+            <Profile
+              items={defaultClothingItems}
+              onSelectCard={handleselectedCard}
+            />
           </Route>
           <Footer />
           {activeModal === "create" && (
-            <ModalWithForm title="New Garment" onClose={handleCloseModal}>
+            <ModalWithForm
+              name="add"
+              title="New Garment"
+              onClose={handleCloseModal}
+              onSubmit={handleAddItemSubmit}
+            >
               <fieldset className="modal__fieldset">
                 <label className="modal__label">
                   Name

@@ -140,7 +140,7 @@
 
 .popup__confirmation-close {
   background-image: url(../images/Union.svg);
-  background: silver;
+  background-color: white;
   border: none;
   height: 16px;
   position: absolute;
@@ -148,6 +148,11 @@
   top: 22px;
   width: 16px;
   margin-right: 20px;
+}
+
+.popup__confirmation-close:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
