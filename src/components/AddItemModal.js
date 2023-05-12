@@ -31,7 +31,12 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   };
 
   return (
-    <ModalWithForm title="New Garment" name="add" onClose={handleCloseModal}>
+    <ModalWithForm
+      title="New Garment"
+      name="add"
+      onClose={handleCloseModal}
+      onSubmit={handleAddItemSubmit}
+    >
       <fieldset className="modal__fieldset">
         <label className="modal__label">
           Name

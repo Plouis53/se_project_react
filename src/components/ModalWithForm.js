@@ -9,11 +9,12 @@ const ModalWithForm = ({
   children,
   onClose,
   name,
+  onSubmit,
 }) => {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__container-form">
-        <form className="modal__form" name={name}>
+        <form className="modal__form" name={name} onSubmit={onSubmit}>
           <fieldset className="modal__fieldset">
             <button
               className="modal__close"
