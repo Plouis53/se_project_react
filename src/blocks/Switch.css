@@ -62,7 +62,7 @@
 
 .switch__temp-F {
   z-index: 100;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 10px;
   top: 0%;
@@ -99,5 +99,6 @@
   /* z-index: 100;
   right: 2px; */
   font-size: 15px;
+  color: #fff;
   /* position: absolute; */
 }
