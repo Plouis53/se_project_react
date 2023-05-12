@@ -81,8 +81,9 @@ const App = () => {
     // handleCloseModal();
   };
 
-  const handleCardDelete = () => {
+  const handleDelete = () => {
     // setClothingItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    // use to handleCardDelete
   };
 
   return (
@@ -169,7 +170,11 @@ const App = () => {
             </ModalWithForm>
           )}
           {activeModal === "preview" && (
-            <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+            <ItemModal
+              onDelete={handleDelete}
+              selectedCard={selectedCard}
+              onClose={handleCloseModal}
+            />
           )}
           {activeModal === "addItem" && (
             <AddItemModal
