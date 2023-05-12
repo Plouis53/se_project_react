@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HashRouter, Route } from "react-router-dom";
-import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import CurrentTempUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";

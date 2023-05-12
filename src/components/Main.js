@@ -1,7 +1,7 @@
 import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../components/WeatherCard";
 import React, { useMemo, useContext } from "react";
-import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
+import CurrentTempUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
