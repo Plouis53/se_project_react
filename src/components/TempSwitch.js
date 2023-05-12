@@ -1,6 +1,6 @@
+import React, { useContext, useEffect, useState } from "react";
 import CurrentTempUnitContext from "../contexts/CurrentTempUnitContext";
-import { useContext, useEffect, useState } from "react";
-import toggleSwitch from "../blocks/Switch.css";
+import "../blocks/Switch.css";
 
 const ToggleSwitch = () => {
   const { currentTempUnit, handleToggleSwitch } = useContext(
@@ -8,7 +8,15 @@ const ToggleSwitch = () => {
   );
 
   const [isChecked, setIsChecked] = useState(currentTempUnit === "C");
-  useEffect(() => setIsChecked(currentTempUnit === "C"), [currentTempUnit]);
+
+  useEffect(() => {
+    setIsChecked(currentTempUnit === "C");
+  }, [currentTempUnit]);
+
+  const handleSwitchChange = () => {
+    setIsChecked(!isChecked);
+    handleToggleSwitch();
+  };
 
   return (
     <div className="switch">
@@ -16,24 +24,23 @@ const ToggleSwitch = () => {
         className="switch__input"
         type="checkbox"
         name="switch-checkbox"
-        value={currentTempUnit}
-        id="switch"
-        onChange={handleToggleSwitch}
         checked={isChecked}
-      ></input>
-      <label className="switch__label">
+        onChange={handleSwitchChange}
+        id="switch"
+      />
+      <label className="switch__label" htmlFor="switch">
         <span className="switch__button">
           <div className="switch__container">
             <span
               className={
                 currentTempUnit === "F"
-                  ? "switch__slider-F"
-                  : "switch__slider-C"
+                  ? "switch__slider switch__slider-F"
+                  : "switch__slider switch__slider-C"
               }
-            ></span>
+            />
             <p
-              className={`switch__F ${
-                currentTempUnit === "F" ? "switch__active-F" : ""
+              className={`switch__temp switch__temp-F ${
+                currentTempUnit === "F" ? "switch__active" : ""
               }`}
             >
               F
@@ -41,45 +48,17 @@ const ToggleSwitch = () => {
             <span
               className={
                 currentTempUnit === "C"
-                  ? "switch__slider-F"
-                  : "switch__slider-C"
+                  ? "switch__slider switch__slider-F"
+                  : "switch__slider switch__slider-C"
               }
-            ></span>
+            />
             <p
-              className={`switch__C ${
-                currentTempUnit === "C" ? "switch__active-C" : ""
+              className={`switch__temp switch__temp-C ${
+                currentTempUnit === "C" ? "switch__active" : ""
               }`}
             >
               C
             </p>
-            {/* <span
-              className={
-                currentTempUnit === "F"
-                  ? "switch__slider-F"
-                  : "switch__slider-C"
-              }
-            ></span>
-            <p
-              className={`switch__temp-F ${
-                currentTempUnit === "F" ? "switch__active-F" : ""
-              }`}
-            >
-              F
-            </p>
-            <span
-              className={
-                currentTempUnit === "C"
-                  ? "switch__slider-F"
-                  : "switch__slider-C"
-              }
-            ></span>
-            <p
-              className={`switch__temp-C ${
-                currentTempUnit === "C" ? "switch__active-C" : ""
-              }`}
-            >
-              C
-            </p> */}
           </div>
         </span>
       </label>
@@ -88,23 +67,3 @@ const ToggleSwitch = () => {
 };
 
 export default ToggleSwitch;
-
-//   return (
-//     <div className="switch">
-//       <div className="switch__container">
-//         <label className="switch__label">
-//           <input
-//             className="switch__input"
-//             type="checkbox"
-//             name="switch-checkbox"
-//             value={currentTempUnit}
-//             id="switch"
-//             onChange={handleToggleSwitch}
-//             checked={isChecked}
-//           />
-//           <span className="switch__button" />
-//         </label>
-//       </div>
-//     </div>
-//   );
-// };
