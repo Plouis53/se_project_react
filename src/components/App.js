@@ -178,6 +178,8 @@ const App = () => {
           )}
           {activeModal === "addItem" && (
             <AddItemModal
+              title="New Garment"
+              name="add"
               onClose={handleCloseModal}
               isOpen={handleCreateModal}
               onAddItem={handleAddItemSubmit}

@@ -47,8 +47,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
             required
             name="name"
             id="input-name"
-            // miniLength="1"
-            // maxLength="30"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
