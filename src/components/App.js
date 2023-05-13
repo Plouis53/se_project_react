@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { HashRouter, Route } from "react-router-dom";
-import CurrentTempUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";
@@ -23,18 +23,13 @@ const App = () => {
   const [weatherImage, setWeatherImage] = useState("");
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  // const [activePopup, setActivePopup] = useState("");
-  // const weatherTemp = "75°F";
   const [temp, setTemp] = useState(0);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
-    // setActivePopup("image");
   };
 
-  const handleAddClick = () => {
-    // setActivePopup("add");
-  };
+  const handleAddClick = () => {};
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -76,20 +71,14 @@ const App = () => {
       link,
       weather,
     };
-
-    // setClothingItems((prevItems) => [...prevItems, newItem]);
-    // handleCloseModal();
   };
 
-  const handleDelete = () => {
-    // setClothingItems((prevItems) => prevItems.filter((item) => item.id !== id));
-    // use to handleCardDelete
-  };
+  const handleDelete = () => {};
 
   return (
     <div className="page">
       <HashRouter>
-        <CurrentTempUnitContext.Provider
+        <CurrentTemperatureUnitContext.Provider
           value={{ currentTempUnit, handleToggleSwitch }}
         >
           <Header onCreateModal={handleCreateModal} />
@@ -185,7 +174,7 @@ const App = () => {
               onAddItem={handleAddItemSubmit}
             />
           )}
-        </CurrentTempUnitContext.Provider>
+        </CurrentTemperatureUnitContext.Provider>
       </HashRouter>
     </div>
   );
