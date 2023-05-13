@@ -28,7 +28,7 @@ export const addItem = async (newItem) => {
 };
 
 // Delete a clothing item by ID
-export const deleteItem = async (id) => {
+export const DeleteItem = async (id) => {
   const response = await fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
   });
