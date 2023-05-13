@@ -1,5 +1,4 @@
-export const baseUrl =
-  "https://my-json-server.typicode.com/Plouis53/se_project_react";
+const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
 
 // Get all clothing items
 export const getAllItems = async () => {
@@ -38,3 +37,4 @@ export const DeleteItem = async (id) => {
   const deletedItemId = await response.json();
   return deletedItemId;
 };
+
