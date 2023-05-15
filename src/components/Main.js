@@ -8,7 +8,8 @@ import "../blocks/Main.css";
 
 function Main({ weatherTemp, onSelectCard }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  const weatherType = useMemo(() => {
+
+  const getWeatherType = () => {
     if (weatherTemp >= 86) {
       return "hot";
     } else if (weatherTemp >= 66 && weatherTemp <= 85) {
@@ -16,7 +17,9 @@ function Main({ weatherTemp, onSelectCard }) {
     } else if (weatherTemp <= 65) {
       return "cold";
     }
-  }, [weatherTemp]);
+  };
+
+  const weatherType = useMemo(getWeatherType, [weatherTemp]);
 
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
@@ -39,11 +42,6 @@ function Main({ weatherTemp, onSelectCard }) {
                 key={item._id}
                 item={item}
                 onSelectCard={onSelectCard}
-                name={item.name}
-                weather={item.weather}
-                id={item.id}
-                link={item.link}
-                _id={undefined}
               />
             ))}
           </ul>
