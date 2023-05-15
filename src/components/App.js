@@ -87,7 +87,7 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <Profile
-              items={defaultClothingItems}
+              items={[...clothingItems, ...defaultClothingItems]}
               onSelectCard={handleselectedCard}
             />
           </Route>
