@@ -42,7 +42,7 @@ const App = () => {
     setNewItem({});
   };
 
-  const handleselectedCard = (card) => {
+  const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
   };
@@ -83,12 +83,12 @@ const App = () => {
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
+            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
             <Profile
               items={[...clothingItems, ...defaultClothingItems]}
-              onSelectCard={handleselectedCard}
+              onSelectCard={handleSelectedCard}
             />
           </Route>
           <Footer />
