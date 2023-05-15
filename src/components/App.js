@@ -64,16 +64,22 @@ const App = () => {
     });
   };
 
-  const handleAddItemSubmit = (name, link, weather) => {
+  const handleAddItemSubmit = (name, link, weatherChange) => {
     const newItem = {
       id: Date.now(),
       name,
       link,
-      weather,
+      weather: weatherChange,
     };
+    setClothingItems((prevItems) => [...prevItems, newItem]);
+    handleCloseModal();
   };
 
-  const handleDelete = () => {};
+  const handleDelete = (itemId) => {
+    setClothingItems((prevItems) =>
+      prevItems.filter((item) => item.id !== itemId)
+    );
+  };
 
   return (
     <div className="page">
@@ -181,4 +187,3 @@ const App = () => {
 };
 
 export default App;
-
