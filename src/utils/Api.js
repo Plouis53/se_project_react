@@ -1,5 +1,5 @@
-// const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
-import { baseUrl } from "./constants";
+const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
+
 // Get all clothing items
 export const getAllItems = async () => {
   const response = await fetch(`${baseUrl}/items`);
@@ -27,7 +27,7 @@ export const addItem = async (newItem) => {
 };
 
 // Delete a clothing item by ID
-export const deleteItem = async (id) => {
+export const DeleteItem = async (id) => {
   const response = await fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
   });
