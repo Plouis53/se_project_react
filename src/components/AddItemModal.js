@@ -13,11 +13,11 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
       setWeather("");
     }
 
-    return () => {
-      setName("");
-      setImageUrl("");
-      setWeather("");
-    };
+    // return () => {
+    //   setName("");
+    //   setImageUrl("");
+    //   setWeather("");
+    // };
   }, [isOpen]);
 
   const handleAddItemSubmit = (e) => {
