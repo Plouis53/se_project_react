@@ -30,6 +30,10 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
     onAddItem(card);
   };
 
+  const handleWeatherChange = (e) => {
+    setWeather(e.target.value);
+  }
+
   return (
     <ModalWithForm
       title="New Garment"
@@ -73,6 +77,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="hot"
               value="hot"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Hot</label>
           </div>
@@ -83,6 +88,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="warm"
               value="warm"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Warm</label>
           </div>
@@ -93,6 +99,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="cold"
               value="cold"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Cold</label>
           </div>
