@@ -12,12 +12,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
       setImageUrl("");
       setWeather("");
     }
-
-    return () => {
-      setName("");
-      setImageUrl("");
-      setWeather("");
-    };
   }, [isOpen]);
 
   const handleAddItemSubmit = (e) => {
@@ -102,4 +96,3 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   );
 };
 export default AddItemModal;
-
