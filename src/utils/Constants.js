@@ -86,6 +86,8 @@ const constants = {
 
 export default { constants };
 
+export const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
+
 // import dayCloudy from "../images/day/cloudy.svg";
 // import dayFog from "../images/day/fog.svg";
 // import dayRain from "../images/day/rain.svg";
