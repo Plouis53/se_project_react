@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
-import CurrentTempUnitContext from "../contexts/CurrentTemperatureUnitContext";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import "../blocks/Switch.css";
 
 const ToggleSwitch = () => {
-  const { currentTempUnit, handleToggleSwitch } = useContext(
-    CurrentTempUnitContext
+  const { currentTemperatureUnit, handleToggleSwitch } = useContext(
+    CurrentTemperatureUnitContext
   );
 
-  const [isChecked, setIsChecked] = useState(currentTempUnit === "C");
+  const [isChecked, setIsChecked] = useState(currentTemperatureUnit === "C");
 
   useEffect(() => {
-    setIsChecked(currentTempUnit === "C");
-  }, [currentTempUnit]);
+    setIsChecked(currentTemperatureUnit === "C");
+  }, [currentTemperatureUnit]);
 
   const handleSwitchChange = () => {
     setIsChecked(!isChecked);
@@ -34,28 +34,28 @@ const ToggleSwitch = () => {
           {/* <div className="switch__container"> */}
           <span
             className={
-              currentTempUnit === "F"
+              currentTemperatureUnit === "F"
                 ? "switch__slider switch__slider-F"
                 : "switch__slider switch__slider-C"
             }
           />
           <p
             className={`switch__temp switch__temp-F ${
-              currentTempUnit === "F" ? "switch__active" : ""
+              currentTemperatureUnit === "F" ? "switch__active" : ""
             }`}
           >
             F
           </p>
           <span
             className={
-              currentTempUnit === "C"
+              currentTemperatureUnit === "C"
                 ? "switch__slider switch__slider-F"
                 : "switch__slider switch__slider-C"
             }
           />
           <p
             className={`switch__temp switch__temp-C ${
-              currentTempUnit === "C" ? "switch__active" : ""
+              currentTemperatureUnit === "C" ? "switch__active" : ""
             }`}
           >
             C

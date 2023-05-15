@@ -15,7 +15,7 @@ import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 
 const App = () => {
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTempUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [newItem, setNewItem] = useState({});
   const [prevItems, setPrevItems] = useState([]);
@@ -79,7 +79,7 @@ const App = () => {
     <div className="page">
       <HashRouter>
         <CurrentTemperatureUnitContext.Provider
-          value={{ currentTempUnit, handleToggleSwitch }}
+          value={{ currentTemperatureUnit, handleToggleSwitch }}
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">
