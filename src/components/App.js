@@ -9,7 +9,7 @@ import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import { defaultClothingItems } from "../utils/constants";
+import { defaultClothingItems } from "../utils/Constants";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -42,7 +42,7 @@ const App = () => {
     setNewItem({});
   };
 
-  const handleSelectedCard = (card) => {
+  const handleselectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
   };
@@ -71,16 +71,9 @@ const App = () => {
       link,
       weather,
     };
-
-    setClothingItems((prevItems) => [...prevItems, newItem]);
-    handleCloseModal();
   };
 
-  const handleDelete = (itemId) => {
-    setClothingItems((prevItems) =>
-      prevItems.filter((item) => item.id !== itemId)
-    );
-  };
+  const handleDelete = () => {};
 
   return (
     <div className="page">
@@ -90,12 +83,12 @@ const App = () => {
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main weatherTemp={temp} onSelectCard={handleselectedCard} />
           </Route>
           <Route path="/profile">
             <Profile
               items={[...clothingItems, ...defaultClothingItems]}
-              onSelectCard={handleSelectedCard}
+              onSelectCard={handleselectedCard}
             />
           </Route>
           <Footer />
@@ -188,3 +181,4 @@ const App = () => {
 };
 
 export default App;
+

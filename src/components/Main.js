@@ -1,4 +1,4 @@
-import { defaultClothingItems } from "../utils/constants";
+import { defaultClothingItems } from "../utils/Constants";
 import WeatherCard from "../components/WeatherCard";
 import React, { useMemo, useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
@@ -8,8 +8,7 @@ import "../blocks/Main.css";
 
 function Main({ weatherTemp, onSelectCard }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-
-  const getWeatherType = () => {
+  const weatherType = useMemo(() => {
     if (weatherTemp >= 86) {
       return "hot";
     } else if (weatherTemp >= 66 && weatherTemp <= 85) {
@@ -17,9 +16,7 @@ function Main({ weatherTemp, onSelectCard }) {
     } else if (weatherTemp <= 65) {
       return "cold";
     }
-  };
-
-  const weatherType = useMemo(getWeatherType, [weatherTemp]);
+  }, [weatherTemp]);
 
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
@@ -38,7 +35,16 @@ function Main({ weatherTemp, onSelectCard }) {
           </p>
           <ul className="main__cards">
             {filteredCards.map((item) => (
-              <ItemCard item={item} onSelectCard={onSelectCard} />
+              <ItemCard
+                key={item._id}
+                item={item}
+                onSelectCard={onSelectCard}
+                name={item.name}
+                weather={item.weather}
+                id={item.id}
+                link={item.link}
+                _id={undefined}
+              />
             ))}
           </ul>
         </section>
@@ -47,5 +53,4 @@ function Main({ weatherTemp, onSelectCard }) {
     </main>
   );
 }
-
 export default Main;

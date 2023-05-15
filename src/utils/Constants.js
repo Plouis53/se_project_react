@@ -1,5 +1,3 @@
-import { getForecastWeather } from "./weatherApi";
-
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -86,7 +84,8 @@ const constants = {
 
 export default { constants };
 
-export const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
+export const baseUrl =
+  "https://my-json-server.typicode.com/Plouis53/se_project_react";
 
 // import dayCloudy from "../images/day/cloudy.svg";
 // import dayFog from "../images/day/fog.svg";

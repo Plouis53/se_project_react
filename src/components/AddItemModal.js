@@ -13,11 +13,11 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
       setWeather("");
     }
 
-    // return () => {
-    //   setName("");
-    //   setImageUrl("");
-    //   setWeather("");
-    // };
+    return () => {
+      setName("");
+      setImageUrl("");
+      setWeather("");
+    };
   }, [isOpen]);
 
   const handleAddItemSubmit = (e) => {
@@ -29,10 +29,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
     };
     onAddItem(card);
   };
-
-  const handleWeatherChange = (e) => {
-    setWeather(e.target.value);
-  }
 
   return (
     <ModalWithForm
@@ -77,7 +73,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="hot"
               value="hot"
               name="rangeOfTemp"
-              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Hot</label>
           </div>
@@ -88,7 +83,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="warm"
               value="warm"
               name="rangeOfTemp"
-              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Warm</label>
           </div>
@@ -99,7 +93,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="cold"
               value="cold"
               name="rangeOfTemp"
-              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Cold</label>
           </div>
@@ -109,3 +102,4 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   );
 };
 export default AddItemModal;
+
