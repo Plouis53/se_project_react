@@ -71,9 +71,16 @@ const App = () => {
       link,
       weather,
     };
+
+    setClothingItems((prevItems) => [...prevItems, newItem]);
+    handleCloseModal();
   };
 
-  const handleDelete = () => {};
+  const handleDelete = (itemId) => {
+    setClothingItems((prevItems) =>
+      prevItems.filter((item) => item.id !== itemId)
+    );
+  };
 
   return (
     <div className="page">
