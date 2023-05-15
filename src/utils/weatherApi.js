@@ -22,9 +22,9 @@ export const getForecastWeather = (
       throw new Error(`Error ${res.status}`);
     })
     .then((data) => parseWeatherData(data))
-    .catch((error) => {
-      console.error(error);
-    });
+    // .catch((error) => {
+    //   console.error(error);
+    // });
 };
 
 export const parseWeatherData = (data) => {
