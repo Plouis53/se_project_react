@@ -76,17 +76,6 @@ export const weatherOptions = [
   },
 ];
 
-const constants = {
-  latitude: "33.7490",
-  longitude: "-84.386330",
-  APIkey: "09023fcd88dfb33405b9fe95d5351e01",
-};
-
-export default { constants };
-
-export const baseUrl =
-  "https://my-json-server.typicode.com/Plouis53/se_project_react";
-
 // import dayCloudy from "../images/day/cloudy.svg";
 // import dayFog from "../images/day/fog.svg";
 // import dayRain from "../images/day/rain.svg";
