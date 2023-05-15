@@ -7,7 +7,8 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
 
   const handleDelete = () => {
     onDelete(selectedCard.id);
-    setShowConfirmationModal(false);
+    // setShowConfirmationModal(false);
+    handleCloseConfirmationModal(false);
   };
 
   const handleOpenConfirmationModal = () => {
