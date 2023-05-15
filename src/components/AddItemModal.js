@@ -4,13 +4,13 @@ import ModalWithForm from "./ModalWithForm";
 const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [weather, setWeather] = useState("");
+  const [weatherChange, setWeatherChange] = useState("");
 
   React.useEffect(() => {
     if (isOpen) {
       setName("");
       setImageUrl("");
-      setWeather("");
+      setWeatherChange("");
     }
   }, [isOpen]);
 
@@ -19,9 +19,13 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
     const card = {
       name: name,
       imageUrl: imageUrl,
-      weather: weather,
+      weather: weatherChange,
     };
     onAddItem(card);
+  };
+
+  const handleWeatherChange = (e) => {
+    setWeatherChange(e.target.value);
   };
 
   return (
@@ -67,6 +71,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="hot"
               value="hot"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Hot</label>
           </div>
@@ -77,6 +82,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="warm"
               value="warm"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Warm</label>
           </div>
@@ -87,6 +93,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
               id="cold"
               value="cold"
               name="rangeOfTemp"
+              onChange={handleWeatherChange}
             />
             <label className="modal__temp-ranges">Cold</label>
           </div>
