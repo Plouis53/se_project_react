@@ -1,39 +1,40 @@
-const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
-
-// Get all clothing items
-export const getAllItems = async () => {
-  const response = await fetch(`${baseUrl}/items`);
-  if (!response.ok) {
-    throw new Error(`Failed to get items: ${response.status}`);
+function itemsApi() {
+  function _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Error${res.status}`);
   }
-  const items = await response.json();
-  return items;
-};
 
-// Add a new clothing item
-export const addItem = async (newItem) => {
-  const response = await fetch(`${baseUrl}/items`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+  const baseUrl =
+    "https://my-json-server.typicode.com/Plouis53/se_project_react";
+
+  return {
+    get: () => {
+      return fetch(`${baseUrl}/items`).then(_checkResponse);
     },
-    body: JSON.stringify(newItem),
-  });
-  if (!response.ok) {
-    throw new Error(`Failed to add item: ${response.status}`);
-  }
-  const addedItem = await response.json();
-  return addedItem;
-};
+    add: (name, imageUrl, weather) => {
+      return fetch(`${baseUrl}/items`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          imageUrl,
+          weather,
+        }),
+      }).then(_checkResponse);
+    },
+    remove: (id) => {
+      return fetch(`${baseUrl}/items/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then(_checkResponse);
+    },
+  };
+}
 
-// Delete a clothing item by ID
-export const DeleteItem = async (id) => {
-  const response = await fetch(`${baseUrl}/items/${id}`, {
-    method: "DELETE",
-  });
-  if (!response.ok) {
-    throw new Error(`Failed to delete item: ${response.status}`);
-  }
-  const deletedItemId = await response.json();
-  return deletedItemId;
-};
+export default itemsApi;
