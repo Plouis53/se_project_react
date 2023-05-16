@@ -1,7 +1,8 @@
+import checkResponse from "./utilis";
 function getItems() {
   const baseUrl =
     "https://my-json-server.typicode.com/Plouis53/se_project_react";
-  return fetch(`${baseUrl}/items`).then(_checkResponse);
+  return fetch(`${baseUrl}/items`).then(checkResponse);
 }
 
 function addItem(name, imageUrl, weather) {
@@ -17,7 +18,7 @@ function addItem(name, imageUrl, weather) {
       imageUrl,
       weather,
     }),
-  }).then(_checkResponse);
+  }).then(checkResponse);
 }
 
 function removeItem(id) {
@@ -28,7 +29,7 @@ function removeItem(id) {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(_checkResponse);
+  }).then(checkResponse);
 }
 
 const itemsApi = {
