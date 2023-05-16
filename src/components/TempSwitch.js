@@ -7,16 +7,11 @@ const ToggleSwitch = () => {
     CurrentTemperatureUnitContext
   );
 
-  const [isChecked, setIsChecked] = useState(currentTemperatureUnit === "C");
+  const isChecked = currentTemperatureUnit === "C";
 
-  // Cannot make changes without compromising toggleswitch
-
-  useEffect(() => {
-    setIsChecked(currentTemperatureUnit === "C");
-  }, [currentTemperatureUnit]);
+  useEffect(() => {}, [currentTemperatureUnit]);
 
   const handleSwitchChange = () => {
-    setIsChecked(!isChecked);
     handleToggleSwitchChange();
   };
 
