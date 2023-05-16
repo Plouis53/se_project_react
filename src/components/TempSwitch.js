@@ -3,13 +3,11 @@ import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitCon
 import "../blocks/Switch.css";
 
 const ToggleSwitch = () => {
-  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
+    CurrentTemperatureUnitContext
+  );
 
   const isChecked = currentTemperatureUnit === "C";
-
-  const handleToggleSwitchChange = () => {
-    handleToggleSwitchChange();
-  };
 
   return (
     <div className="switch">
