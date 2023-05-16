@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import "../blocks/ItemModal.css";
 import "../components/ModalWithForm";
 
-
-const ItemModal = ({ selectedCard, onClose, onDelete }) => {
+const ItemModal = ({
+  selectedCard,
+  onClose,
+  onDelete,
+  onCloseConfirmationModal,
+}) => {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   const handleDelete = () => {
     onDelete(selectedCard.id);
     // setShowConfirmationModal(false);
-    handleCloseConfirmationModal(false);
+    onCloseConfirmationModal(false);
   };
 
   const handleOpenConfirmationModal = () => {
@@ -18,6 +22,7 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
 
   const handleCloseConfirmationModal = () => {
     setShowConfirmationModal(false);
+    onCloseConfirmationModal(false);
   };
 
   return (

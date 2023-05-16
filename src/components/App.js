@@ -29,7 +29,7 @@ const App = () => {
     setSelectedCard(card);
   };
 
-  const handleAddClick = () => {};
+  // const handleAddClick = () => {};
 
   const handleCreateModal = () => {
     setActiveModal("create");
