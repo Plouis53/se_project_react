@@ -101,6 +101,7 @@ const App = () => {
           {activeModal === "create" && (
             <ModalWithForm
               name="add"
+              buttonText="Add garment"
               title="New Garment"
               onClose={handleCloseModal}
               onSubmit={handleAddItemSubmit}

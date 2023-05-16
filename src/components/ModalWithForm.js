@@ -4,7 +4,7 @@ import "../blocks/ModalWithForm.css";
 // import closeIcon from "../Images/Union.svg";
 
 const ModalWithForm = ({
-  buttonText = "Add garment",
+  buttonText,
   title,
   children,
   onClose,
