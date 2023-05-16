@@ -1,10 +1,3 @@
-function _checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error${res.status}`);
-}
-
 function getItems() {
   const baseUrl =
     "https://my-json-server.typicode.com/Plouis53/se_project_react";
