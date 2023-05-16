@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import "../blocks/WeatherCard.css";
 import "../blocks/Card.css";
-import { weatherOption } from "../utils/constants";
+import { weatherOptions } from "../utils/constants";
 
 // const weatherOptions = [
 //   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
@@ -46,7 +46,7 @@ import { weatherOption } from "../utils/constants";
 
 const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
-  const imageSrc = weatherOption.filter((i) => {
+  const imageSrc = weatherOptions.filter((i) => {
     //cannot make changes to filter & (I) without compromising imageSRC
     return i.day === day && i.type === type;
   });

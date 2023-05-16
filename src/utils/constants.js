@@ -42,7 +42,7 @@ export const defaultClothingItems = [
   },
 ];
 
-export const weatherOption = [
+export const weatherOptions = [
   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
   { url: require("../images/day/storm.svg").default, day: true, type: "storm" },
   { url: require("../images/day/snow.svg").default, day: true, type: "snow" },
