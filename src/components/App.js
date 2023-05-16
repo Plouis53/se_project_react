@@ -53,9 +53,7 @@ const App = () => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => {});
   }, []);
 
   const handleToggleSwitchChange = () => {
