@@ -19,7 +19,7 @@ function Main({ weatherTemp, onSelectCard }) {
     }
   };
 
-  const weatherType = useMemo(getWeatherType, [weatherTemp]);
+  const weatherType = getWeatherType();
 
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
