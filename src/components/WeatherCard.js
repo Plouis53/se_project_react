@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import "../blocks/WeatherCard.css";
 import "../blocks/Card.css";
-import { weatherOption } from "../utils/Constants";
+import { weatherOption } from "../utils/constants";
 
 // const weatherOptions = [
 //   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },

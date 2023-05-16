@@ -9,7 +9,7 @@ import ModalWithForm from "../components/ModalWithForm";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import { defaultClothingItems } from "../utils/Constants";
+import { defaultClothingItems } from "../utils/constants";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
