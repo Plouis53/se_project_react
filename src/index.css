@@ -13,7 +13,7 @@
 @import url(./blocks/Profile.css);
 @import url(./blocks/ClothesSection.css);
 @import url(./components/AddItemModal.js);
-
+@import url(./components/DeleteConfirmationModal.js);
 
 code {
   font-family: "Cabinet Grotesk", source-code-pro, Menlo, Monaco, Consolas,
