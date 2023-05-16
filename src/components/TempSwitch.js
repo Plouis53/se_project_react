@@ -9,6 +9,8 @@ const ToggleSwitch = () => {
 
   const [isChecked, setIsChecked] = useState(currentTemperatureUnit === "C");
 
+  // Cannot make changes without compromising toggleswitch
+
   useEffect(() => {
     setIsChecked(currentTemperatureUnit === "C");
   }, [currentTemperatureUnit]);
@@ -31,7 +33,6 @@ const ToggleSwitch = () => {
       <label className="switch__label" htmlFor="switch">
         <div className="switch__container">
           <span className="switch__button"></span>
-          {/* <div className="switch__container"> */}
           <span
             className={
               currentTemperatureUnit === "F"
