@@ -23,6 +23,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
       weather: weatherChange,
     };
     onAddItem(card);
+    handleCloseModal();
   };
 
   const handleWeatherChange = (e) => {

@@ -1,8 +1,6 @@
 import React from "react";
 import "../blocks/ModalWithForm.css";
 
-// import closeIcon from "../Images/Union.svg";
-
 const ModalWithForm = ({
   buttonText,
   title,
