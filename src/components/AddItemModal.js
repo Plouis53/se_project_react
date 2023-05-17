@@ -23,7 +23,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
       weather: weatherChange,
     };
     itemsApi
-      .add(newItem)
+      .add(newItem.name, newItem.imageUrl, newItem.weather)
       .then((response) => {
         console.log("Item added successfully:", response);
         onAddItem(newItem);
@@ -65,11 +65,11 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
             Image
             <input
               className="modal__input"
-              type="link"
-              placeholder="Image Link"
+              type="url"
+              placeholder="Image Url"
               required
-              name="Image Link"
-              id="input-link"
+              name="imageUrl"
+              id="input-imageUrl"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />

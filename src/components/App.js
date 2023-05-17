@@ -70,7 +70,7 @@ const App = () => {
       weather,
     };
     itemsApi
-      .add(newItem.name, newItem.link, newItem.weather)
+      .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
         setClothingItems((prevItems) => [...prevItems, newItem]);
@@ -114,8 +114,8 @@ const App = () => {
           <Footer />
           {activeModal === "create" && (
             <AddItemModal
+              buttonText="Add garment"
               title="New Garment"
-              name="add"
               handleCloseModal={handleCloseModal}
               isOpen={handleCreateModal}
               onAddItem={handleAddItemSubmit}
