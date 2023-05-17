@@ -10,7 +10,7 @@ import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
 import { defaultClothingItems } from "../utils/constants";
-import { deleteItem } from "../utils/itemsApi";
+import itemsApi from "../utils/api";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -29,8 +29,6 @@ const App = () => {
   const handleCardClick = (card) => {
     setSelectedCard(card);
   };
-
-  // const handleAddClick = () => {};
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -72,29 +70,30 @@ const App = () => {
       link: imageUrl,
       weather,
     };
-
-    setClothingItems((prevItems) => [...prevItems, newItem]);
-    handleCloseModal();
-  };
-
-  // const handleDelete = (itemId) => {
-  //   setClothingItems((prevItems) =>
-  //     prevItems.filter((item) => item.id !== itemId)
-  //   );
-  // };
-
-  const handleDelete = (itemId) => {
-    deleteItem(itemId)
+    itemsApi
+      .add(newItem.name, newItem.link, newItem.weather)
       .then((response) => {
-        console.log("Item deleted successfully", response);
+        console.log("Item added successfully:", response);
+        setClothingItems((prevItems) => [...prevItems, newItem]);
+        handleCloseModal();
       })
       .catch((error) => {
-        console.error("Error deleting item", error);
+        console.log("Error adding item:", error);
       });
+  };
 
-    setClothingItems((prevItems) =>
-      prevItems.filter((item) => item.id !== itemId)
-    );
+  const handleDelete = (itemId) => {
+    itemsApi
+      .remove(itemId)
+      .then(() => {
+        console.log("Item deleted successfully");
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item.id !== itemId)
+        );
+      })
+      .catch((error) => {
+        console.log("Error deleting item:", error);
+      });
   };
 
   return (
@@ -114,7 +113,7 @@ const App = () => {
             />
           </Route>
           <Footer />
-          {activeModal === "AddItemModal" && (
+          {activeModal === "create" && (
             <ModalWithForm
               name="add"
               buttonText="Add garment"
@@ -188,7 +187,7 @@ const App = () => {
               onClose={handleCloseModal}
             />
           )}
-          {activeModal === "create" && (
+          {activeModal === "addItem" && (
             <AddItemModal
               title="New Garment"
               name="add"

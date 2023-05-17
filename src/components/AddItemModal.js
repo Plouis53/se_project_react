@@ -102,7 +102,9 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
             </div>
           </div>
         </fieldset>
-        <button type="submit">{buttonText}</button>
+        <button className="modal__submit-button" type="submit">
+          {buttonText}
+        </button>
       </form>
     </ModalWithForm>
   );
