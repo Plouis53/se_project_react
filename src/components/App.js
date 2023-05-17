@@ -73,7 +73,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems((prevItems) => [...newItem, prevItems]);
+        setClothingItems((prevItems) => [newItem, ...prevItems]);
         handleCloseModal();
       })
       .catch((error) => {
