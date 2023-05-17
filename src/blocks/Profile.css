@@ -6,9 +6,9 @@
 .profile__container {
   margin: 0 40px 0 40px;
   display: flex;
-  /* height: 676px; */
+  /* height: 676px;
   left: 385px;
-  top: 176px;
+  top: 176px; */
   width: 90%;
   max-width: 1100px;
 }

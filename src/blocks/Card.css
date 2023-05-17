@@ -1,11 +1,19 @@
 .card {
   background-color: #e9e9e9;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 19px;
+  width: 328px;
+  height: 328px;
+  background: center no-repeat;
+  background-size: 328px;
+  position: relative;
+  /* background-color: #e9e9e9;
   background: 50% no-repeat;
   background-size: 328px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
   height: 328px;
-  width: 328px;
+  width: 328px; */
 }
 
 .card:hover {
@@ -13,13 +21,29 @@
 }
 
 .card__container {
-  position: relative;
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* position: relative;
+  display: flex;
+  justify-content: center; */
 }
 
 .card__name {
+  margin: 16px 0 0 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  font-weight: 700;
   background-color: #fff;
+  border-radius: 4px;
+  width: fit-content;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* background-color: #fff;
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
@@ -28,7 +52,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  position: absolute;
+  position: absolute; */
 }
 
 .card__image {
