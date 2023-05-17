@@ -38,7 +38,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
       onClose={handleCloseModal}
       onSubmit={handleAddItemSubmit}
     >
-      <form onSubmit={handleAddItemSubmit}>
+      <form onSubmit={handleAddItemSubmit} name={name}>
         <fieldset className="modal__fieldset">
           <label className="modal__label">
             Name
@@ -58,10 +58,10 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
             <input
               className="modal__input"
               type="url"
-              placeholder="Image Url"
+              placeholder="Image Link"
               required
-              name="Image Url"
-              id="input-url"
+              name="Image Link"
+              id="input-link"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
@@ -104,7 +104,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
           </div>
         </fieldset>
         <button className="modal__submit-button" type="submit">
-          {buttonText}
+          Add garment
         </button>
       </form>
     </ModalWithForm>

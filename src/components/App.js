@@ -116,7 +116,7 @@ const App = () => {
             <AddItemModal
               title="New Garment"
               name="add"
-              onClose={handleCloseModal}
+              handleCloseModal={handleCloseModal}
               isOpen={handleCreateModal}
               onAddItem={handleAddItemSubmit}
             />
