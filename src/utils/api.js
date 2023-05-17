@@ -6,7 +6,7 @@ const itemsApi = {
   get: () => {
     return fetch(`${baseUrl}/items`).then(checkResponse);
   },
-  add: (name, imageUrl, weather) => {
+  add: ({ name, link, weather }) => {
     return fetch(`${baseUrl}/items`, {
       method: "POST",
       headers: {
@@ -14,7 +14,7 @@ const itemsApi = {
       },
       body: JSON.stringify({
         name,
-        imageUrl,
+        link,
         weather,
       }),
     }).then(checkResponse);

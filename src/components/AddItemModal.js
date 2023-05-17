@@ -17,21 +17,11 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
 
   const handleAddItemSubmit = (e) => {
     e.preventDefault();
-    const newItem = {
+    onAddItem({
       name: name,
       imageUrl: imageUrl,
       weather: weatherChange,
-    };
-    itemsApi
-      .add(newItem.name, newItem.imageUrl, newItem.weather)
-      .then((response) => {
-        console.log("Item added successfully:", response);
-        onAddItem(newItem);
-        handleCloseModal();
-      })
-      .catch((error) => {
-        console.log("Error adding item:", error);
-      });
+    });
   };
 
   const handleWeatherChange = (e) => {
@@ -46,7 +36,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
       onClose={handleCloseModal}
       onSubmit={handleAddItemSubmit}
     >
-      <form onSubmit={handleAddItemSubmit} name={name}>
+      
         <fieldset className="modal__fieldset">
           <label className="modal__label">
             Name
@@ -114,7 +104,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
         <button className="modal__submit-button" type="submit">
           Add garment
         </button>
-      </form>
+      
     </ModalWithForm>
   );
 };

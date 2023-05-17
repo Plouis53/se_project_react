@@ -35,9 +35,9 @@ const App = () => {
 
   const handleCloseModal = () => {
     setActiveModal("");
-    setClothingItems(prevItems);
-    setPrevItems([]);
-    setNewItem({});
+    // setClothingItems(prevItems);
+    // setPrevItems([]);
+    // setNewItem({});
   };
 
   const handleSelectedCard = (card) => {
@@ -50,10 +50,20 @@ const App = () => {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
+        itemsApi
+          .get()
+          .then((response) => {
+            setClothingItems(response);
+          })
+          .catch((error) => {
+            console.log("Error adding item:", error);
+          });
       })
       .catch((error) => {
         console.log(error);
       });
+    // 1. use itemsApi.get() to setClothingItems
+    // 2. You're done
   }, []);
 
   const handleToggleSwitchChange = () => {
@@ -69,11 +79,12 @@ const App = () => {
       link: imageUrl,
       weather,
     };
+    console.log(newItem);
     itemsApi
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        setClothingItems((items) => [response, ...items]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -86,9 +97,7 @@ const App = () => {
       .remove(itemId)
       .then(() => {
         console.log("Item deleted successfully");
-        setClothingItems((prevItems) =>
-          prevItems.filter((item) => item.id !== itemId)
-        );
+        setClothingItems((i) => i.filter((item) => item.id !== itemId));
       })
       .catch((error) => {
         console.log("Error deleting item:", error);
@@ -103,13 +112,14 @@ const App = () => {
         >
           <Header onCreateModal={handleCreateModal} />
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
           </Route>
           <Route path="/profile">
-            <Profile
-              items={[...clothingItems, ...defaultClothingItems]}
-              onSelectCard={handleSelectedCard}
-            />
+            <Profile items={clothingItems} onSelectCard={handleSelectedCard} />
           </Route>
           <Footer />
           {activeModal === "create" && (
