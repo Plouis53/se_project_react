@@ -1,14 +1,7 @@
 import React from "react";
 import "../blocks/ModalWithForm.css";
 
-const ModalWithForm = ({
-  buttonText,
-  title,
-  children,
-  onClose,
-  name,
-  onSubmit,
-}) => {
+const ModalWithForm = ({ title, children, onClose, name, onSubmit }) => {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__container-form">
