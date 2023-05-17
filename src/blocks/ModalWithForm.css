@@ -123,7 +123,7 @@
   margin-left: 8px;
 }
 
-.modal__footer {
+/* .modal__footer {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   color: white;
@@ -138,10 +138,23 @@
   align-items: center;
   gap: 8px;
   border-radius: 4px;
-}
+} */
 
-.modal__submit-button{
-  
+.modal__submit-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  width: 124px;
+  line-height: 36px;
+  margin: 28px 0 36px 28px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
 }
 
 /* @media screen and (min-width: 375px) and (max-width: 822px) {
