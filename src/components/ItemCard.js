@@ -1,6 +1,6 @@
 import React from "react";
 import "../blocks/Card.css";
-import "../blocks/Profile.css"
+import "../blocks/Profile.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
   const handleCardClick = () => {
