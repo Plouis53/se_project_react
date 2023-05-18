@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import { defaultClothingItems } from "../utils/constants";
 import itemsApi from "../utils/api";
 import "../blocks/App.css";
 import "../blocks/Card.css";
@@ -62,8 +61,6 @@ const App = () => {
       .catch((error) => {
         console.log(error);
       });
-    // 1. use itemsApi.get() to setClothingItems
-    // 2. You're done
   }, []);
 
   const handleToggleSwitchChange = () => {
