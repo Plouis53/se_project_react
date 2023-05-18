@@ -3,6 +3,7 @@ import "../blocks/ClothesSection.css";
 import ItemCard from "./ItemCard";
 
 const ClothesSection = ({ cards, onCardClick, onAddClick }) => {
+  console.log("ClothesSection");
   return (
     <div className="clothes">
       <div className="clothes__container">
