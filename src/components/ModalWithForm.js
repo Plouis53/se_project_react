@@ -17,6 +17,9 @@ const ModalWithForm = ({ title, children, onClose, name, onSubmit }) => {
             <h2 className="modal__header">{title}</h2>
             {children}
           </fieldset>
+          <button className="modal__submit-button" type="submit">
+            Add garment
+          </button>
         </form>
       </div>
     </div>
