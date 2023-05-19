@@ -80,7 +80,7 @@ const App = () => {
     itemsApi
       .add(newItem)
       .then((response) => {
-        // console.log("Item added successfully:", response);
+        console.log("Item added successfully:", response);
         setClothingItems((items) => [response, ...items]);
         handleCloseModal();
       })
