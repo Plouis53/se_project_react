@@ -1,7 +1,14 @@
 import React from "react";
 import "../blocks/ModalWithForm.css";
 
-const ModalWithForm = ({ title, children, onClose, name, onSubmit }) => {
+const ModalWithForm = ({
+  title,
+  children,
+  onClose,
+  name,
+  onSubmit,
+  buttonText,
+}) => {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__container-form">
@@ -18,7 +25,7 @@ const ModalWithForm = ({ title, children, onClose, name, onSubmit }) => {
             {children}
           </fieldset>
           <button className="modal__submit-button" type="submit">
-            Add garment
+            {buttonText}
           </button>
         </form>
       </div>
