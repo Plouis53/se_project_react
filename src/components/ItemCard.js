@@ -3,6 +3,7 @@ import "../blocks/Card.css";
 import "../blocks/Profile.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
+  debugger;
   const handleCardClick = () => {
     onSelectCard(item);
   };
