@@ -97,6 +97,7 @@ const App = () => {
         setClothingItems((clothingItems) =>
           clothingItems.filter((item) => item.id !== itemId)
         );
+        handleCloseModal();
       })
       .catch((error) => {
         console.log("Error deleting item:", error);
