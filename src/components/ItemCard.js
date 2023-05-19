@@ -6,7 +6,6 @@ const ItemCard = ({ item, onSelectCard }) => {
   const handleCardClick = () => {
     onSelectCard(item);
   };
-
   return (
     <div className="card">
       <div className="card__container">

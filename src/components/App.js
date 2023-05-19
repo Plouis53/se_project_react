@@ -76,11 +76,11 @@ const App = () => {
       link: imageUrl,
       weather,
     };
-    console.log(newItem);
+    // console.log(newItem);
     itemsApi
       .add(newItem)
       .then((response) => {
-        console.log("Item added successfully:", response);
+        // console.log("Item added successfully:", response);
         setClothingItems((items) => [response, ...items]);
         handleCloseModal();
       })
