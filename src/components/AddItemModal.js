@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalWithForm from "./ModalWithForm";
 import itemsApi from "../utils/api";
 
-const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
+const AddItemModal = ({ isOpen, onAddItem, handleCloseModal }) => {
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weatherChange, setWeatherChange] = useState("");
@@ -30,7 +30,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
 
   return (
     <ModalWithForm
-      buttonText={buttonText}
+      // buttonText={buttonText}
       title="New Garment"
       name="add"
       onClose={handleCloseModal}
@@ -100,7 +100,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseModal, buttonText }) => {
           </div>
         </div>
       </fieldset>
-      <button className="modal__submit-button" type="submit">
+      <button className="modal__submit-button" type="submit"> 
         Add garment
       </button>
     </ModalWithForm>

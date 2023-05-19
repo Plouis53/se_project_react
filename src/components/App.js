@@ -94,7 +94,9 @@ const App = () => {
       .remove(itemId)
       .then(() => {
         console.log("Item deleted successfully");
-        setClothingItems((i) => i.filter((item) => item.id !== itemId));
+        setClothingItems((clothingItems) =>
+          clothingItems.filter((item) => item.id !== itemId)
+        );
       })
       .catch((error) => {
         console.log("Error deleting item:", error);
