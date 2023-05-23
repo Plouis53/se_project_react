@@ -42,13 +42,17 @@
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .card {
-    background-size: 164px;
+    width: 164px;
   }
-
-  /* .card__image {
-    display: flex;
-  } */
 }
 
-/* @media screen and (min-width: 823px) and (max-width: 1440px) {
-} */
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+  .card__image {
+    width: 328px;
+    /* height: 328px; */
+  }
+
+  .card__name {
+    max-width: 275px;
+  }
+}

@@ -35,5 +35,18 @@
   }
 }
 
-/* @media screen and (min-width: 823px) and (max-width: 1440px) {
-} */
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+  .footer {
+    max-width: 768px;
+    margin: 65px auto 0 auto;
+    max-width: 768px;
+  }
+
+  .footer__author {
+    margin: 0 0 0 20px;
+  }
+
+  .footer__year {
+    margin: 0 20px 0 0;
+  }
+}

@@ -18,7 +18,7 @@
 }
 
 .main__text {
-  font-family: 'Cabinet Grotesk';
+  font-family: "Cabinet Grotesk";
   font-style: normal;
   font-size: 20px;
   font-weight: 700;
@@ -50,7 +50,7 @@
   }
 
   .main__clothing {
-    margin: 16px 0 0;
+    margin: 16px 2px 0 10px;
   }
 
   .main__text {
@@ -62,5 +62,21 @@
   }
 }
 
-/* @media screen and (min-width: 823px) and (max-width: 1440px) {
-} */
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+  .main {
+    margin: 33px auto 0 auto;
+    max-width: 768px;
+  }
+
+  .main__container {
+    margin: 0 20px 0 20px;
+  }
+
+  .main__clothing {
+    margin: 20px 0 0 0;
+  }
+
+  .main__cards {
+    grid-template-columns: repeat(4, 164px);
+  }
+}

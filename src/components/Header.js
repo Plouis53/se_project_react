@@ -23,7 +23,11 @@ const Header = ({ onCreateModal }) => {
         </p>
       </div>
       <button className="header__button" type="button" aria-label="mobile menu">
-        <img src={headerButton}></img>
+        <img
+          src={headerButton}
+          className="header__mobile-menu"
+          alt="Header Mobile Menu"
+        />
       </button>
       <div className="header__right">
         <div className="header__avatar">
