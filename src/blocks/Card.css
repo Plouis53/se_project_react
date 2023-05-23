@@ -43,13 +43,22 @@
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .card {
     width: 164px;
+    height: 164px;
+  }
+
+  .card__container {
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  .card__image {
+    height: 164px;
   }
 }
 
 @media screen and (min-width: 823px) and (max-width: 1440px) {
   .card__image {
     width: 328px;
-    /* height: 328px; */
   }
 
   .card__name {

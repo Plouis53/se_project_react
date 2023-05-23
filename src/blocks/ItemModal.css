@@ -163,8 +163,6 @@
   cursor: pointer;
 }
 
-
-
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .popup__photo {
     background-color: white;
@@ -193,8 +191,20 @@
     margin-top: 0;
     right: 12px;
   }
+
+  .popup__delete {
+    margin: 20px 20px 0 0;
+  }
+
+  .popup__confirmation {
+    max-width: 343px;
+  }
+
+  .popup__confirmation-buttons {
+    left: auto;
+    margin: 10px 40px;
+  }
 }
 
 @media screen and (min-width: 823px) and (max-width: 1440px) {
-  
 }

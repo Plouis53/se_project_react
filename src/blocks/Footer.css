@@ -21,11 +21,6 @@
 }
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
-  .footer {
-    margin: 83px auto 0;
-    max-width: 375px;
-  }
-
   .footer__author {
     margin: 0 0 0 10px;
   }
