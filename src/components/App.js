@@ -21,7 +21,7 @@ const App = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [weatherImage, setWeatherImage] = useState("");
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState({})
+  const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
 
   const handleCardClick = (card) => {
