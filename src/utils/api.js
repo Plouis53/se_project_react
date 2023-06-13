@@ -1,5 +1,4 @@
-import { baseUrl } from "./constants";
-import checkResponse from "./constants";
+import { baseUrl, checkResponse } from "./constants";
 
 const itemsApi = {
   get: () => {
