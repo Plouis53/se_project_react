@@ -9,6 +9,7 @@ import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
 import itemsApi from "../utils/api";
+import ProtectedRoute from "./ProtectedRoute";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -23,6 +24,7 @@ const App = () => {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -110,7 +112,7 @@ const App = () => {
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
-          <Header onCreateModal={handleCreateModal} />
+          <Header onCreateModal={handleCreateModal} isLoggedIn={isLoggedIn} />
           <Route exact path="/">
             <Main
               weatherTemp={temp}
@@ -118,9 +120,9 @@ const App = () => {
               clothingItems={clothingItems}
             />
           </Route>
-          <Route path="/profile">
+          <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
             <Profile items={clothingItems} onSelectCard={handleSelectedCard} />
-          </Route>
+          </ProtectedRoute>
           <Footer />
           {activeModal === "create" && (
             <AddItemModal
