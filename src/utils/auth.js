@@ -17,6 +17,7 @@ export const signIn = (email, password) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({ email, password }),
   })
@@ -29,8 +30,19 @@ export const signIn = (email, password) => {
     });
 };
 
-export default auth;
-export function register(username, password, email) {
-    throw new Error("Function not implemented.");
-}
+export const checkTokenValidity = (token) => {
+  return fetch(`${baseUrl}/user/me`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => checkResponse(res))
+    .then((data) => data);
+};
 
+// export default auth;
+// export function register(username, password, email) {
+//   throw new Error("Function not implemented.");
+// }

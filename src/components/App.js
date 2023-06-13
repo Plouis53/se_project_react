@@ -10,6 +10,7 @@ import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
 import itemsApi from "../utils/api";
 import ProtectedRoute from "./ProtectedRoute";
+import { signUp, signIn, checkTokenValidity } from "../utils/auth";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -61,14 +62,66 @@ const App = () => {
           });
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error fetching weather data:", error);
       });
+
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkTokenValidity(token)
+        .then((data) => {
+          setIsLoggedIn(true);
+        })
+        .catch((error) => {
+          console.error("Error checking token validity:", error);
+          // Handle error scenario or log out the user
+        });
+    }
   }, []);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit((currentTempState) => {
       return currentTempState === "C" ? "F" : "C";
     });
+  };
+
+  const handleRegistration = (name, email, password) => {
+    signUp(name, email, password)
+      .then((response) => {
+        // Process the response or handle it as needed
+        if (response.success) {
+          // Registration successful
+          setIsLoggedIn(true);
+          handleCloseModal();
+        } else {
+          // Registration failed
+          console.log("User registration failed:", response.error);
+          // Handle failure scenario
+        }
+      })
+      .catch((error) => {
+        console.error("Error occurred during user registration:", error);
+        // Handle error scenario
+      });
+  };
+
+  const handleSignIn = (email, password) => {
+    signIn(email, password)
+      .then((response) => {
+        // Process the response or handle it as needed
+        if (response.success) {
+          // Sign-in successful
+          setIsLoggedIn(true);
+          handleCloseModal();
+        } else {
+          // Sign-in failed
+          console.log("User sign-in failed:", response.error);
+          // Handle failure scenario
+        }
+      })
+      .catch((error) => {
+        console.error("Error occurred during user sign-in:", error);
+        // Handle error scenario
+      });
   };
 
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
