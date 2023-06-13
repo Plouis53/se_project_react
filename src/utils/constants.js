@@ -2,6 +2,16 @@ export const latitude = "33.7490";
 export const longitude = "-84.386330";
 export const APIkey = "09023fcd88dfb33405b9fe95d5351e01";
 
+export default function checkResponse(res) {
+  if (res.ok) {
+    return res.json();
+  } else {
+    return Promise.reject(`Error: ${res.status}`);
+  }
+}
+
+export const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
+
 export const defaultClothingItems = [
   {
     id: 0,

@@ -1,6 +1,5 @@
-import checkResponse from "./utilis";
-
-const baseUrl = "https://my-json-server.typicode.com/Plouis53/se_project_react";
+import { baseUrl } from "./constants";
+import checkResponse from "./constants";
 
 const itemsApi = {
   get: () => {
