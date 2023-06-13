@@ -28,3 +28,9 @@ export const signIn = (email, password) => {
       }
     });
 };
+
+export default auth;
+export function register(username, password, email) {
+    throw new Error("Function not implemented.");
+}
+
