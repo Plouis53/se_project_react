@@ -1,46 +1,100 @@
 import React, { useState } from "react";
+import "../blocks/RegisterModal.css";
 
-const RegisterModal = ({ onRegistration }) => {
+const RegisterModal = ({ onClose, onRegister }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onRegistration(name, email, password);
+  const handleRegister = () => {
+    // Call the onRegister callback with the name, email, and password
+    onRegister(name, email, password);
   };
 
   return (
     <div className="modal">
-      <div className="modal__content">
-        <h2>Register</h2>
-        <form onSubmit={handleSubmit}>
+      <h2>Register</h2>
+      <form>
+        <div className="form-group">
+          <label>Name</label>
           <input
             type="text"
-            placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+        </div>
+        <div className="form-group">
+          <label>Email</label>
           <input
             type="email"
-            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+        </div>
+        <div className="form-group">
+          <label>Password</label>
           <input
             type="password"
-            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Register</button>
-        </form>
-      </div>
+        </div>
+        <button type="button" onClick={handleRegister}>
+          Register
+        </button>
+      </form>
+      <button type="button" onClick={onClose}>
+        Close
+      </button>
     </div>
   );
 };
 
 export default RegisterModal;
+
+//61323import React, { useState } from "react";
+
+// const RegisterModal = ({ onRegistration }) => {
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     onRegistration(name, email, password);
+//   };
+
+//   return (
+//     <div className="modal">
+//       <div className="modal__content">
+//         <h2>Register</h2>
+//         <form onSubmit={handleSubmit}>
+//           <input
+//             type="text"
+//             placeholder="Name"
+//             value={name}
+//             onChange={(e) => setName(e.target.value)}
+//           />
+//           <input
+//             type="email"
+//             placeholder="Email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//           <input
+//             type="password"
+//             placeholder="Password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//           />
+//           <button type="submit">Register</button>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default RegisterModal;
 
 // import React from "react";
 // import { Link } from "react-router-dom";
