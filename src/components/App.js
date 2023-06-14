@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import itemsApi from "../utils/api";
+import { itemsApi, userApi } from "../utils/api";
 import ProtectedRoute from "./ProtectedRoute";
 import { signUp, signIn, checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -73,6 +73,7 @@ const App = () => {
     setIsLoggedIn(false);
     setCurrentUser({});
     localStorage.removeItem("jwt");
+    history.push("/");
   };
 
   const handleCardClick = (card) => {
@@ -213,7 +214,7 @@ const App = () => {
           <CurrentTemperatureUnitContext.Provider
             value={{ currentTemperatureUnit, handleToggleSwitchChange }}
           >
-            <Header onCreateModal={handleCreateModal} isLoggedIn={isLoggedIn} />
+            <Header onCreateModal={handleAddClick} onProfileClick={handleCardClick}isLoggedIn={isLoggedIn} />
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
