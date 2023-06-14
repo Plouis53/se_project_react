@@ -5,7 +5,7 @@ import EditProfileModal from "./EditProfileModal";
 import "../blocks/Profile.css";
 import "../blocks/Page.css";
 
-const Profile = ({ items, onSelectCard, onAddClick, currentUser, onClose }) => {
+const Profile = ({ items, onSelectCard, onAddClick, currentUser, onClose, isLoggedIn }) => {
   const handleCardClick = (item) => {
     onSelectCard(item);
   };
@@ -22,6 +22,7 @@ const Profile = ({ items, onSelectCard, onAddClick, currentUser, onClose }) => {
         <div className="profile__sidebar">
           <SideBar
             currentUser={currentUser}
+            isLoggedIn={isLoggedIn}
             onUpdateProfile={handleUpdateProfile}
             onClose={onClose}
           />
