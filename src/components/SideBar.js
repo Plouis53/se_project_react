@@ -1,26 +1,61 @@
-import React from "react";
-import headerAvatar from "../images/avatar.svg";
-import "../blocks/SideBar.css";
+import React, { useContext } from "react";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
-const SideBar = ({ onProfileClick }) => {
-  const handleProfileClick = () => {
-    // Logic to handle the profile click event
-    if (onProfileClick) {
-      onProfileClick();
-    }
-  };
+
+const SideBar = ({ isLoggedIn, editClick, logoutClick }) => {
+  const currentUser = useContext(CurrentUserContext);
 
   return (
-    <div className="sidebar" onClick={handleProfileClick}>
-      <div className="sidebar__container">
-        <img src={headerAvatar} className="sidebar__avatar" alt="avatar" />
-        <div className="sidebar__name">Phillippe Louis</div>
-      </div>
+    <div className="profile__sidebar">
+      {isLoggedIn ? (
+        <div className="profile__info">
+          {currentUser.data.avatar ? (
+            <img
+              className="profile__avatar"
+              src={currentUser.data.avatar}
+              alt="User avatar"
+            />
+          ) : (
+            <p className="profile__letter">{currentUser.data.name[0]}</p>
+          )}
+          <p className="profile__name">{currentUser.data.name}</p>
+        </div>
+      ) : null}
+      <button className="profile__edit profile__button" onClick={editClick}>
+        Change profile data
+      </button>
+      <button className="profile__logout profile__button" onClick={logoutClick}>
+        Log out
+      </button>
     </div>
   );
 };
 
 export default SideBar;
+
+// import React from "react";
+// import headerAvatar from "../images/avatar.svg";
+// import "../blocks/SideBar.css";
+
+// const SideBar = ({ onProfileClick }) => {
+//   const handleProfileClick = () => {
+//     // Logic to handle the profile click event
+//     if (onProfileClick) {
+//       onProfileClick();
+//     }
+//   };
+
+//   return (
+//     <div className="sidebar" onClick={handleProfileClick}>
+//       <div className="sidebar__container">
+//         <img src={headerAvatar} className="sidebar__avatar" alt="avatar" />
+//         <div className="sidebar__name">Phillippe Louis</div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SideBar;
 
 // 61323import React from "react";
 // import headerAvatar from "../images/avatar.svg";

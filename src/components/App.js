@@ -55,7 +55,7 @@ const App = () => {
       });
   };
 
-  const handleRegistration = (avatar, name, email, password) => {
+  const handleRegister = (avatar, name, email, password) => {
     setIsLoading(true);
 
     auth
@@ -75,7 +75,7 @@ const App = () => {
       });
   };
 
-  const handleLogout = () => {
+  const handleSignout = () => {
     setIsLoggedIn(false);
     setCurrentUser({});
     localStorage.removeItem("jwt");
@@ -91,7 +91,7 @@ const App = () => {
     setActiveModal("add");
   };
 
-  const handleLoginClick = () => {
+  const handleSigninClick = () => {
     setActiveModal("login");
   };
 
@@ -232,8 +232,10 @@ const App = () => {
           >
             <Header
               onCreateModal={handleAddClick}
-              onProfileClick={handleCardClick}
+              handleClick={handleCardClick}
               isLoggedIn={isLoggedIn}
+              handleSignIn={handleSigninClick}
+              handleRegister={handleRegisterClick}
             />
             <Route exact path="/">
               <Main
