@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import "../blocks/Header.css";
 import headerLogo from "../images/logo.svg";
-// import headerAvatar from "../images/avatar.svg";
 import ToggleSwitch from "./TempSwitch";
 import { NavLink } from "react-router-dom";
 import headerButton from "../images/header-button.svg";
