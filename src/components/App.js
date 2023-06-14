@@ -157,6 +157,24 @@ const App = () => {
       });
   };
 
+  const handleLikeClick = ({ id, isLiked, user }) => {
+    const token = localStorage.getItem("jwt");
+
+    const addLike = () => {
+      console.log(`Adding like for item with id=${id}`);
+    };
+
+    const removeLike = () => {
+      console.log(`Removing like for item with id=${id}`);
+    };
+
+    if (isLiked) {
+      removeLike();
+    } else {
+      addLike();
+    }
+  };
+
   useEffect(() => {
     getForecastWeather()
       .then((data) => {
