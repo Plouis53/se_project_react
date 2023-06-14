@@ -20,14 +20,14 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
     setShowConfirmationModal(false);
   };
 
-  // Checking if the current user is the owner of the current clothing item
-  const isOwn =
-    selectedCard.owner && selectedCard.owner._id === currentUser._id;
+  //   // Checking if the current user is the owner of the current clothing item
+  //   const isOwn =
+  //     selectedCard.owner && selectedCard.owner._id === currentUser._id;
 
-  // Creating a variable which you'll then set in `className` for the delete button
-  const itemDeleteButtonClassName = `item__delete-button ${
-    isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
-  }`;
+  //   // Creating a variable which you'll then set in `className` for the delete button
+  //   const itemDeleteButton = `.popup__delete ${
+  //     isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
+  //   }`;
 
   return (
     <div className={`popup__container-image`}>
@@ -51,8 +51,16 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
               Weather Type: {selectedCard.weather}
             </p>
           </div>
+          {/* {isOwn && (
+            <button
+              className="popup__delete popup__delete-old"
+              onClick={handleOpenConfirmationModal}
+            >
+              Delete (Previous)
+            </button>
+          )} */}
           <button
-            className={itemDeleteButtonClassName} // Set the className based on ownership
+            className="popup__delete popup__delete-old"
             onClick={handleOpenConfirmationModal}
           >
             Delete
