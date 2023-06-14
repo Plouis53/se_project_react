@@ -51,25 +51,6 @@
   margin: 0 40px 0 0;
 }
 
-.header__avatar {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.header__avatar-image {
-  padding: 20px 0 0 0;
-}
-
-.header__name {
-  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 25px;
-  padding: 40px 12px 0 0;
-}
-
 .header__add {
   background-color: white;
   border: none;
@@ -96,6 +77,77 @@
   display: flex;
   color: black;
   padding: 0 0 24px 20px;
+}
+
+.header__name {
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  padding: 40px 12px 0 0;
+}
+
+.header__avatar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header__info {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.header__login-info {
+  grid-column: 2/2;
+  grid-row: 1/1;
+  display: flex;
+  color: #000;
+  margin-bottom: 7px;
+}
+
+.header__signup {
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  margin: 8px 12px 0 0;
+  border: none;
+  background-color: white;
+  /* padding: 0; */
+}
+
+.header__signup:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.header__login {
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 35px;
+  margin: 8px 12px 0 8px;
+  border: none;
+  background-color: white;
+  /* padding: 0; */
+}
+
+.header__login:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 375px) and (max-width: 822px) {

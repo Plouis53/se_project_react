@@ -10,7 +10,7 @@ import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
 import { itemsApi, userApi } from "../utils/api";
 import ProtectedRoute from "./ProtectedRoute";
-import { signUp, signIn, checkTokenValidity } from "../utils/auth";
+import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
 import "../blocks/App.css";
@@ -95,7 +95,7 @@ const App = () => {
     setActiveModal("login");
   };
 
-  const handleLogoutClick = () => {
+  const handleSignoutClick = () => {
     setActiveModal("logout");
   };
 
@@ -105,6 +105,16 @@ const App = () => {
 
   const handleRegisterClick = () => {
     setActiveModal("register");
+  };
+
+  const handleMobileClick = () => {
+    setActiveModal("mobile");
+  };
+
+  const handleOutClick = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      handleCreateModal();
+    }
   };
 
   const handleCreateModal = () => {
@@ -152,6 +162,26 @@ const App = () => {
       .finally(() => {
         setIsLoading(false);
       });
+  };
+
+  // review this
+  const handleEditSubmit = ({ name, avatarUrl }) => {
+    // setIsLoading(true);
+    // editProfile({ name, avatarUrl }, token)
+    //   .then(() => {
+    //     setCurrentUser({
+    //       data: {
+    //         ...currentUser.data,
+    //         name: name,
+    //         avatar: avatarUrl,
+    //       },
+    //     });
+    //     handleCloseModal();
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   const handleDelete = (itemId) => {
@@ -231,11 +261,17 @@ const App = () => {
             value={{ currentTemperatureUnit, handleToggleSwitchChange }}
           >
             <Header
-              onCreateModal={handleAddClick}
-              handleClick={handleCardClick}
-              isLoggedIn={isLoggedIn}
+              parseWeatherData={parseWeatherData}
+              handleClick={handleAddClick}
+              handleMobile={handleMobileClick}
               handleSignIn={handleSigninClick}
               handleRegister={handleRegisterClick}
+              isLoggedIn={isLoggedIn}
+              // onCreateModal={handleAddClick}
+              // handleClick={handleCardClick}
+              // isLoggedIn={isLoggedIn}
+              // handleSignIn={handleSigninClick}
+              // handleRegister={handleRegisterClick}
             />
             <Route exact path="/">
               <Main
