@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter, Route, useHistory } from "react-router-dom";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
@@ -50,10 +50,10 @@ const App = () => {
       .finally(() => handleCloseModal());
   };
 
-  const handleRegistration = (name, email, password) => {
+  const handleRegistration = (avatar, name, email, password) => {
     setIsLoggedIn(true);
     auth
-      .signUp(name, avatar, email, password)
+      .signUp(avatar, name, email, password)
       .then((response) => {
         if (response) {
           setCurrentUser(response);
@@ -69,8 +69,35 @@ const App = () => {
       .catch((error) => console.log(error));
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentUser({});
+    localStorage.removeItem("jwt");
+  };
+
   const handleCardClick = (card) => {
     setSelectedCard(card);
+    setActiveModal("image");
+  };
+
+  const handleAddClick = () => {
+    setActiveModal("add");
+  };
+
+  const handleLoginClick = () => {
+    setActiveModal("login");
+  };
+
+  const handleLogoutClick = () => {
+    setActiveModal("logout");
+  };
+
+  const handleEditClick = () => {
+    setActiveModal("edit");
+  };
+
+  const handleRegisterClick = () => {
+    setActiveModal("register");
   };
 
   const handleCreateModal = () => {
@@ -89,83 +116,11 @@ const App = () => {
     setSelectedCard(card);
   };
 
-  useEffect(() => {
-    getForecastWeather()
-      .then((data) => {
-        const temperature = parseWeatherData(data);
-        setTemp(temperature);
-        itemsApi
-          .get()
-          .then((response) => {
-            setClothingItems(response);
-          })
-          .catch((error) => {
-            console.log("Error adding item:", error);
-          });
-      })
-      .catch((error) => {
-        console.log("Error fetching weather data:", error);
-      });
-
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      checkTokenValidity(token)
-        .then((data) => {
-          setIsLoggedIn(true);
-        })
-        .catch((error) => {
-          console.error("Error checking token validity:", error);
-          // Handle error scenario or log out the user
-        });
-    }
-  }, []);
-
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit((currentTempState) => {
       return currentTempState === "C" ? "F" : "C";
     });
   };
-
-  // const handleRegistration = (name, email, password) => {
-  //   signUp(name, email, password)
-  //     .then((response) => {
-  //       // Process the response or handle it as needed
-  //       if (response.success) {
-  //         // Registration successful
-  //         setIsLoggedIn(true);
-  //         handleCloseModal();
-  //       } else {
-  //         // Registration failed
-  //         console.log("User registration failed:", response.error);
-  //         // Handle failure scenario
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error occurred during user registration:", error);
-  //       // Handle error scenario
-  //     });
-  // };
-
-  // const handleSignIn = (email, password) => {
-  //   auth
-  //   signIn(email, password)
-  //     .then((response) => {
-  //       // Process the response or handle it as needed
-  //       if (response.success) {
-  //         // Sign-in successful
-  //         setIsLoggedIn(true);
-  //         handleCloseModal();
-  //       } else {
-  //         // Sign-in failed
-  //         console.log("User sign-in failed:", response.error);
-  //         // Handle failure scenario
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error occurred during user sign-in:", error);
-  //       // Handle error scenario
-  //     });
-  // };
 
   const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
     const newItem = {
@@ -201,6 +156,37 @@ const App = () => {
         console.log("Error deleting item:", error);
       });
   };
+
+  useEffect(() => {
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+        itemsApi
+          .get()
+          .then((response) => {
+            setClothingItems(response);
+          })
+          .catch((error) => {
+            console.log("Error adding item:", error);
+          });
+      })
+      .catch((error) => {
+        console.log("Error fetching weather data:", error);
+      });
+
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkTokenValidity(token)
+        .then((data) => {
+          setIsLoggedIn(true);
+        })
+        .catch((error) => {
+          console.error("Error checking token validity:", error);
+          // Handle error scenario or log out the user
+        });
+    }
+  }, []);
 
   return (
     <div className="page">
@@ -244,7 +230,6 @@ const App = () => {
             )}
           </CurrentTemperatureUnitContext.Provider>
         </CurrentUserContext.Provider>
-        //{" "}
       </HashRouter>
     </div>
   );
