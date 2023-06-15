@@ -279,7 +279,8 @@ const App = () => {
                 onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
-                
+                isLoggedIn={isLoggedIn}
+                onLike={handleLikeClick}
               />
             </Route>
             {/* <Route path="/profile"> */}
