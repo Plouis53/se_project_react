@@ -276,8 +276,10 @@ const App = () => {
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
+                onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
+                
               />
             </Route>
             {/* <Route path="/profile"> */}
