@@ -31,7 +31,13 @@ const ClothesSection = ({
             (currentUser.data === undefined ? "" : currentUser.data._id)
         )}
         {cards.map((card) => (
-          <ItemCard key={card.id} item={card} onSelectCard={onCardClick} />
+          <ItemCard
+            key={card.id}
+            item={card}
+            onSelectCard={onCardClick}
+            onLike={onLike}
+            isLoggedIn={isLoggedIn}
+          />
         ))}
       </ul>
     </div>
