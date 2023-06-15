@@ -283,16 +283,20 @@ const App = () => {
                 onLike={handleLikeClick}
               />
             </Route>
-            {/* <Route path="/profile"> */}
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
               <Profile
                 items={clothingItems}
-                onSelectCard={handleSelectedCard}
+                onCardClick={handleCardClick}
                 onAddClick={handleAddClick}
-                currentUser={currentUser}
-                onClose={handleCloseModal}
+                isLoggedIn={isLoggedIn}
+                editClick={handleEditClick}
+                SignOutClick={handleSignoutClick}
+                onLike={handleLikeClick}
+                // onSelectCard={handleSelectedCard}
+                // onAddClick={handleAddClick}
+                // currentUser={currentUser}
+                // onClose={handleCloseModal}
               />
-              {/* <Route> */}
             </ProtectedRoute>
             <Footer />
             {activeModal === "create" && (

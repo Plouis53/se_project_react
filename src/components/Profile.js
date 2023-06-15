@@ -7,7 +7,7 @@ const Profile = ({
   onAddClick,
   isLoggedIn,
   editClick,
-  logoutClick,
+  SignOutClick,
   onLike,
 }) => {
   return (
@@ -16,7 +16,7 @@ const Profile = ({
         <SideBar
           isLoggedIn={isLoggedIn}
           editClick={editClick}
-          logoutClick={logoutClick}
+          logoutClick={SignOutClick}
         />
         <ClothesSection
           cards={items}
