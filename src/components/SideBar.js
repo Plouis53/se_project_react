@@ -16,7 +16,7 @@ const SideBar = ({ isLoggedIn, editClick, logoutClick }) => {
               alt="User avatar"
             />
           ) : (
-            <p className="profile__letter">{currentUser.data.name[0]}</p>
+            <p className="profile__note">{currentUser.data.name[0]}</p>
           )}
           <p className="profile__name">{currentUser.data.name}</p>
         </div>
