@@ -17,6 +17,7 @@ import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
+import LoginModal from "./LoginModal";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -321,7 +322,7 @@ const App = () => {
                 onClose={handleCloseModal}
                 onDeleteClick={handleDelete}
                 onOutClick={handleOutClick}
-                isLoggedIn={isLoggedIn}
+                // isLoggedIn={isLoggedIn}
               />
             )}
             {activeModal === "confirm" && (
@@ -331,6 +332,15 @@ const App = () => {
                 onCancel={handleCancel}
                 onDelete={handleDelete}
                 card={selectedCard}
+                // isLoading={isLoading}
+              />
+            )}
+            {activeModal === "login" && (
+              <LoginModal
+                onClose={handleCloseModal}
+                handleRegisterClick={handleRegisterClick}
+                handleOutClick={handleOutClick}
+                handleLogin={handleSignIn}
                 isLoading={isLoading}
               />
             )}

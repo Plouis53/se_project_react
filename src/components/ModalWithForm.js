@@ -8,10 +8,11 @@ const ModalWithForm = ({
   name,
   onSubmit,
   buttonText,
+  onOutClick,
 }) => {
   return (
     <div className={`modal modal_type_${name}`}>
-      <div className="modal__container-form">
+      <div className="modal__container-form" onClick={onOutClick}>
         <form className="modal__form" onSubmit={onSubmit}>
           <fieldset className="modal__fieldset">
             <button
