@@ -3,12 +3,12 @@ import "../blocks/ItemModal.css";
 import "../components/ModalWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
-const ItemModal = ({ selectedCard, onClose, onDelete }) => {
+const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   const { currentUser } = useContext(CurrentUserContext);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   const handleDelete = () => {
-    onDelete(selectedCard.id);
+    onDeleteClick(selectedCard.id);
     handleCloseConfirmationModal();
   };
 
@@ -30,7 +30,7 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
   }`;
 
   return (
-    <div className={`popup__container-image`}>
+    <div className={`popup__container-image`} onClick={onOutClick}>
       <div className="popup__photo">
         <img
           className="popup__image"
@@ -51,19 +51,19 @@ const ItemModal = ({ selectedCard, onClose, onDelete }) => {
               Weather Type: {selectedCard.weather}
             </p>
           </div>
-          {isOwn && (
+          {/* {isOwn && (
             <button
             className={"popup__delete"}
               onClick={handleOpenConfirmationModal}
             >
               Delete
             </button>
-          )}
+          )} */}
           <button
             className="popup__delete popup__delete-old"
             onClick={handleOpenConfirmationModal}
           >
-            Delete 
+            Delete
           </button>
           {showConfirmationModal && (
             <div className="popup__confirmation">

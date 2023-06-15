@@ -13,6 +13,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
+import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -89,6 +90,10 @@ const App = () => {
 
   const handleAddClick = () => {
     setActiveModal("add");
+  };
+
+  const handleCancel = () => {
+    setActiveModal("image");
   };
 
   const handleSigninClick = () => {
@@ -299,20 +304,34 @@ const App = () => {
               />
             </ProtectedRoute>
             <Footer />
-            {activeModal === "create" && (
+            {activeModal === "add" && (
               <AddItemModal
                 buttonText="Add garment"
                 title="New Garment"
                 handleCloseModal={handleCloseModal}
                 isOpen={handleCreateModal}
                 onAddItem={handleAddItemSubmit}
+                handleOutClick={handleOutClick}
+                token={token}
               />
             )}
             {activeModal === "preview" && (
               <ItemModal
-                onDelete={handleDelete}
                 selectedCard={selectedCard}
                 onClose={handleCloseModal}
+                onDeleteClick={handleDelete}
+                onOutClick={handleOutClick}
+                isLoggedIn={isLoggedIn}
+              />
+            )}
+            {activeModal === "confirm" && (
+              <DeleteConfirmationModal
+                onClose={handleCloseModal}
+                onOutClick={handleOutClick}
+                onCancel={handleCancel}
+                onDelete={handleDelete}
+                card={selectedCard}
+                isLoading={isLoading}
               />
             )}
           </CurrentTemperatureUnitContext.Provider>

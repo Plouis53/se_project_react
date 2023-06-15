@@ -1,5 +1,5 @@
 const DeleteConfirmationModal = ({
-  onclick,
+  onOutClick,
   onDelete,
   card,
   onClose,
@@ -13,7 +13,10 @@ const DeleteConfirmationModal = ({
     <div className="popup__confirmation">
       <p>Are you sure you want to delete this item?</p>
       <p className="popup__text_confirm">This action is irreversible.</p>
-      <button className="popup__confirmation-close" onClick={onClose}></button>
+      <button
+        className="popup__confirmation-close"
+        onClick={onOutClick}
+      ></button>
       <div className="popup__confirmation-buttons">
         <button
           className="popup__button_confirm"
@@ -35,3 +38,5 @@ const DeleteConfirmationModal = ({
     </div>
   );
 };
+
+export default DeleteConfirmationModal;
