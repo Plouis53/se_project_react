@@ -40,6 +40,17 @@
   /* object-fit: contain; */
 }
 
+.card__like {
+  height: 15px;
+  width: 18px;
+  margin: 16px 0 0 5px;
+}
+
+.card__like:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .card {
     width: 164px;
