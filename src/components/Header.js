@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import "../blocks/Header.css";
+import { NavLink } from "react-router-dom";
 import headerLogo from "../images/logo.svg";
 import ToggleSwitch from "./TempSwitch";
-import { NavLink } from "react-router-dom";
 import headerButton from "../images/header-button.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import "../blocks/Header.css";
 
 const Header = ({
   parseWeatherData,

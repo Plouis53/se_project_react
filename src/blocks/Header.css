@@ -118,6 +118,7 @@
 }
 
 .header__signup {
+  background-color: white;
   font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -125,8 +126,6 @@
   line-height: 35px;
   margin: 8px 12px 0 0;
   border: none;
-  background-color: white;
-  /* padding: 0; */
 }
 
 .header__signup:hover {
@@ -135,6 +134,7 @@
 }
 
 .header__login {
+  background-color: white;
   font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -142,22 +142,12 @@
   line-height: 35px;
   margin: 8px 12px 0 8px;
   border: none;
-  background-color: white;
-  /* padding: 0; */
 }
 
 .header__login:hover {
   opacity: 0.8;
   cursor: pointer;
 }
-
-/* .header__mobile-menu {
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  padding: 0;
-  align-self: flex-end;
-  display: flex;
-} */
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .header {
