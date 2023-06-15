@@ -1,198 +1,124 @@
-import React, { useState } from "react";
-import "../blocks/RegisterModal.css";
+import React from "react";
+import ModalWithForm from "./ModalWithForm";
 
-const RegisterModal = ({ onClose, onRegister }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const RegisterModal = ({
+  onClose,
+  handleOutClick,
+  handleRegister,
+  handleLoginClick,
+  isLoading,
+}) => {
+  const [emailValue, setEmail] = React.useState("");
+  const [passwordValue, setPassword] = React.useState("");
+  const [nameValue, setNameValue] = React.useState("");
+  const [avatarValue, setAvatarValue] = React.useState("");
 
-  const handleRegister = () => {
-    // Call the onRegister callback with the name, email, and password
-    onRegister(name, email, password);
+  const buttonClasses = {
+    mainButton: "modal__login",
+    altButton: "modal__other",
+  };
+  const buttonTexts = {
+    button: isLoading ? "Saving..." : "Next",
+    other: "or Log in",
   };
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    handleRegister(avatarValue, emailValue, nameValue, passwordValue);
+  };
+
+  const onEmailChange = (evt) => {
+    setEmail(evt.target.value);
+  };
+
+  const onPasswordChange = (evt) => {
+    setPassword(evt.target.value);
+  };
+
+  const onNameChange = (evt) => {
+    setNameValue(evt.target.value);
+  };
+
+  const onAvatarChange = (evt) => {
+    setAvatarValue(evt.target.value);
+  };
+
+  React.useEffect(() => {
+    setEmail("");
+    setPassword("");
+    setNameValue("");
+    setAvatarValue("");
+  }, []);
+
   return (
-    <div className="modal">
-      <h2>Register</h2>
-      <form>
-        <div className="form-group">
-          <label>Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="button" onClick={handleRegister}>
-          Register
-        </button>
-      </form>
-      <button type="button" onClick={onClose}>
-        Close
-      </button>
-    </div>
+    <ModalWithForm
+      title="Log in"
+      name="Login"
+      onClose={onClose}
+      buttonText={buttonTexts}
+      onOutClick={handleOutClick}
+      handleSubmit={handleSubmit}
+      buttonClass={buttonClasses}
+      altButtonClick={handleLoginClick}
+    >
+      <label className="modal__label">
+        Email*
+        <input
+          className="modal__input"
+          type="email"
+          placeholder="Email"
+          required
+          name="email"
+          id="inputEmail"
+          minLength="1"
+          maxLength="30"
+          value={emailValue}
+          onChange={onEmailChange}
+        />
+      </label>
+      <label className="modal__label">
+        Password*
+        <input
+          className="modal__input"
+          placeholder="Password"
+          required
+          name="password"
+          id="input-Password"
+          type="password"
+          value={passwordValue}
+          onChange={onPasswordChange}
+        />
+      </label>
+      <label className="modal__label">
+        Name*
+        <input
+          className="modal__input"
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="input-Name"
+          required
+          minLength="1"
+          maxLength="30"
+          value={nameValue}
+          onChange={onNameChange}
+        />
+      </label>
+      <label className="modal__label">
+        Avatar
+        <input
+          className="modal__input"
+          placeholder="Avatar URL"
+          name="avatarUrl"
+          id="inputAvatarUrl"
+          type="url"
+          value={avatarValue}
+          onChange={onAvatarChange}
+        />
+      </label>
+    </ModalWithForm>
   );
 };
 
 export default RegisterModal;
-
-//61323import React, { useState } from "react";
-
-// const RegisterModal = ({ onRegistration }) => {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onRegistration(name, email, password);
-//   };
-
-//   return (
-//     <div className="modal">
-//       <div className="modal__content">
-//         <h2>Register</h2>
-//         <form onSubmit={handleSubmit}>
-//           <input
-//             type="text"
-//             placeholder="Name"
-//             value={name}
-//             onChange={(e) => setName(e.target.value)}
-//           />
-//           <input
-//             type="email"
-//             placeholder="Email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//           />
-//           <input
-//             type="password"
-//             placeholder="Password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//           />
-//           <button type="submit">Register</button>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RegisterModal;
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import * as auth from "../utils/auth";
-// import "../blocks/register.css";
-
-// class Register extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       username: "",
-//       email: "",
-//       password: "",
-//       confirmPassword: "",
-//       calGoal: "",
-//     };
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-
-//   handleChange = (e) => {
-//     const { name, value } = e.target;
-//     this.setState({
-//       [name]: value,
-//     });
-//   };
-
-//   handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (this.state.password === this.state.confirmPassword) {
-//       auth.register(this.state.username, this.state.password, this.state.email);
-//     }
-//   };
-
-//   render() {
-//     return (
-//       <div className="register">
-//         <p className="register__welcome">Please register.</p>
-//         <form onSubmit={this.handleSubmit} className="register__form">
-//           <label htmlFor="username">Username:</label>
-//           <input
-//             id="username"
-//             name="username"
-//             type="text"
-//             value={this.state.username}
-//             onChange={this.handleChange}
-//           />
-//           <label htmlFor="email">Email:</label>
-//           <input
-//             id="email"
-//             name="email"
-//             type="email"
-//             value={this.state.email}
-//             onChange={this.handleChange}
-//           />
-//           <label htmlFor="password">Password:</label>
-//           <input
-//             id="password"
-//             name="password"
-//             type="password"
-//             value={this.state.password}
-//             onChange={this.handleChange}
-//           />
-//           <label htmlFor="confirmPassword">Confirm password:</label>
-//           <input
-//             id="confirmPassword"
-//             name="confirmPassword"
-//             type="password"
-//             value={this.state.confirmPassword}
-//             onChange={this.handleChange}
-//           />
-//           <label htmlFor="calGoal">Daily calorie goal:</label>
-//           <input
-//             id="calGoal"
-//             name="calGoal"
-//             type="number"
-//             value={this.state.calGoal}
-//             onChange={this.handleChange}
-//           />
-//           <div className="register__button-container">
-//             <button
-//               type="submit"
-//               onSubmit={this.handleSubmit}
-//               className="register__link"
-//             >
-//               Sign up
-//             </button>
-//           </div>
-//         </form>
-//         <div className="register__signin">
-//           <p>Already have an account??</p>
-//           <Link to="login" className="register__login-link">
-//             Log in here
-//           </Link>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Register;

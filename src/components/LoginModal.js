@@ -8,8 +8,8 @@ const LoginModal = ({
   handleRegisterClick,
   isLoading,
 }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailValue, setEmail] = useState("");
+  const [passwordValue, setPassword] = useState("");
 
   const buttonClasses = {
     mainButton: "modal__login",
@@ -23,11 +23,11 @@ const LoginModal = ({
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    if (!email || !password) {
+    if (!emailValue || !passwordValue) {
       return;
     }
 
-    handleLogin(email, password);
+    handleLogin(emailValue, passwordValue);
   };
 
   const onEmailChange = (evt) => {
@@ -65,7 +65,7 @@ const LoginModal = ({
           id="inputEmail"
           minLength="1"
           maxLength="30"
-          value={email}
+          value={emailValue}
           onChange={onEmailChange}
         />
       </label>
@@ -78,7 +78,7 @@ const LoginModal = ({
           name="password"
           id="inputPassword"
           type="password"
-          value={email}
+          value={passwordValue}
           onChange={onPasswordChange}
         />
       </label>
