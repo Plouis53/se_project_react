@@ -22,7 +22,7 @@ const ModalWithForm = ({
         <form className="modal__form" onSubmit={handleSubmit}>
           <fieldset className="modal__fieldset">
             <button
-              className="modal__close"
+              className="modal__button"
               type="button"
               aria-label="Close"
               id="modal-close-button"

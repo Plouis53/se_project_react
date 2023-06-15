@@ -1,0 +1,69 @@
+.modal__label {
+  font-family: "Cabinet Grotesk", "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+  margin: 24px 0 0 28px;
+}
+
+.modal__input {
+  font-family: "Cabinet Grotesk", "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #000000;
+  width: 440px;
+  height: 24px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 8px 36px 0 0;
+  padding: 0;
+}
+
+.modal__text {
+  margin: 24px 0 0 28px;
+  font-size: 16px;
+  line-height: 125%;
+  font-weight: 700;
+}
+
+.modal__inputs_container {
+  margin: 14px 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.modal__input_button {
+  margin: 0;
+}
+
+.modal__label_multiple {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .modal__label {
+    width: 343px;
+    margin: 24px 0 0 16px;
+  }
+
+  .modal__input {
+    width: 343px;
+    margin: 8px 16px 0 0;
+  }
+
+  .modal__text {
+    margin: 24px 0 0 16px;
+  }
+
+  .modal__inputs_container {
+    margin: 14px 0 0 16px;
+  }
+}
