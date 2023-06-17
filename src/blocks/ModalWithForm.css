@@ -41,6 +41,7 @@
 }
 
 .modal__fieldset {
+  border: 1px solid #000;
   display: flex;
   border: none;
   border-radius: 10px;
