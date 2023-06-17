@@ -52,7 +52,15 @@ const LoginModal = ({
       onOutClick={handleOutClick}
       handleSubmit={handleSubmit}
       buttonClass={buttonClasses}
-      altButtonClick={handleRegisterClick}
+      // altButtonClick={handleSigninClick}
+      // title="Log in"
+      // name="Login"
+      // onClose={onClose}
+      // buttonText={buttonTexts}
+      // onOutClick={handleOutClick}
+      // handleSubmit={handleSubmit}
+      // buttonClass={buttonClasses}
+      // altButtonClick={handleRegisterClick}
     >
       <label className="modal__label">
         Email

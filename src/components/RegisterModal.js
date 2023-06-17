@@ -5,7 +5,7 @@ const RegisterModal = ({
   onClose,
   handleOutClick,
   handleRegister,
-  handleLoginClick,
+  handleSigninClick,
   isLoading,
 }) => {
   const [emailValue, setEmail] = React.useState("");
@@ -60,7 +60,7 @@ const RegisterModal = ({
       onOutClick={handleOutClick}
       handleSubmit={handleSubmit}
       buttonClass={buttonClasses}
-      altButtonClick={handleLoginClick}
+      altButtonClick={handleSigninClick}
     >
       <label className="modal__label">
         Email*

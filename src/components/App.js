@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import { itemsApi, userApi } from "../utils/api";
+import { itemsApi } from "../utils/api";
 import ProtectedRoute from "./ProtectedRoute";
 import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -18,6 +18,7 @@ import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -342,6 +343,15 @@ const App = () => {
                 handleOutClick={handleOutClick}
                 handleLogin={handleSignIn}
                 isLoading={isLoading}
+              />
+            )}
+            {activeModal === "register" && (
+              <RegisterModal
+                onClose={handleCloseModal}
+                handleOutClick={handleOutClick}
+                handleSigninClick={handleSigninClick}
+                isLoading={isLoading}
+                handleRegister={handleRegister}
               />
             )}
           </CurrentTemperatureUnitContext.Provider>
