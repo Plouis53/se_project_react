@@ -34,7 +34,7 @@
   justify-content: center;
   flex-direction: column;
   background: #fff;
-  height: 436px;
+  /* height: 436px; */
   width: 496px;
   border-radius: 20px;
   box-sizing: border-box;
@@ -98,6 +98,39 @@
   height: 20px;
   margin: 8px 36px 0 0;
   width: 440px;
+}
+
+.modal__login {
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 36px;
+  line-height: 1.2em;
+  margin: 34px 0 36px 28px;
+  padding: 0;
+  text-align: center;
+  width: 73px;
+}
+
+.modal__other {
+  background-color: #fff;
+  border: none;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 36px;
+  line-height: 1.2em;
+  margin: 34px 0 36px 12px;
+  opacity: 0.5;
+  padding: 0;
+  text-align: center;
+  /* width: 85px; */
 }
 
 .modal__text {

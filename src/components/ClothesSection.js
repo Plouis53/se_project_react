@@ -17,7 +17,7 @@ const ClothesSection = ({
         <div className="clothes__title">Your items</div>
       </div>
       <button
-        className="clothes__button"
+        className="clothes__button" // might want to change the class name to be uniformed
         type="button"
         aria-label="Add"
         onClick={onAddClick}

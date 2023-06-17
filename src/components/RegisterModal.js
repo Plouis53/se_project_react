@@ -53,8 +53,8 @@ const RegisterModal = ({
 
   return (
     <ModalWithForm
-      title="Log in"
-      name="Login"
+      title="Sign up"
+      name="Signup"
       onClose={onClose}
       buttonText={buttonTexts}
       onOutClick={handleOutClick}
