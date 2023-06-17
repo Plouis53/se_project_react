@@ -46,7 +46,7 @@ const ModalWithForm = ({
               >
                 {buttonText.other}
                 {/* <button className="modal__submit-button" type="submit"> */}
-                {buttonText}
+                {/* {buttonText.alt} */}
               </button>
             </div>
           </fieldset>
