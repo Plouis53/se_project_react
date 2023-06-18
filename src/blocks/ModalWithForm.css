@@ -30,6 +30,7 @@
 }
 
 .modal__form {
+  border: 1px solid #000;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -41,7 +42,6 @@
 }
 
 .modal__fieldset {
-  border: 1px solid #000;
   display: flex;
   border: none;
   border-radius: 10px;
@@ -118,6 +118,11 @@
   width: 73px;
 }
 
+.modal__login:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 .modal__other {
   background-color: #fff;
   border: none;
@@ -128,7 +133,7 @@
   height: 36px;
   line-height: 1.2em;
   margin: 34px 0 36px 12px;
-  opacity: 0.5;
+  opacity: 0.6;
   padding: 0;
   text-align: center;
   /* width: 85px; */
