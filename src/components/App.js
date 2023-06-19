@@ -21,6 +21,7 @@ import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
+import LogoutModal from "./LogoutModal";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -366,6 +367,13 @@ const App = () => {
                 handleSigninClick={handleSigninClick}
                 isLoading={isLoading}
                 handleRegister={handleRegister}
+              />
+            )}
+            {activeModal === "logout" && (
+              <LogoutModal
+                // onClick={handleCloseModal}
+                handleOutClick={handleOutClick}
+                logout={handleSignout}
               />
             )}
           </CurrentTemperatureUnitContext.Provider>

@@ -2,7 +2,7 @@ import React from "react";
 import closeIcon from "../images/Union.svg";
 
 const LogoutModal = ({ handleCloseModal, handleOutClick, logout }) => {
-  const handleLogout = () => {
+  const handleSignout = () => {
     logout();
     handleCloseModal();
   };
@@ -27,7 +27,7 @@ const LogoutModal = ({ handleCloseModal, handleOutClick, logout }) => {
           className="modal__button_confirm"
           type="button"
           aria-label="Confirm"
-          onClick={handleLogout}
+          onClick={handleSignout}
         >
           Yes, log out
         </button>
