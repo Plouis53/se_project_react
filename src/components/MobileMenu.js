@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-// import closeIcon from "../images/mobileClose.svg";
+import closeIcon from "../images/Union.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
 const MobileMenu = ({
   onClose,
   handleClick,
   onOutClick,
-  handleLogin,
+  handleSignin,
   handleRegister,
   isLoggedIn,
 }) => {
@@ -20,7 +20,7 @@ const MobileMenu = ({
           <img
             className="menu__close"
             alt="Close button"
-            // src={closeIcon}
+            src={closeIcon}
             onClick={onClose}
           />
         </button>
@@ -52,7 +52,7 @@ const MobileMenu = ({
             <button className="menu__sign" onClick={handleRegister}>
               Sign Up
             </button>
-            <button className="menu__login" onClick={handleLogin}>
+            <button className="menu__login" onClick={handleSignin}>
               Log In
             </button>
           </div>

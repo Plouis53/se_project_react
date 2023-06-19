@@ -14,8 +14,7 @@
 @import url(./blocks/ClothesSection.css);
 @import url(./components/AddItemModal.js);
 @import url(./components/DeleteConfirmationModal.js);
-@import url(./blocks/ModalForm.css);
-@import url(./blocks/ModalForms.css);
+@import url(./blocks/MobileMenu.css);
 
 code {
   font-family: "Cabinet Grotesk", source-code-pro, Menlo, Monaco, Consolas,

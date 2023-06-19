@@ -4,7 +4,7 @@ import ModalWithForm from "./ModalWithForm";
 const LoginModal = ({
   onClose,
   handleOutClick,
-  handleLogin,
+  handleSignin,
   handleRegisterClick,
   isLoading,
 }) => {
@@ -27,7 +27,7 @@ const LoginModal = ({
       return;
     }
 
-    handleLogin(emailValue, passwordValue);
+    handleSignin(emailValue, passwordValue);
   };
 
   const onEmailChange = (evt) => {

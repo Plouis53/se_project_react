@@ -14,11 +14,13 @@ import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
 import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
+import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
+import MobileMenu from "./MobileMenu";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
-import LoginModal from "./LoginModal";
-import RegisterModal from "./RegisterModal";
+import "../blocks/MobileMenu.css";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -336,12 +338,22 @@ const App = () => {
                 // isLoading={isLoading}
               />
             )}
+            {activeModal === "mobile" && (
+              <MobileMenu
+                onClose={handleCloseModal}
+                onOutClick={handleOutClick}
+                handleClick={handleAddClick}
+                isLoggedIn={isLoggedIn}
+                handleSignin={handleSigninClick}
+                handleRegister={handleRegisterClick}
+              />
+            )}
             {activeModal === "login" && (
               <LoginModal
                 onClose={handleCloseModal}
                 handleRegisterClick={handleRegisterClick}
                 handleOutClick={handleOutClick}
-                handleLogin={handleSignIn}
+                handleSignin={handleSignIn}
                 isLoading={isLoading}
               />
             )}

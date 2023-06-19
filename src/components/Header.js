@@ -5,6 +5,7 @@ import ToggleSwitch from "./TempSwitch";
 import headerButton from "../images/header-button.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import "../blocks/Header.css";
+import MobileMenu from "./MobileMenu";
 
 const Header = ({
   parseWeatherData,
