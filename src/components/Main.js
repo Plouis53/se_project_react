@@ -5,7 +5,7 @@ import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
 
-function Main({ weatherTemp, onSelectCard, clothingItems }) {
+function Main({ onCardClick, weatherTemp, onSelectCard, clothingItems }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   const getWeatherType = () => {
@@ -37,7 +37,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
           </p>
           <ul className="main__cards">
             {filteredCards.map((item) => (
-              <ItemCard key={item.id} item={item} onSelectCard={onSelectCard} />
+              <ItemCard key={item.id} item={item} onSelectCard={onSelectCard} onCardClick />
             ))}
           </ul>
         </section>
