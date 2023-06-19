@@ -37,13 +37,25 @@
   border-radius: 19px;
   height: 328px;
   width: 100%;
-  /* object-fit: contain; */
+  object-fit: contain;
 }
 
 .card__like-button {
+  position: absolute;
+  left: 65.82%;
+  top: 5.5%;
+  bottom: 61.68%;
   height: 15px;
   width: 18px;
-  margin: 16px 0 0 5px;
+  /* right: 9.93%; */
+  /* top: 5.5%;
+  bottom: 61.68%; */
+  /* height: 15px;
+  width: 18px;
+  margin: 16px 0 0 5px; */
+  /* width: 24px;
+  height: 24px;
+  margin-top: 8px;  */
 }
 
 .card__like:hover {
@@ -64,6 +76,10 @@
 
   .card__image {
     height: 164px;
+  }
+
+  .card__like-button {
+    margin: 10px 0 0 14px;
   }
 }
 

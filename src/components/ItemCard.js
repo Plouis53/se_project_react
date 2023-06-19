@@ -17,7 +17,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
   const handleCardClick = () => {
     onSelectCard(item);
   };
-
+  // console.log(isLoggedIn);
   return (
     <div className="card">
       <div className="card__container">
@@ -28,14 +28,14 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
           onClick={handleCardClick}
           alt={item.name}
         />
-        {isLoggedIn ? (
+        {/* {isLoggedIn ? ( */}
           <img
             src={isLiked ? FullHeart : Heart}
             alt="like button"
             className="card__like-button"
             onClick={handleLike}
           />
-        ) : null}
+        {/* ) : null} */}
       </div>
     </div>
   );
