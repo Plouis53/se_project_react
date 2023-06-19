@@ -54,7 +54,7 @@ function Main({
             ))}
           </ul>
         </section>
-        <button className="main__button"></button>
+        {/* <button className="main__button"></button> */}
       </div>
     </main>
   );
