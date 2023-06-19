@@ -32,7 +32,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
           <img
             src={isLiked ? FullHeart : Heart}
             alt="like button"
-            className="card__like"
+            className="card__like-button"
             onClick={handleLike}
           />
         ) : null}
