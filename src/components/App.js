@@ -224,10 +224,12 @@ const App = () => {
       console.log(`Removing like for item with id=${id}`);
     };
 
-    if (isLiked) {
-      removeLike();
-    } else {
-      addLike();
+    if (id) {
+      if (isLiked) {
+        removeLike();
+      } else {
+        addLike();
+      }
     }
   };
 

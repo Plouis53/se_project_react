@@ -7,11 +7,11 @@ import "../blocks/Main.css";
 
 function Main({
   onLike,
-  isLiked,
+  // isLiked,
   weatherTemp,
   onSelectCard,
   clothingItems,
-  isLoggedIn,
+  // isLoggedIn,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -49,7 +49,7 @@ function Main({
                 item={item}
                 onSelectCard={onSelectCard}
                 onLike={onLike}
-                isLoggedIn={isLoggedIn}
+                // isLoggedIn={isLoggedIn}
               />
             ))}
           </ul>
