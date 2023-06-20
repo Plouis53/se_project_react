@@ -1,18 +1,18 @@
 import { baseUrl, checkResponse } from "../utils/constants";
 
-export const signUp = (name, avatar, email, password) => {
+export const signUp = (user) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, avatar, email, password }),
+    body: JSON.stringify(user),
   })
     .then((res) => checkResponse(res))
     .then((res) => res);
 };
 
-export const signIn = (email, password) => {
+export const signIn = ({ email, password }) => {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {

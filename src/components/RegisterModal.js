@@ -24,8 +24,13 @@ const RegisterModal = ({
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
-    handleRegister(avatarValue, emailValue, nameValue, passwordValue);
+    const user = {
+      avatar: avatarValue,
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+    };
+    handleRegister(user);
   };
 
   const onEmailChange = (evt) => {

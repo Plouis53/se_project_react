@@ -39,11 +39,11 @@ const App = () => {
   const history = useHistory();
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const handleSignIn = (email, password) => {
+  const handleSignIn = ({ email, password }) => {
     setIsLoading(true);
 
     auth
-      .signIn(email, password)
+      .signIn({ email, password })
       .then((data) => {
         if (data.token) {
           return auth.checkTokenValidity(data.token);
@@ -61,15 +61,15 @@ const App = () => {
       });
   };
 
-  const handleRegister = (avatar, name, email, password) => {
+  const handleRegister = (user) => {
     setIsLoading(true);
 
     auth
-      .signUp(avatar, name, email, password)
+      .signUp(user)
       .then((response) => {
         if (response) {
           setCurrentUser(response);
-          handleSignIn(email, password);
+          handleSignIn(user);
         } else {
           console.log("User registration failed:", response.error);
         }

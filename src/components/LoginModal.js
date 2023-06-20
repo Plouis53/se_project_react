@@ -26,8 +26,8 @@ const LoginModal = ({
     if (!emailValue || !passwordValue) {
       return;
     }
-
-    handleSignin(emailValue, passwordValue);
+    const user = { email: emailValue, password: passwordValue };
+    handleSignin(user);
   };
 
   const onEmailChange = (evt) => {
