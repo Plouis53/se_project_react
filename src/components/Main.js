@@ -6,12 +6,12 @@ import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
 
 function Main({
-  onLike,
+  onCardLike,
   // isLiked,
   weatherTemp,
   onSelectCard,
   clothingItems,
-  // isLoggedIn,
+  isLoggedIn,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -48,8 +48,8 @@ function Main({
                 key={item.id}
                 item={item}
                 onSelectCard={onSelectCard}
-                onLike={onLike}
-                // isLoggedIn={isLoggedIn}
+                onLike={onCardLike}
+                isLoggedIn={isLoggedIn}
               />
             ))}
           </ul>

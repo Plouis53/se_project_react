@@ -371,7 +371,7 @@ const App = () => {
             )}
             {activeModal === "logout" && (
               <LogoutModal
-                // onClick={handleCloseModal}
+                onClick={handleCloseModal}
                 handleOutClick={handleOutClick}
                 logout={handleSignout}
               />

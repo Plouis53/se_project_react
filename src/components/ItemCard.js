@@ -5,14 +5,13 @@ import FullHeart from "../images/Fullheart.svg";
 import "../blocks/Card.css";
 import "../blocks/Profile.css";
 
-const ItemCard = ({ item, onSelectCard, onLike }) => {
+const ItemCard = ({ item, onSelectCard, onLike, onCardClick }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
     item.likes && item.likes.some((user) => user._id === currentUser._id);
 
   const handleLikeClick = () => {
     if (item._id) {
-      // Check if _id is defined
       onLike(item._id, isLiked, currentUser);
     }
   };
