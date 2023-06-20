@@ -214,25 +214,25 @@ const App = () => {
       });
   };
 
-  // const handleLikeClick = ({ id, isLiked, user }) => {
-  //   const token = localStorage.getItem("jwt");
+  const handleLikeClick = ({ id, isLiked, user }) => {
+    const token = localStorage.getItem("jwt");
 
-  //   const addLike = () => {
-  //     console.log(`Adding like for item with id=${id}`);
-  //   };
+    const addLike = () => {
+      console.log(`Adding like for item with id=${id}`);
+    };
 
-  //   const removeLike = () => {
-  //     console.log(`Removing like for item with id=${id}`);
-  //   };
+    const removeLike = () => {
+      console.log(`Removing like for item with id=${id}`);
+    };
 
-  //   if (id) {
-  //     if (isLiked) {
-  //       removeLike();
-  //     } else {
-  //       addLike();
-  //     }
-  //   }
-  // };
+    if (id) {
+      if (isLiked) {
+        removeLike();
+      } else {
+        addLike();
+      }
+    }
+  };
 
 // implement this function from the WTWR training module//
 //   const handleLikeClick = ({ id, isLiked, user }) => {
