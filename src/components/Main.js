@@ -4,6 +4,7 @@ import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitCon
 import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
+import "../blocks/Card.css";
 
 function Main({
   onCardLike,
