@@ -1,7 +1,7 @@
 import { baseUrl, checkResponse } from "../utils/constants";
 
 export const signUp = (name, avatar, email, password) => {
-  return fetch(`${baseUrl}/Signup`, {
+  return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +13,7 @@ export const signUp = (name, avatar, email, password) => {
 };
 
 export const signIn = (email, password) => {
-  return fetch(`${baseUrl}/Signin`, {
+  return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

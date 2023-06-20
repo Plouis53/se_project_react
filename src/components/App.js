@@ -239,13 +239,15 @@ const App = () => {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
+
         itemsApi
           .get()
           .then((response) => {
+            console.log(response);
             setClothingItems(response);
           })
-          .catch((error) => {
-            console.log("Error adding item:", error);
+          .catch((err) => {
+            console.log("Error adding item:", err);
           });
       })
       .catch((error) => {

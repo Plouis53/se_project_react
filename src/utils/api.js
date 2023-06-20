@@ -35,7 +35,7 @@ const userApi = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.get('jwt')}`
+        // "Authorization": `Bearer ${localStorage.get('jwt')}`
       },
       body: JSON.stringify({
         avatar,
@@ -50,7 +50,7 @@ const userApi = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.get('jwt')}`
+        // "Authorization": `Bearer ${localStorage.get('jwt')}`
       },
       body: JSON.stringify({
         email,
