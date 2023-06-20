@@ -234,7 +234,7 @@ const App = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     getForecastWeather()
       .then((data) => {
         const temperature = parseWeatherData(data);
