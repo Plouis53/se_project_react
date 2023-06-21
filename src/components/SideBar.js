@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import Profile from "./Profile";
 
 const SideBar = ({ isLoggedIn, editClick, SignOutClick }) => {
   const currentUser = useContext(CurrentUserContext);
