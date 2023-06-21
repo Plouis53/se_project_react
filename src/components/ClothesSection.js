@@ -12,7 +12,7 @@ const ClothesSection = ({
 }) => {
   const currentUser = useContext(CurrentUserContext);
   return (
-    <div className="clothes">
+    <div className="">
       <div className="clothes__container">
         <div className="clothes__title">Your items</div>
       </div>

@@ -315,13 +315,14 @@ const App = () => {
           <Footer />
           {activeModal === "add" && (
             <AddItemModal
-              buttonText="Add garment"
-              title="New Garment"
+              // buttonText="Add garment"
+              // title="New Garment"
               handleCloseModal={handleCloseModal}
               isOpen={handleCreateModal}
               onAddItem={handleAddItemSubmit}
               handleOutClick={handleOutClick}
               token={token}
+              isLoading={isLoading}
             />
           )}
           {activeModal === "preview" && (
