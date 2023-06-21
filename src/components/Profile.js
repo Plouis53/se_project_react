@@ -14,16 +14,14 @@ const Profile = ({
   return (
     <section className="profile">
       <div className="profile__content">
-        {isLoggedIn && (
-          <div className="profile__info">
-            {/* Render the profile information */}
-          </div>
-        )}
         <SideBar
           isLoggedIn={isLoggedIn}
           editClick={editClick}
           logoutClick={logoutClick}
         />
+        <div className="profile__info">
+          {/* Render the profile information */}
+        </div>
         <ClothesSection
           cards={items}
           onCardClick={onCardClick}
@@ -35,8 +33,9 @@ const Profile = ({
     </section>
   );
 };
-
 export default Profile;
+
+// export default Profile;
 
 // import React from "react";
 // import SideBar from "./SideBar";

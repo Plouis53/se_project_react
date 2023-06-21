@@ -304,7 +304,7 @@ const App = () => {
               onAddClick={handleAddClick}
               isLoggedIn={isLoggedIn}
               editClick={handleEditClick}
-              SignOutClick={handleSignoutClick}
+              logoutClick={handleSignoutClick}
               onLike={handleLikeClick}
               // onSelectCard={handleSelectedCard}
               // onAddClick={handleAddClick}
