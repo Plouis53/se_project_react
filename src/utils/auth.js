@@ -31,7 +31,7 @@ export const signIn = ({ email, password }) => {
 };
 
 export const checkTokenValidity = (token) => {
-  return fetch(`${baseUrl}/user/me`, {
+  return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
