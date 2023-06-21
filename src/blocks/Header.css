@@ -97,19 +97,45 @@
   padding: 0 0 24px 20px;
 }
 
+.header__link:visited {
+  color: #000;
+}
+
 .header__name {
+  height: 25px;
+  width: 157px;
   font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 25px;
-  padding: 40px 12px 0 0;
+  margin: 8px 12px 0 8px;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  /* width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content; */
+  /*left: 1151px;
+  top: 8px;
+  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  padding: 40px 12px 0 0; */
 }
 
 .header__avatar {
-  display: flex;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  /* display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: center; */
 }
 
 .header__info {
