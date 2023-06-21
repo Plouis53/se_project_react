@@ -58,13 +58,13 @@
   text-overflow: ellipsis;
 }
 
-.profile__clothes-section {
+/* .profile__clothes-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 75%;
   height: 100%;
-}
+} */
 
 .profile__button {
   height: 25px;
