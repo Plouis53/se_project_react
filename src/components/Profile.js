@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 import ClothesSection from "./ClothesSection";
 
 const Profile = ({
-  items,
+  items, // it could be cards
   onCardClick,
   onAddClick,
   isLoggedIn,
@@ -13,7 +13,7 @@ const Profile = ({
 }) => {
   return (
     <section className="profile">
-      <div className="profile__container">
+      <div className="profile__content">
         <SideBar
           isLoggedIn={isLoggedIn}
           editClick={editClick}
