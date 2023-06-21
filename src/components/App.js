@@ -17,11 +17,11 @@ import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
+import LogoutModal from "./LogoutModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
-import LogoutModal from "./LogoutModal";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");

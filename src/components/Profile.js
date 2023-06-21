@@ -1,5 +1,6 @@
-import ClothesSection from "./ClothesSection";
+import React from "react";
 import SideBar from "./SideBar";
+import ClothesSection from "./ClothesSection";
 
 const Profile = ({
   items,
@@ -16,7 +17,7 @@ const Profile = ({
         <SideBar
           isLoggedIn={isLoggedIn}
           editClick={editClick}
-          logoutClick={SignOutClick}
+          SignOutClick={SignOutClick}
         />
         <ClothesSection
           cards={items}

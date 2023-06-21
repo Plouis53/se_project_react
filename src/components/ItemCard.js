@@ -5,7 +5,7 @@ import FullHeart from "../images/Fullheart.svg";
 import "../blocks/Card.css";
 import "../blocks/Profile.css";
 
-const ItemCard = ({ item, onSelectCard, onLike, onCardClick }) => {
+const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
     item.likes && item.likes.some((user) => user._id === currentUser._id);
@@ -30,14 +30,15 @@ const ItemCard = ({ item, onSelectCard, onLike, onCardClick }) => {
           onClick={handleCardClick}
           alt={item.name}
         />
-        {/* {isLoggedIn ? ( */}
-        <img
-          src={isLiked ? FullHeart : Heart}
-          alt="like button"
-          className="card__like-button"
-          onClick={handleLikeClick}
-        />
-        {/* ) : null} */}
+        {isLoggedIn ? (
+          <img
+            src={isLiked ? FullHeart : Heart}
+            alt="like button"
+            className="card__like-button"
+            onClick={handleLikeClick}
+          />
+        ) : // {/* ) : null} */}
+        null}
       </div>
     </div>
   );
