@@ -35,7 +35,7 @@
   justify-content: center;
   flex-direction: column;
   background: #fff;
-  /* height: 436px; */
+  height: 436px;
   width: 496px;
   border-radius: 20px;
   box-sizing: border-box;
@@ -50,6 +50,27 @@
   padding: 0;
   width: 496px;
   position: relative;
+}
+
+.modal__add {
+  width: 124px;
+  height: 36px;
+  background-color: black;
+  margin: 34px 0 36px 28px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: white;
+}
+
+.modal__leave {
+  display: none;
 }
 
 .modal__button {
