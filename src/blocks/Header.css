@@ -53,9 +53,26 @@
 }
 
 .header__add {
+  /* height: 24px; */
+  width: 116px;
+  left: 1015px;
+  top: 8px;
+  /* border-radius: undefinedpx; */
+  /* position: absolute;
+  left: 74.63%;
+  right: 16.84%;
+  top: 20%;
+  bottom: 20%; */
+
+  font-family: "Cabinet Grotesk";
+  /* font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px; */
+  color: #000000;
   background-color: white;
   border: none;
-  font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif;
+  /* font-family: "Cabinet Grotesk", Arial, Helvetica, sans-serif; */
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -104,7 +121,7 @@
   border-radius: 25px;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 9px;
   font-size: 25px;
   font-weight: 700;
 }

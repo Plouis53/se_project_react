@@ -6,7 +6,6 @@ import headerButton from "../images/header-button.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import "../blocks/Header.css";
 
-
 const Header = ({
   parseWeatherData,
   handleSignIn,
@@ -53,7 +52,7 @@ const Header = ({
       <div className="header__right">
         <ToggleSwitch />
         {isLoggedIn ? (
-          <div>
+          <>
             <button
               type="button"
               onClick={handleClick}
@@ -74,7 +73,7 @@ const Header = ({
                 <p className="header__info">{userData.name[0]}</p>
               )}
             </NavLink>
-          </div>
+          </>
         ) : (
           <div className="header__login-info">
             <button className="header__signup" onClick={handleRegister}>
