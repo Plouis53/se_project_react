@@ -268,120 +268,120 @@ const App = () => {
   }, []);
 
   return (
-    <div className="page">
-      <HashRouter>
-        <CurrentUserContext.Provider value={currentUser}>
-          <CurrentTemperatureUnitContext.Provider
-            value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-          >
-            <Header
-              parseWeatherData={parseWeatherData}
-              handleClick={handleAddClick}
-              handleMobile={handleMobileClick}
-              handleSignIn={handleSigninClick}
-              handleRegister={handleRegisterClick}
+    // <div className="page">
+    <HashRouter>
+      <CurrentUserContext.Provider value={currentUser}>
+        <CurrentTemperatureUnitContext.Provider
+          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+        >
+          <Header
+            parseWeatherData={parseWeatherData}
+            handleClick={handleAddClick}
+            handleMobile={handleMobileClick}
+            handleSignIn={handleSigninClick}
+            handleRegister={handleRegisterClick}
+            isLoggedIn={isLoggedIn}
+            // onCreateModal={handleAddClick}
+            // handleClick={handleCardClick}
+            // isLoggedIn={isLoggedIn}
+            // handleSignIn={handleSigninClick}
+            // handleRegister={handleRegisterClick}
+          />
+          <Route exact path="/">
+            <Main
+              weatherTemp={temp}
+              onCardClick={handleCardClick}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
               isLoggedIn={isLoggedIn}
-              // onCreateModal={handleAddClick}
-              // handleClick={handleCardClick}
-              // isLoggedIn={isLoggedIn}
-              // handleSignIn={handleSigninClick}
-              // handleRegister={handleRegisterClick}
+              onLike={handleLikeClick}
             />
-            <Route exact path="/">
-              <Main
-                weatherTemp={temp}
-                onCardClick={handleCardClick}
-                onSelectCard={handleSelectedCard}
-                clothingItems={clothingItems}
-                isLoggedIn={isLoggedIn}
-                onLike={handleLikeClick}
-              />
-            </Route>
-            <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
-              <Profile
-                items={clothingItems}
-                onCardClick={handleCardClick}
-                onAddClick={handleAddClick}
-                isLoggedIn={isLoggedIn}
-                editClick={handleEditClick}
-                SignOutClick={handleSignoutClick}
-                onLike={handleLikeClick}
-                // onSelectCard={handleSelectedCard}
-                // onAddClick={handleAddClick}
-                // currentUser={currentUser}
-                // onClose={handleCloseModal}
-              />
-            </ProtectedRoute>
-            <Footer />
-            {activeModal === "add" && (
-              <AddItemModal
-                buttonText="Add garment"
-                title="New Garment"
-                handleCloseModal={handleCloseModal}
-                isOpen={handleCreateModal}
-                onAddItem={handleAddItemSubmit}
-                handleOutClick={handleOutClick}
-                token={token}
-              />
-            )}
-            {activeModal === "preview" && (
-              <ItemModal
-                selectedCard={selectedCard}
-                onClose={handleCloseModal}
-                onDeleteClick={handleDelete}
-                onOutClick={handleOutClick}
-                // isLoggedIn={isLoggedIn}
-              />
-            )}
-            {activeModal === "confirm" && (
-              <DeleteConfirmationModal
-                onClose={handleCloseModal}
-                onOutClick={handleOutClick}
-                onCancel={handleCancel}
-                onDelete={handleDelete}
-                card={selectedCard}
-                // isLoading={isLoading}
-              />
-            )}
-            {activeModal === "mobile" && (
-              <MobileMenu
-                onClose={handleCloseModal}
-                onOutClick={handleOutClick}
-                handleClick={handleAddClick}
-                isLoggedIn={isLoggedIn}
-                handleSignin={handleSigninClick}
-                handleRegister={handleRegisterClick}
-              />
-            )}
-            {activeModal === "login" && (
-              <LoginModal
-                onClose={handleCloseModal}
-                handleRegisterClick={handleRegisterClick}
-                handleOutClick={handleOutClick}
-                handleSignin={handleSignIn}
-                isLoading={isLoading}
-              />
-            )}
-            {activeModal === "register" && (
-              <RegisterModal
-                onClose={handleCloseModal}
-                handleOutClick={handleOutClick}
-                handleSigninClick={handleSigninClick}
-                isLoading={isLoading}
-                handleRegister={handleRegister}
-              />
-            )}
-            {activeModal === "logout" && (
-              <LogoutModal
-                onClick={handleCloseModal}
-                handleOutClick={handleOutClick}
-                logout={handleSignout}
-              />
-            )}
-          </CurrentTemperatureUnitContext.Provider>
-        </CurrentUserContext.Provider>
-      </HashRouter>
-    </div>
+          </Route>
+          <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
+            <Profile
+              items={clothingItems}
+              onCardClick={handleCardClick}
+              onAddClick={handleAddClick}
+              isLoggedIn={isLoggedIn}
+              editClick={handleEditClick}
+              SignOutClick={handleSignoutClick}
+              onLike={handleLikeClick}
+              // onSelectCard={handleSelectedCard}
+              // onAddClick={handleAddClick}
+              // currentUser={currentUser}
+              // onClose={handleCloseModal}
+            />
+          </ProtectedRoute>
+          <Footer />
+          {activeModal === "add" && (
+            <AddItemModal
+              buttonText="Add garment"
+              title="New Garment"
+              handleCloseModal={handleCloseModal}
+              isOpen={handleCreateModal}
+              onAddItem={handleAddItemSubmit}
+              handleOutClick={handleOutClick}
+              token={token}
+            />
+          )}
+          {activeModal === "preview" && (
+            <ItemModal
+              selectedCard={selectedCard}
+              onClose={handleCloseModal}
+              onDeleteClick={handleDelete}
+              onOutClick={handleOutClick}
+              isLoggedIn={isLoggedIn}
+            />
+          )}
+          {activeModal === "confirm" && (
+            <DeleteConfirmationModal
+              onClose={handleCloseModal}
+              onOutClick={handleOutClick}
+              onCancel={handleCancel}
+              onDelete={handleDelete}
+              card={selectedCard}
+              isLoading={isLoading}
+            />
+          )}
+          {activeModal === "mobile" && (
+            <MobileMenu
+              onClose={handleCloseModal}
+              onOutClick={handleOutClick}
+              handleClick={handleAddClick}
+              isLoggedIn={isLoggedIn}
+              handleSignin={handleSigninClick}
+              handleRegister={handleRegisterClick}
+            />
+          )}
+          {activeModal === "login" && (
+            <LoginModal
+              onClose={handleCloseModal}
+              handleRegisterClick={handleRegisterClick}
+              handleOutClick={handleOutClick}
+              handleSignin={handleSignIn}
+              isLoading={isLoading}
+            />
+          )}
+          {activeModal === "register" && (
+            <RegisterModal
+              onClose={handleCloseModal}
+              handleOutClick={handleOutClick}
+              handleSigninClick={handleSigninClick}
+              isLoading={isLoading}
+              handleRegister={handleRegister}
+            />
+          )}
+          {activeModal === "logout" && (
+            <LogoutModal
+              onClick={handleCloseModal}
+              handleOutClick={handleOutClick}
+              logout={handleSignout}
+            />
+          )}
+        </CurrentTemperatureUnitContext.Provider>
+      </CurrentUserContext.Provider>
+    </HashRouter>
+    // </div>
   );
 };
 
