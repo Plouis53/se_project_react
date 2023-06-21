@@ -14,10 +14,16 @@ const ModalWithForm = ({
   altButtonClick,
 }) => {
   if (!buttonText.other) {
-    buttonText.other = null;
+    // buttonText.other = null;
   }
+
+  const buttonClasses = {
+    mainButton: "modal__login",
+    altButton: "modal__other",
+  };
+  
   return (
-    <div className={`modal modal_type_${name}`}>
+    // <div className={`modal modal_type_${name}`}>
       <div className="modal__container-form" onClick={onOutClick}>
         {/* <div className={`modal modal_type_${name}`}> */}
         <form className="modal__form" onSubmit={handleSubmit}>
@@ -53,7 +59,7 @@ const ModalWithForm = ({
           </fieldset>
         </form>
       </div>
-    </div>
+    // </div>
   );
 };
 

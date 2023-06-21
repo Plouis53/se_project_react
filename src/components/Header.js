@@ -63,15 +63,14 @@ const Header = ({
             </button>
             <NavLink to="/profile" className="header__link">
               <p className="header__name">{userData.name}</p>
-              {userData.avatar ? (
-                <img
-                  className="header__avatar"
-                  src={userData.avatar}
-                  alt="User avatar"
-                />
-              ) : (
-                <p className="header__info">{userData.name[0]}</p>
-              )}
+              {/* {userData.avatar ? ( */}
+              <img
+                className="header__avatar"
+                src={userData.avatar}
+                alt="User avatar"
+              />
+              {/* ) : ( */}
+              {/* <p className="header__letter-info">{userData.name[0]}</p> */}
             </NavLink>
           </>
         ) : (
