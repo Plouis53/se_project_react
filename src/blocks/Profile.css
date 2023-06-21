@@ -91,12 +91,87 @@
   width: 80px;
 }
 
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 17px;
+}
+
+.profile__subcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile__add {
+  margin: 0 0 2px 20px;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+  background-color: #f3f3f3;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.profile__add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.profile__cards {
+  display: grid;
+  margin: 17px 0 0 0;
+  gap: 20px;
+  padding: 0;
+  grid-template-columns: repeat(3, 328px);
+  justify-self: end;
+}
+
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .profile {
     max-width: 375px;
   }
 
-  .profile__container {
+  .profile__content {
+    margin: 0 16px 0 16px;
+    flex-direction: column;
+  }
+
+  .profile__sidebar {
+    justify-content: center;
+  }
+
+  .profile__button {
+    text-align: center;
+  }
+
+  .profile__info {
+    justify-content: center;
+  }
+
+  .profile__name {
+    width: 225px;
+  }
+
+  .profile__subcontainer {
+    justify-content: center;
+  }
+
+  .profile__cards {
+    display: grid;
+    margin: 17px 0 0 0;
+    gap: 20px;
+    padding: 0;
+    grid-template-columns: repeat(2, 164px);
+    justify-self: end;
+  }
+
+  /* .profile__container {
     display: flex;
     flex-direction: column;
     margin-top: 17px;
@@ -112,8 +187,38 @@
   .profile__clothes-section {
     width: 100%;
     border-radius: 0 0 10px 10px;
-  }
+  } */
 }
 
 /* @media screen and (min-width: 823px) and (max-width: 1440px) {
+  .profile {
+    max-width: 768px;
+  }
+
+  .profile__info {
+    width: 214px;
+  }
+
+  .profile__content {
+    margin: 0 20px 0 20px;
+  }
+
+  .profile__avatar {
+    width: 43px;
+    height: 43px;
+    margin: 0 8px 0 0;
+  }
+
+  .profile__name {
+    width: 125px;
+  }
+
+  .profile__button {
+    font-size: 18px;
+  }
+
+  .profile__cards {
+    grid-template-columns: repeat(3, 164px);
+    gap: 10px;
+  }
 } */

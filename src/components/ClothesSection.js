@@ -12,19 +12,19 @@ const ClothesSection = ({
 }) => {
   const currentUser = useContext(CurrentUserContext);
   return (
-    <div className="">
-      <div className="clothes__container">
-        <div className="clothes__title">Your items</div>
+    <div className="profile__container">
+      <div className="profile__subcontainer">
+        <p className="profile__title">Your items</p>
+        <button
+          className="profile__add" // might want to change the class name to be uniformed
+          type="button"
+          aria-label="Add"
+          onClick={onAddClick}
+        >
+          + Add new
+        </button>
       </div>
-      <button
-        className="clothes__button" // might want to change the class name to be uniformed
-        type="button"
-        aria-label="Add"
-        onClick={onAddClick}
-      >
-        + Add new
-      </button>
-      <ul className="clothes__list">
+      <ul className="profile__cards">
         {cards.filter(
           (card) =>
             card.owner ===
