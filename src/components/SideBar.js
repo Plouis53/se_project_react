@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Profile from "./Profile";
 
 const SideBar = ({ isLoggedIn, editClick, SignOutClick }) => {
   const currentUser = useContext(CurrentUserContext);
 
   return (
     <div className="profile__sidebar">
-      {isLoggedIn ? (
+      {isLoggedIn && currentUser.data && (
         <div className="profile__info">
           {currentUser.data.avatar ? (
             <img
@@ -20,7 +19,7 @@ const SideBar = ({ isLoggedIn, editClick, SignOutClick }) => {
           )}
           <p className="profile__name">{currentUser.data.name}</p>
         </div>
-      ) : null}
+      )}
       <button className="profile__edit profile__button" onClick={editClick}>
         Change profile data
       </button>
