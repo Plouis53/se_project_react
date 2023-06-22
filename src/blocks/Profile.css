@@ -82,15 +82,17 @@
 }
 
 .profile__edit {
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
   margin: 24px 0 0 0;
   width: 201px;
+  background-color: white;
 }
 
 .profile__logout {
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
   margin: 8px 0 0 0;
   width: 80px;
+  background-color: white;
 }
 
 .profile__container {
