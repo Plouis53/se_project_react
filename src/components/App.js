@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
-import { itemsApi } from "../utils/api";
+import { itemsApi, userApi } from "../utils/api";
 import ProtectedRoute from "./ProtectedRoute";
 import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
@@ -18,6 +18,7 @@ import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
 import LogoutModal from "./LogoutModal";
+import EditModal from "./EditModal";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
@@ -176,22 +177,22 @@ const App = () => {
 
   // review this
   const handleEditSubmit = ({ name, avatarUrl }) => {
-    // setIsLoading(true);
-    // editProfile({ name, avatarUrl }, token)
-    //   .then(() => {
-    //     setCurrentUser({
-    //       data: {
-    //         ...currentUser.data,
-    //         name: name,
-    //         avatar: avatarUrl,
-    //       },
-    //     });
-    //     handleCloseModal();
-    //     setIsLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    setIsLoading(true);
+    updateCurrentUser({ name, avatarUrl }, token)
+      .then(() => {
+        setCurrentUser({
+          data: {
+            ...currentUser.data,
+            name: name,
+            avatar: avatarUrl,
+          },
+        });
+        handleCloseModal();
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleDelete = (itemId) => {
@@ -372,6 +373,15 @@ const App = () => {
               handleRegister={handleRegister}
             />
           )}
+          {activeModal === "edit" && (
+            <EditModal
+              handleCloseModal={handleCloseModal}
+              handleOutClick={handleOutClick}
+              token={token}
+              handleEdit={handleEditSubmit}
+              isLoading={isLoading}
+            />
+          )}
           {activeModal === "logout" && (
             <LogoutModal
               onClick={handleCloseModal}
@@ -388,6 +398,9 @@ const App = () => {
 
 export default App;
 
+function updateCurrentUser(arg0, token) {
+  throw new Error("Function not implemented.");
+}
 // import React, { useEffect, useState } from "react";
 // import { HashRouter, Route, useHistory } from "react-router-dom";
 // import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
