@@ -52,7 +52,7 @@
 .profile__name {
   font-weight: 700;
   font-size: 20px;
-  width: 125px;
+  /* width: 125px; */
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
