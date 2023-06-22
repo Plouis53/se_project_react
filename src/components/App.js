@@ -377,7 +377,6 @@ const App = () => {
             <EditModal
               handleCloseModal={handleCloseModal}
               handleOutClick={handleOutClick}
-              token={token}
               handleEdit={handleEditSubmit}
               isLoading={isLoading}
             />
