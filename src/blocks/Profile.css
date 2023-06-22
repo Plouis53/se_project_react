@@ -82,11 +82,13 @@
 }
 
 .profile__edit {
+  background-color: #f3f3f3;
   margin: 24px 0 0 0;
   width: 201px;
 }
 
 .profile__logout {
+  background-color: #f3f3f3;
   margin: 8px 0 0 0;
   width: 80px;
 }
