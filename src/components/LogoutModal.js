@@ -15,7 +15,7 @@ const LogoutModal = ({ handleCloseModal, handleOutClick, logout }) => {
             className="modal__close"
             alt="Close button"
             src={closeIcon}
-            onClick={handleCloseModal}
+            handleCloseModal={handleCloseModal}
           />
         </button>
         <div className="modal__container_confirm">
