@@ -31,9 +31,9 @@ function Main({
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
 
-  const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
-  });
+  // const filteredCards = clothingItems.filter((item) => {
+  //   return item.weather.toLowerCase() === weatherType;
+  // });
 
   return (
     <main className="main">
@@ -44,7 +44,7 @@ function Main({
             Today is {currentTempString} / You may want to wear:
           </p>
           <ul className="main__cards">
-            {filteredCards.map((item) => (
+            {clothingItems.map((item) => (
               <ItemCard
                 key={item.id}
                 item={item}
