@@ -23,6 +23,7 @@ import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
+import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -246,6 +247,7 @@ const App = () => {
           .then((response) => {
             console.log(response);
             setClothingItems(response);
+            debugger;
           })
           .catch((err) => {
             console.log("Error adding item:", err);
@@ -288,6 +290,7 @@ const App = () => {
             // handleSignIn={handleSigninClick}
             // handleRegister={handleRegisterClick}
           />
+          <Switch>
           <Route exact path="/">
             <Main
               weatherTemp={temp}
@@ -313,6 +316,7 @@ const App = () => {
               // onClose={handleCloseModal}
             />
           </ProtectedRoute>
+          </Switch>
           <Footer />
           {activeModal === "add" && (
             <AddItemModal
