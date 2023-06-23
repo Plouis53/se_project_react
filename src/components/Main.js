@@ -32,7 +32,6 @@ function Main({
   const currentTempString = currentTemp[currentTemperatureUnit];
 
   const filteredCards = clothingItems.filter((item) => {
-    debugger;
     return item.weather.toLowerCase() === weatherType;
   });
 

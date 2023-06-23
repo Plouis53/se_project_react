@@ -138,6 +138,14 @@
     height: 44px;
     margin: 0 16px 0 0;
   }
+
+  .menu__sign {
+    background-color: white;
+  }
+
+  .menu__login {
+    background-color: white;
+  }
 }
 
 /* @media screen and (min-width: 823px) and (max-width: 1400px) {
