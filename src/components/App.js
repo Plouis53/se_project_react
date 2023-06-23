@@ -247,7 +247,6 @@ const App = () => {
           .then((response) => {
             console.log(response);
             setClothingItems(response);
-            debugger;
           })
           .catch((err) => {
             console.log("Error adding item:", err);
@@ -291,31 +290,31 @@ const App = () => {
             // handleRegister={handleRegisterClick}
           />
           <Switch>
-          <Route exact path="/">
-            <Main
-              weatherTemp={temp}
-              onCardClick={handleCardClick}
-              onSelectCard={handleSelectedCard}
-              clothingItems={clothingItems}
-              isLoggedIn={isLoggedIn}
-              onLike={handleLikeClick}
-            />
-          </Route>
-          <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
-            <Profile
-              items={clothingItems}
-              onCardClick={handleCardClick}
-              onAddClick={handleAddClick}
-              isLoggedIn={isLoggedIn}
-              editClick={handleEditClick}
-              logoutClick={handleSignoutClick}
-              onLike={handleLikeClick}
-              // onSelectCard={handleSelectedCard}
-              // onAddClick={handleAddClick}
-              // currentUser={currentUser}
-              // onClose={handleCloseModal}
-            />
-          </ProtectedRoute>
+            <Route exact path="/">
+              <Main
+                weatherTemp={temp}
+                onCardClick={handleCardClick}
+                onSelectCard={handleSelectedCard}
+                clothingItems={clothingItems}
+                isLoggedIn={isLoggedIn}
+                onLike={handleLikeClick}
+              />
+            </Route>
+            <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
+              <Profile
+                items={clothingItems}
+                onCardClick={handleCardClick}
+                onAddClick={handleAddClick}
+                isLoggedIn={isLoggedIn}
+                editClick={handleEditClick}
+                logoutClick={handleSignoutClick}
+                onLike={handleLikeClick}
+                // onSelectCard={handleSelectedCard}
+                // onAddClick={handleAddClick}
+                // currentUser={currentUser}
+                // onClose={handleCloseModal}
+              />
+            </ProtectedRoute>
           </Switch>
           <Footer />
           {activeModal === "add" && (
