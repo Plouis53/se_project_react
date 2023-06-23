@@ -100,7 +100,7 @@ const AddItemModal = ({
           />
         </label>
         <p className="modal__text">Select the weather type:</p>
-        <div className="modal__input-container" onChange={onImageChange}>
+        <div className="modal__input-container" onChange={onWeatherChange}>
           <div>
             <input
               className="modal__input-button"
