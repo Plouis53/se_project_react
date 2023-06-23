@@ -1,4 +1,4 @@
-.clothes {
+/* .clothes {
   width: 100%;
   padding: 20px;
 }
@@ -16,7 +16,7 @@
   top: 120px;
   font-family: "Cabinet Grotesk";
   font-style: normal;
-  /* font-weight: 700; */
+   font-weight: 700;
   line-height: 25px;
   color: #000000;
 }
@@ -50,5 +50,5 @@
   }
 }
 
-/* @media screen and (min-width: 823px) and (max-width: 1440px) {
-} */
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+}  */

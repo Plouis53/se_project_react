@@ -1,4 +1,4 @@
-.modal__container-form {
+/* .modal__container-form {
   z-index: 1;
   position: fixed;
   bottom: 0;
@@ -88,7 +88,7 @@
   cursor: pointer;
 }
 
-/* .modal {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
