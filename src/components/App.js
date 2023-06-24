@@ -141,6 +141,7 @@ const App = () => {
   };
 
   const handleSelectedCard = (card) => {
+    console.log(card);
     setActiveModal("preview");
     setSelectedCard(card);
   };
@@ -151,13 +152,14 @@ const App = () => {
     });
   };
 
-  const handleAddItemSubmit = ({ name, imageUrl, weather }) => {
+  const handleAddItemSubmit = ({ card }) => {
+    const { name, imageURL, weather } = card;
     setIsLoading(true);
 
     const newItem = {
       id: Date.now(),
       name,
-      imageUrl,
+      imageURL,
       weather,
     };
 
@@ -293,7 +295,7 @@ const App = () => {
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
-                onCardClick={handleCardClick}
+                // onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}

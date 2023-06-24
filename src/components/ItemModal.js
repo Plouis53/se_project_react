@@ -28,7 +28,7 @@ const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   // const itemDeleteButtonClassName = `item__delete-button ${
   //   isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
   // }`;
-
+  console.log(selectedCard);
   return (
     <div className={`modal__container-image`} onClick={onOutClick}>
       <div className="popup__photo">

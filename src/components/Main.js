@@ -36,7 +36,7 @@ function Main({
   // const filteredCards = clothingItems.filter((item) => {
   //   return item.weather.toLowerCase() === weatherType;
   // });
-
+  
   return (
     <main className="main">
       <div className="main__container">
@@ -48,7 +48,7 @@ function Main({
           <ul className="main__cards">
             {clothingItems.map((item) => (
               <ItemCard
-                key={item.id}
+                key={item._id}
                 item={item}
                 onSelectCard={onSelectCard}
                 onLike={onCardLike}

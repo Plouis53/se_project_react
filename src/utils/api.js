@@ -3,7 +3,7 @@ import { baseUrl, checkResponse } from "./constants";
 const getItem = (key) => {
   try {
     const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : null;
+    return item;
   } catch (error) {
     console.error("Error retrieving item from local storage:", error);
     return null;
@@ -15,6 +15,7 @@ const itemsApi = {
     return fetch(`${baseUrl}/items`).then(checkResponse);
   },
   add: ({ name, imageUrl, weather }) => {
+    console.log(name, weather, imageUrl);
     return fetch(`${baseUrl}/items`, {
       method: "POST",
       headers: {
