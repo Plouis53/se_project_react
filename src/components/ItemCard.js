@@ -17,6 +17,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
   };
 
   const handleCardClick = () => {
+    console.log(item);
     onSelectCard(item);
   };
   // console.log(isLoggedIn);

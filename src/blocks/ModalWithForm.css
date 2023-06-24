@@ -306,14 +306,14 @@
     border-top-left-radius: 10px; */
   }
 
-  /* .modal__input {
-    border: none;
+  .modal__input {
+    /* border: none;
     border-bottom: 1px solid black;
     font-size: 14px;
     height: 20px;
-    margin: 8px 36px 0 0; 
-    width: 440px;
-  } */
+    margin: 8px 36px 0 0;  */
+    width: 340px;
+  }
 
   .modal__label {
     font-size: 12px;

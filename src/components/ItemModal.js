@@ -30,7 +30,7 @@ const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   // }`;
   console.log(selectedCard);
   return (
-    <div className={`modal__container-image`} onClick={onOutClick}>
+    <div className={`popup__container-image`} onClick={onOutClick}>
       <div className="popup__photo">
         <img
           className="popup__image"
