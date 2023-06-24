@@ -55,6 +55,19 @@ function Main({
               />
             ))}
           </ul>
+          {/* <ul className="main__cards">
+            {cards
+              .filter((card) => card.weather === weatherType)
+              .map((clothingItems) => (
+                <ItemCard
+                  key={clothingItems._id}
+                  item={clothingItems}
+                  onSelectCard={onSelectCard}
+                  onLike={onCardLike}
+                  isLoggedIn={isLoggedIn}
+                />
+              ))}
+          </ul> */}
         </section>
         {/* <button className="main__button"></button> */}
       </div>
