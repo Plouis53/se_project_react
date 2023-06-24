@@ -5,6 +5,7 @@ import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
 import "../blocks/Card.css";
+import "../blocks/ItemModal.css";
 
 function Main({
   cards,

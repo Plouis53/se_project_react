@@ -21,16 +21,16 @@ const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   };
 
   // Checking if the current user is the owner of the current clothing item
-  const isOwn =
-    selectedCard.owner && selectedCard.owner._id === currentUser._id;
+  // const isOwn =
+  //   selectedCard.owner && selectedCard.owner._id === currentUser._id;
 
   // Creating a variable which you'll then set in `className` for the delete button
-  const itemDeleteButtonClassName = `item__delete-button ${
-    isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
-  }`;
+  // const itemDeleteButtonClassName = `item__delete-button ${
+  //   isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
+  // }`;
 
   return (
-    <div className={`popup__container-image`} onClick={onOutClick}>
+    <div className={`modal__container-image`} onClick={onOutClick}>
       <div className="popup__photo">
         <img
           className="popup__image"
