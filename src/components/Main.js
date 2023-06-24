@@ -7,6 +7,7 @@ import "../blocks/Main.css";
 import "../blocks/Card.css";
 
 function Main({
+  cards,
   onCardLike,
   // isLiked,
   weatherTemp,
