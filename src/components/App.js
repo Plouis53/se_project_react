@@ -153,13 +153,13 @@ const App = () => {
   };
 
   const handleAddItemSubmit = ({ card }) => {
-    const { name, imageURL, weather } = card;
+    const { name, imageUrl, weather } = card;
     setIsLoading(true);
 
     const newItem = {
       id: Date.now(),
       name,
-      imageURL,
+      imageUrl,
       weather,
     };
 

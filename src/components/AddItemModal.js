@@ -35,7 +35,7 @@ const AddItemModal = ({
     e.preventDefault();
     const card = {};
     card.name = nameValue;
-    card.imageURL = imageValue;
+    card.imageUrl = imageValue;
     card.weather = weatherValue;
     onAddItem({
       card,
@@ -79,7 +79,7 @@ const AddItemModal = ({
             name="name"
             id="input-name"
             minLength="1"
-            maxLength="30"
+            maxLength="300"
             value={nameValue}
             // onChange={(e) => setNameValue(e.target.value)}
             onChange={onNameChange}
