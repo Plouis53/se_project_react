@@ -125,6 +125,10 @@ const App = () => {
     setActiveModal("mobile");
   };
 
+  const handleDeleteClick = () => {
+    setActiveModal("confirm");
+  };
+
   const handleOutClick = (evt) => {
     if (evt.target === evt.currentTarget) {
       handleCreateModal();
@@ -212,6 +216,7 @@ const App = () => {
         );
         handleCloseModal();
       })
+
       .catch((error) => {
         console.log("Error deleting item:", error);
       })
@@ -347,7 +352,7 @@ const App = () => {
               onClose={handleCloseModal}
               onOutClick={handleOutClick}
               onCancel={handleCancel}
-              onDelete={handleDelete}
+              onDelete={handleDeleteClick}
               card={selectedCard}
               isLoading={isLoading}
             />

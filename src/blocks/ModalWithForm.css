@@ -69,6 +69,11 @@
   color: white;
 }
 
+.modal__add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 .modal__leave {
   display: none;
 }

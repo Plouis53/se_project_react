@@ -15,7 +15,7 @@ const ModalWithForm = ({
   altButtonClick,
 }) => {
   if (!buttonText.other) {
-    // buttonText.other = null;
+    buttonText.other = null;
   }
 
   // const buttonClasses = {

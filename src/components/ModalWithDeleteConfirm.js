@@ -9,7 +9,7 @@ const ModalWithDeleteConfirm = ({
   onClose,
   onCancel,
 }) => {
-  const handleDeleteClick = () => {
+  const handleDelete = () => {
     onDelete(card._id);
   };
 
@@ -32,7 +32,7 @@ const ModalWithDeleteConfirm = ({
           className="modal__button_confirm"
           type="button"
           aria-label="Confirm"
-          onClick={handleDeleteClick}
+          onClick={handleDelete}
         >
           Yes, delete item
         </button>
