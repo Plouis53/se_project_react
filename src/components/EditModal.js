@@ -21,6 +21,9 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
     // handleEdit(onUpdateProfile);
   };
 
+  const nameValue = currentUser?.data?.name || "";
+  const avatarValue = currentUser?.data?.avatar || "";
+
   return (
     <ModalWithForm
       title="Change Profile Data"
@@ -41,7 +44,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           required
           minLength="1"
           maxLength="30"
-          defaultValue={currentUser.data.name}
+          defaultValue={nameValue}
           onChange={handleEdit}
         />
       </label>
@@ -55,7 +58,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           required
           minLength="1"
           maxLength="30"
-          defaultValue={currentUser.data.avatar}
+          defaultValue={avatarValue}
           onChange={handleEdit}
         />
       </label>
