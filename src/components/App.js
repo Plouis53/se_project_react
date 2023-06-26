@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithImage from "./ModalWithImage";
+
 // import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
@@ -14,7 +15,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
-import DeleteConfirmationModal from "../components/DeleteConfirmationModal";
+import ModalWithDeleteConfirm from "./ModalWithDeleteConfirm";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
@@ -25,6 +26,7 @@ import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
+import "../blocks/ModalConfirm.css";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -342,7 +344,7 @@ const App = () => {
             />
           )}
           {activeModal === "confirm" && (
-            <DeleteConfirmationModal
+            <ModalWithDeleteConfirm
               onClose={handleCloseModal}
               onOutClick={handleOutClick}
               onCancel={handleCancel}

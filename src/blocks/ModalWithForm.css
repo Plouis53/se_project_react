@@ -81,7 +81,7 @@
   padding: 0;
 }
 
-.modal__close {
+/* .modal__close {
   background-image: url(../images/Union.svg);
   border: none;
   background-color: white;
@@ -90,7 +90,7 @@
   right: 36px;
   top: 26px;
   width: 16px;
-}
+} */
 
 .modal__close:hover {
   cursor: pointer;
