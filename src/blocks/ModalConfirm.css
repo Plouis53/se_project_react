@@ -1,4 +1,4 @@
-.modal__container-confirm {
+/* .modal__container_confirm {
   z-index: 1;
   position: fixed;
   bottom: 0;
@@ -11,9 +11,9 @@
   opacity: 1;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.modal__confirm {
+/* .modal__confirm {
   background-color: #fff;
   width: 496px;
   height: 280px;
@@ -24,7 +24,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .modal__container_confirm {
   text-align: center;

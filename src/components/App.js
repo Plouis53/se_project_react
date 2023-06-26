@@ -208,7 +208,7 @@ const App = () => {
       .then(() => {
         console.log("Item deleted successfully");
         setClothingItems((clothingItems) =>
-          clothingItems.filter((item) => item.id !== itemId)
+          clothingItems.filter((item) => item._id !== itemId)
         );
         handleCloseModal();
       })
@@ -252,8 +252,8 @@ const App = () => {
             console.log(response);
             setClothingItems(response);
           })
-          .catch((err) => {
-            console.log("Error adding item:", err);
+          .catch((error) => {
+            console.log("Error adding item:", error);
           });
       })
       .catch((error) => {

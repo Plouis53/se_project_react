@@ -29,12 +29,12 @@ const itemsApi = {
       }),
     }).then(checkResponse);
   },
-  remove: (id) => {
+  remove: (id, token) => {
     return fetch(`${baseUrl}/items/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${getItem("jwt")}`,
+        Authorization: `Bearer ${getItem(token)}`,
       },
     }).then(checkResponse);
   },

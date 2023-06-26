@@ -147,7 +147,7 @@
   cursor: pointer;
 }
 
-.modal__confirmation-close {
+/* .modal__confirmation-close {
   background-image: url(../images/Union.svg);
   background-color: white;
   border: none;
@@ -162,7 +162,7 @@
 .modal__confirmation-close:hover {
   opacity: 0.6;
   cursor: pointer;
-}
+} */
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .modal__photo {
