@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 import ModalWithImage from "./ModalWithImage";
-
+import ModalWithDeleteConfirm from "./ModalWithDeleteConfirm";
 // import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
@@ -15,7 +15,6 @@ import ProtectedRoute from "./ProtectedRoute";
 import { checkTokenValidity } from "../utils/auth";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import * as auth from "../utils/auth";
-import ModalWithDeleteConfirm from "./ModalWithDeleteConfirm";
 import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
