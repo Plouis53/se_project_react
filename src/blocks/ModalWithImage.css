@@ -1,0 +1,211 @@
+.modal__container-image {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0;
+  display: flex;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__photo {
+  border: 1px solid #000;
+  position: relative;
+  height: 610px;
+  width: 498px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.modal__image {
+  max-width: 75vw;
+  max-height: 75vh;
+  width: 498px;
+  height: 498px;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  position: relative;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.modal__close {
+  background-image: url(../images/Union.svg);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  width: 16px;
+  margin-right: 20px;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.modal__subcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__title {
+  margin: 12px 0 0 32px;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  width: fit-content;
+}
+
+.modal__weather {
+  margin: 12px 0 0 32px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal__delete {
+  color: #ff4d00;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 32px 0 0;
+  height: fit-content;
+  border: none;
+  background-color: #fff;
+}
+
+.modal__delete:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.modal__confirmation {
+  height: 300px;
+  width: 670px;
+  box-sizing: border-box;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  padding: 60px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.modal__confirmation p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.modal__confirmation-buttons {
+  position: absolute;
+  width: 138px;
+  margin: 40px;
+  left: 220px;
+}
+
+.modal__button_confirm {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff4d00;
+  border: none;
+  background-color: #fff;
+  margin: 10px 0 0 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.modal__button_confirm:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.modal__button_cancel {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  background-color: #fff;
+  margin: 24px 0 0 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.modal__button_cancel:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.modal__confirmation-close {
+  background-image: url(../images/Union.svg);
+  background-color: white;
+  border: none;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  width: 16px;
+  margin-right: 20px;
+}
+
+.modal__confirmation-close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .modal__photo {
+    background-color: white;
+    border-radius: 16px;
+    height: 463px;
+    position: relative;
+    width: 343px;
+  }
+
+  .modal__title {
+    margin: 20px 0 0 20px;
+  }
+
+  .modal__weather {
+    margin: 20px 0 0 20px;
+  }
+
+  .modal__image {
+    height: 343px;
+    max-height: 100%;
+    max-width: 100%;
+    width: 343px;
+  }
+
+  .modal__close {
+    margin-top: 0;
+    right: 12px;
+  }
+
+  .modal__delete {
+    margin: 20px 20px 0 0;
+  }
+
+  .modal__confirmation {
+    max-width: 343px;
+  }
+
+  .modal__confirmation-buttons {
+    left: auto;
+    margin: 10px 40px;
+  }
+}
+
+@media screen and (min-width: 823px) and (max-width: 1440px) {
+}

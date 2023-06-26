@@ -5,7 +5,8 @@ import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
-import ItemModal from "../components/ItemModal";
+import ModalWithImage from "./ModalWithImage";
+// import ItemModal from "../components/ItemModal";
 import Profile from "../components/Profile";
 import AddItemModal from "./AddItemModal";
 import { itemsApi, userApi } from "../utils/api";
@@ -19,11 +20,11 @@ import RegisterModal from "./RegisterModal";
 import MobileMenu from "./MobileMenu";
 import LogoutModal from "./LogoutModal";
 import EditModal from "./EditModal";
+import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 import "../blocks/App.css";
 import "../blocks/Card.css";
 import "../blocks/WeatherCard.css";
 import "../blocks/MobileMenu.css";
-import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -332,7 +333,7 @@ const App = () => {
             />
           )}
           {activeModal === "preview" && (
-            <ItemModal
+            <ModalWithImage
               selectedCard={selectedCard}
               onClose={handleCloseModal}
               onDeleteClick={handleDelete}
