@@ -393,6 +393,16 @@ const App = () => {
               logout={handleSignout}
             />
           )}
+          {activeModal === "mobile" && (
+            <MobileMenu
+              onClose={handleCloseModal}
+              onOutClick={handleOutClick}
+              handleClick={handleAddClick}
+              isLoggedIn={isLoggedIn}
+              handleSignin={handleSigninClick}
+              handleRegister={handleRegisterClick}
+            />
+          )}
         </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
     </HashRouter>

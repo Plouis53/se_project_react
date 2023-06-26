@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import closeIcon from "../images/Union.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+// import "../blocks/MobileMenu.css";
+// import "../blocks/ItemModal.css";
 
 const MobileMenu = ({
   onClose,

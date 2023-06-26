@@ -3,6 +3,7 @@ import "../blocks/ItemModal.css";
 import "../components/ModalWithForm";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 
+
 const ItemModal = ({ selectedCard, onClose, onOutClick, onDeleteClick }) => {
   const { currentUser } = useContext(CurrentUserContext);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
