@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { HashRouter, Route, useHistory } from "react-router-dom";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
-import Header from "../components/Header";
-import Main from "../components/Main";
+import Header from "./Header";
+import Main from "./Main";
 import Footer from "../components/Footer";
 import ModalWithImage from "./ModalWithImage";
 import ModalWithDeleteConfirm from "./ModalWithDeleteConfirm";
@@ -302,7 +302,7 @@ const App = () => {
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
-                // onCardClick={handleCardClick}
+                onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}

@@ -36,7 +36,7 @@
 }
 
 .modal__close {
-  background-image: url(../images/Union.svg);
+  /* background-image: url(../images/Union.svg); */
   background-color: rgba(0, 0, 0, 0);
   border: none;
   height: 16px;

@@ -10,13 +10,13 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
   const isLiked =
     item.likes && item.likes.some((user) => user._id === currentUser._id);
 
-  const handleLikeClick = () => {
+  const handleLike = () => {
     if (item._id) {
       onLike(item._id, isLiked, currentUser);
     }
   };
 
-  const handleCardClick = () => {
+  const onClick = () => {
     console.log(item);
     onSelectCard(item);
   };
@@ -28,7 +28,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
         <img
           src={item?.link || item?.imageUrl || ""}
           className="card__image"
-          onClick={handleCardClick}
+          onClick={onClick}
           alt={item.name}
         />
         {isLoggedIn ? (
@@ -36,7 +36,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
             src={isLiked ? FullHeart : Heart}
             alt="like button"
             className="card__like-button"
-            onClick={handleLikeClick}
+            onClick={handleLike}
           />
         ) : // {/* ) : null} */}
         null}

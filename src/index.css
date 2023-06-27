@@ -7,6 +7,7 @@
 @import url(./blocks/Main.css);
 @import url(./blocks/ModalWithForm.css);
 @import url(./blocks/ModalConfirm.css);
+@import url(./blocks/ModalWithImage.css);
 @import url(./blocks/Page.css);
 @import url(./blocks/WeatherCard.css);
 @import url(./blocks/Switch.css);
@@ -14,7 +15,7 @@
 @import url(./blocks/Profile.css);
 /* @import url(./blocks/ClothesSection.css); */
 @import url(./components/AddItemModal.js);
-@import url(./components/DeleteConfirmationModal.js);
+/* @import url(./components/DeleteConfirmationModal.js); */
 @import url(./blocks/MobileMenu.css);
 
 code {
