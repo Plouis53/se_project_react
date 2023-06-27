@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Heart from "../images/Heart.svg";
-import FullHeart from "../images/Fullheart.svg";
+import heart from "../images/heart.svg";
+import filledHeart from "../images/filledHeart.svg";
 import "../blocks/Card.css";
 import "../blocks/Profile.css";
 
@@ -11,6 +11,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
     item.likes && item.likes.some((user) => user._id === currentUser._id);
 
   const handleLike = () => {
+    console.log(onLike);
     if (item._id) {
       onLike(item._id, isLiked, currentUser);
     }
@@ -33,7 +34,7 @@ const ItemCard = ({ item, onSelectCard, onLike, isLoggedIn }) => {
         />
         {isLoggedIn ? (
           <img
-            src={isLiked ? FullHeart : Heart}
+            src={isLiked ? filledHeart : heart}
             alt="like button"
             className="card__like-button"
             onClick={handleLike}

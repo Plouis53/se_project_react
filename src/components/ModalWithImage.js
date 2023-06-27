@@ -42,7 +42,8 @@ const ModalWithImage = ({
           {isOwn ? (
             <button
               className="modal__delete"
-              onClick={onDeleteClick}
+              onClick={() => onDeleteClick(selectedCard._id)}
+              //   onClick={onDeleteClick}
               aria-label="Delete"
             >
               Delete Item

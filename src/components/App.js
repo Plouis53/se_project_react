@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HashRouter, Route, useHistory } from "react-router-dom";
+import { BrowserRouter, Route, useHistory } from "react-router-dom";
 import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext";
 import { getForecastWeather, parseWeatherData } from "../utils/weatherApi";
 import Header from "./Header";
@@ -270,6 +270,7 @@ const App = () => {
       checkTokenValidity(token)
         .then((data) => {
           setIsLoggedIn(true);
+          setCurrentUser(data);
         })
         .catch((error) => {
           console.error("Error checking token validity:", error);
@@ -280,7 +281,7 @@ const App = () => {
 
   return (
     // <div className="page">
-    <HashRouter>
+    <BrowserRouter>
       <CurrentUserContext.Provider value={currentUser}>
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -412,7 +413,7 @@ const App = () => {
           )}
         </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
-    </HashRouter>
+    </BrowserRouter>
     // </div>
   );
 };
