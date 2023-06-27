@@ -25,7 +25,9 @@ const ModalWithDeleteConfirm = ({
           />
         </button>
         <div className="modal__container_confirm">
-          <p>Are you sure you want to delete this item?</p>
+          <p className="modal__text_confirm">
+            Are you sure you want to delete this item?
+          </p>
           <p className="modal__text_confirm">This action is irreversible.</p>
         </div>
         <button
