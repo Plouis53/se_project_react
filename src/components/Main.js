@@ -5,12 +5,9 @@ import ItemCard from "./ItemCard";
 import { temperature } from "../utils/weatherApi";
 import "../blocks/Main.css";
 import "../blocks/Card.css";
-import "../blocks/ItemModal.css";
 
 function Main({
-  cards,
   onCardLike,
-  // isLiked,
   weatherTemp,
   onSelectCard,
   clothingItems,
@@ -33,10 +30,6 @@ function Main({
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
 
-  // const filteredCards = clothingItems.filter((item) => {
-  //   return item.weather.toLowerCase() === weatherType;
-  // });
-  
   return (
     <main className="main">
       <div className="main__container">
@@ -56,21 +49,7 @@ function Main({
               />
             ))}
           </ul>
-          {/* <ul className="main__cards">
-            {cards
-              .filter((card) => card.weather === weatherType)
-              .map((clothingItems) => (
-                <ItemCard
-                  key={clothingItems._id}
-                  item={clothingItems}
-                  onSelectCard={onSelectCard}
-                  onLike={onCardLike}
-                  isLoggedIn={isLoggedIn}
-                />
-              ))}
-          </ul> */}
         </section>
-        {/* <button className="main__button"></button> */}
       </div>
     </main>
   );
