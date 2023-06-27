@@ -10,7 +10,7 @@ const ModalWithDeleteConfirm = ({
   onCancel,
 }) => {
   const handleDelete = () => {
-    onDelete(card.itemId);
+    onDelete(card);
   };
 
   return (

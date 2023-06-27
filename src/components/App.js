@@ -125,8 +125,26 @@ const App = () => {
     setActiveModal("mobile");
   };
 
-  const handleDeleteClick = () => {
-    setActiveModal("confirm");
+  const handleDeleteClick = (card) => {
+    console.log(card._id);
+
+    itemsApi
+      .remove(card._id)
+      .then(() => {
+        console.log("Item deleted successfully");
+        setClothingItems((clothingItems) =>
+          clothingItems.filter((item) => item._id !== card._id)
+        );
+        handleCloseModal();
+        setActiveModal("");
+      })
+
+      .catch((error) => {
+        console.log("Error deleting item:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   const handleOutClick = (evt) => {
