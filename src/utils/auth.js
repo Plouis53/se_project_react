@@ -42,6 +42,10 @@ export const checkTokenValidity = (token) => {
     .then((data) => data);
 };
 
+
+export function signOut(arg0) {
+  throw new Error("Function not implemented.");
+}
 // 61323export default auth;
 // export function register(username, password, email) {
 //   throw new Error("Function not implemented.");

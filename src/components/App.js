@@ -86,8 +86,8 @@ const App = () => {
   };
 
   const handleSignout = () => {
-    setIsLoggedIn(false);
     setCurrentUser({});
+    setIsLoggedIn(false);
     localStorage.removeItem("jwt");
     history.push("/");
   };
@@ -205,24 +205,26 @@ const App = () => {
   };
 
   const handleDelete = (itemId) => {
-    setIsLoading(true);
+    // where is the modal call?
+    // setIsLoading(true);
+    setActiveModal("confirm");
 
-    itemsApi
-      .remove(itemId)
-      .then(() => {
-        console.log("Item deleted successfully");
-        setClothingItems((clothingItems) =>
-          clothingItems.filter((item) => item._id !== itemId)
-        );
-        handleCloseModal();
-      })
+    // itemsApi
+    //   .remove(itemId)
+    //   .then(() => {
+    //     console.log("Item deleted successfully");
+    //     setClothingItems((clothingItems) =>
+    //       clothingItems.filter((item) => item._id !== itemId)
+    //     );
+    //     handleCloseModal();
+    //   })
 
-      .catch((error) => {
-        console.log("Error deleting item:", error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    //   .catch((error) => {
+    //     console.log("Error deleting item:", error);
+    //   })
+    //   .finally(() => {
+    //     setIsLoading(false);
+    //   });
   };
 
   const handleLikeClick = ({ id, isLiked, user }) => {
@@ -399,6 +401,7 @@ const App = () => {
               handleCloseModal={handleCloseModal}
               handleOutClick={handleOutClick}
               logout={handleSignout}
+              history={history}
             />
           )}
           {activeModal === "mobile" && (

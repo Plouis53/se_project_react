@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import closeIcon from "../images/Union.svg";
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import "../blocks/ModalWithImage.css";
+import ModalWithForm from "./ModalWithForm";
 
 const ModalWithImage = ({
   selectedCard,
