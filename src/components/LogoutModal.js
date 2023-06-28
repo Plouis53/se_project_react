@@ -1,11 +1,10 @@
 import React from "react";
 import closeIcon from "../images/Union.svg";
 
-const LogoutModal = ({ handleCloseModal, handleOutClick, logout, history }) => {
+const LogoutModal = ({ handleCloseModal, handleOutClick, logout }) => {
   const handleSignout = () => {
     logout();
     handleCloseModal();
-    // history.push("/");
   };
 
   return (
@@ -16,7 +15,6 @@ const LogoutModal = ({ handleCloseModal, handleOutClick, logout, history }) => {
             className="modal__close"
             alt="Close button"
             src={closeIcon}
-            // handleSignout={handleCloseModal}
             onClick={handleCloseModal}
           />
         </button>
