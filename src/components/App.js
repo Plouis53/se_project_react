@@ -299,7 +299,6 @@ const App = () => {
   }, []);
 
   return (
-    // <div className="page">
     <BrowserRouter>
       <CurrentUserContext.Provider value={currentUser}>
         <CurrentTemperatureUnitContext.Provider
@@ -312,11 +311,6 @@ const App = () => {
             handleSignIn={handleSigninClick}
             handleRegister={handleRegisterClick}
             isLoggedIn={isLoggedIn}
-            // onCreateModal={handleAddClick}
-            // handleClick={handleCardClick}
-            // isLoggedIn={isLoggedIn}
-            // handleSignIn={handleSigninClick}
-            // handleRegister={handleRegisterClick}
           />
           <Switch>
             <Route exact path="/">
@@ -338,18 +332,12 @@ const App = () => {
                 editClick={handleEditClick}
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
-                // onSelectCard={handleSelectedCard}
-                // onAddClick={handleAddClick}
-                // currentUser={currentUser}
-                // onClose={handleCloseModal}
               />
             </ProtectedRoute>
           </Switch>
           <Footer />
           {activeModal === "add" && (
             <AddItemModal
-              // buttonText="Add garment"
-              // title="New Garment"
               handleCloseModal={handleCloseModal}
               isOpen={handleCreateModal}
               onAddItem={handleAddItemSubmit}
@@ -418,7 +406,6 @@ const App = () => {
               handleCloseModal={handleCloseModal}
               handleOutClick={handleOutClick}
               logout={handleSignout}
-
             />
           )}
           {activeModal === "mobile" && (
@@ -434,7 +421,6 @@ const App = () => {
         </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
     </BrowserRouter>
-    // </div>
   );
 };
 

@@ -43,7 +43,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           id="inputName"
           required
           minLength="1"
-          maxLength="30"
+          maxLength="300"
           defaultValue={nameValue}
           onChange={handleEdit}
         />
@@ -57,7 +57,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           id="inputAvatarURL"
           required
           minLength="1"
-          maxLength="30"
+          maxLength="300"
           defaultValue={avatarValue}
           onChange={handleEdit}
         />
