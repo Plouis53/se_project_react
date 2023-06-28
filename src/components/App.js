@@ -245,6 +245,7 @@ const App = () => {
   };
 
   const handleLikeClick = ({ id, isLiked, user }) => {
+    console.log(id, isLiked, user);
     const token = localStorage.getItem("jwt");
 
     const addLike = ({ id, isLiked, user }) => {
@@ -320,7 +321,7 @@ const App = () => {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
-                onLike={handleLikeClick}
+                onCardLike={handleLikeClick}
               />
             </Route>
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>

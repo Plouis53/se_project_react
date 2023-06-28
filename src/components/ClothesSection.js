@@ -12,7 +12,7 @@ const ClothesSection = ({
 }) => {
   const currentUser = useContext(CurrentUserContext);
   console.log({ currentUser });
-
+  console.log(onLike);
   const filteredCards = cards.filter(
     (card) =>
       card.owner ===

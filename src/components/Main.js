@@ -24,7 +24,7 @@ function Main({
       return "cold";
     }
   };
-
+  console.log(onCardLike);
   const weatherType = getWeatherType();
 
   const currentTemp = temperature(weatherTemp);
