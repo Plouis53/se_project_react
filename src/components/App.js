@@ -165,7 +165,7 @@ const App = () => {
 
   const handleSelectedCard = (card) => {
     console.log(card);
-    setActiveModal("preview");
+    setActiveModal("image");
     setSelectedCard(card);
   };
 
