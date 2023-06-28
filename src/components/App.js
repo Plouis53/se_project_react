@@ -346,7 +346,7 @@ const App = () => {
               isLoading={isLoading}
             />
           )}
-          {activeModal === "preview" && (
+          {activeModal === "image" && (
             <ModalWithImage
               selectedCard={selectedCard}
               onClose={handleCloseModal}
