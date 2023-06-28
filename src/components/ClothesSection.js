@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import ItemCard from "./ItemCard";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-// import "../blocks/ClothesSection.css";
 import "../blocks/Profile.css";
 
 const ClothesSection = ({
@@ -12,7 +11,7 @@ const ClothesSection = ({
   onLike,
 }) => {
   const currentUser = useContext(CurrentUserContext);
-  console.log({currentUser})
+  console.log({ currentUser });
 
   const filteredCards = cards.filter(
     (card) =>

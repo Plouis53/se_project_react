@@ -42,7 +42,7 @@ const App = () => {
   const [token, setToken] = React.useState("");
   const history = useHistory();
   const [isLoading, setIsLoading] = React.useState(false);
-
+  console.log(history);
   const handleSignIn = ({ email, password }) => {
     setIsLoading(true);
 
@@ -89,7 +89,7 @@ const App = () => {
     setCurrentUser({});
     setIsLoggedIn(false);
     localStorage.removeItem("jwt");
-    history.push("/");
+    // history.push("/");
   };
 
   const handleCardClick = (card) => {
@@ -419,7 +419,7 @@ const App = () => {
               handleCloseModal={handleCloseModal}
               handleOutClick={handleOutClick}
               logout={handleSignout}
-              history={history}
+              // history={history}
             />
           )}
           {activeModal === "mobile" && (

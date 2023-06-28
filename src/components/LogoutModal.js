@@ -5,7 +5,7 @@ const LogoutModal = ({ handleCloseModal, handleOutClick, logout, history }) => {
   const handleSignout = () => {
     logout();
     handleCloseModal();
-    history.push("/");
+    // history.push("/");
   };
 
   return (
