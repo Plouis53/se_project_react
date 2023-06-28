@@ -15,7 +15,6 @@ const itemsApi = {
     return fetch(`${baseUrl}/items`).then(checkResponse);
   },
   add: ({ name, imageUrl, weather }) => {
-    console.log(name, weather, imageUrl);
     return fetch(`${baseUrl}/items`, {
       method: "POST",
       headers: {
@@ -38,7 +37,27 @@ const itemsApi = {
       },
     }).then(checkResponse);
   },
+  like: (id) => {
+    return fetch(`${baseUrl}/items/${id}/likes`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getItem("jwt")}`,
+      },
+    }).then(checkResponse);
+  },
+  unlike: (id) => {
+    return fetch(`${baseUrl}/items/${id}/likes`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${getItem("jwt")}`,
+      },
+    }).then(checkResponse);
+  },
 };
+
+export default itemsApi;
 
 const userApi = {
   signup: (avatar, name, email, password) => {

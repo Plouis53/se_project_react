@@ -244,23 +244,54 @@ const App = () => {
     //   });
   };
 
+  // const handleLikeClick = ({ id, isLiked, user }) => {
+  //   console.log(id, isLiked, user);
+  //   const token = localStorage.getItem("jwt");
+
+  //   const addLike = ({ id, isLiked, user }) => {
+  //     console.log(`Adding like for item with id=${id}`);
+  //   };
+
+  //   const removeLike = ({ id, isLiked, user }) => {
+  //     console.log(`Removing like for item with id=${id}`);
+  //   };
+
+  //   if (id) {
+  //     if (isLiked) {
+  //       removeLike();
+  //     } else {
+  //       addLike();
+  //     }
+  //   }
+  // };
+
   const handleLikeClick = ({ id, isLiked, user }) => {
     console.log(id, isLiked, user);
     const token = localStorage.getItem("jwt");
 
-    const addLike = ({ id, isLiked, user }) => {
-      console.log(`Adding like for item with id=${id}`);
-    };
-
-    const removeLike = ({ id, isLiked, user }) => {
-      console.log(`Removing like for item with id=${id}`);
-    };
-
     if (id) {
       if (isLiked) {
-        removeLike();
+        itemsApi
+          .unlike(id)
+          .then((response) => {
+            console.log(`Unlike successful for item with id=${id}`);
+            // Update your state or perform any other necessary actions
+          })
+          .catch((error) => {
+            console.error(`Error unliking item with id=${id}`, error);
+            // Handle the error appropriately
+          });
       } else {
-        addLike();
+        itemsApi
+          .like(id)
+          .then((response) => {
+            console.log(`Like successful for item with id=${id}`);
+            // Update your state or perform any other necessary actions
+          })
+          .catch((error) => {
+            console.error(`Error liking item with id=${id}`, error);
+            // Handle the error appropriately
+          });
       }
     }
   };
