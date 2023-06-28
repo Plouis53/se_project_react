@@ -265,34 +265,56 @@ const App = () => {
   //   }
   // };
 
-  const handleLikeClick = ({ id, isLiked, user }) => {
-    console.log(id, isLiked, user);
+  // const handleLikeClick = ({ id, isLiked, user }) => {
+  //   console.log(id, isLiked, user);
+  //   const token = localStorage.getItem("jwt");
+
+  //   if (id) {
+  //     if (isLiked) {
+  //       itemsApi
+  //         .unlike(id)
+  //         .then((response) => {
+  //           console.log(`Unlike successful for item with id=${id}`);
+  //           // Update your state or perform any other necessary actions
+  //         })
+  //         .catch((error) => {
+  //           console.error(`Error unliking item with id=${id}`, error);
+  //           // Handle the error appropriately
+  //         });
+  //     } else {
+  //       itemsApi
+  //         .like(id)
+  //         .then((response) => {
+  //           console.log(`Like successful for item with id=${id}`);
+  //           // Update your state or perform any other necessary actions
+  //         })
+  //         .catch((error) => {
+  //           console.error(`Error liking item with id=${id}`, error);
+  //           // Handle the error appropriately
+  //         });
+  //     }
+  //   }
+  // };
+
+  const handleLikeClick = (id, isLiked) => {
     const token = localStorage.getItem("jwt");
 
-    if (id) {
-      if (isLiked) {
-        itemsApi
-          .unlike(id)
-          .then((response) => {
-            console.log(`Unlike successful for item with id=${id}`);
-            // Update your state or perform any other necessary actions
-          })
-          .catch((error) => {
-            console.error(`Error unliking item with id=${id}`, error);
-            // Handle the error appropriately
-          });
-      } else {
-        itemsApi
-          .like(id)
-          .then((response) => {
-            console.log(`Like successful for item with id=${id}`);
-            // Update your state or perform any other necessary actions
-          })
-          .catch((error) => {
-            console.error(`Error liking item with id=${id}`, error);
-            // Handle the error appropriately
-          });
-      }
+    if (isLiked) {
+      itemsApi
+        .unlike(id)
+        .then((updatedCard) => {
+          // Handle the updated card data
+          console.log("Card unliked:", updatedCard);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      itemsApi
+        .like(id)
+        .then((updatedCard) => {
+          // Handle the updated card data
+          console.log("Card liked:", updatedCard);
+        })
+        .catch((err) => console.log(err));
     }
   };
 
@@ -334,7 +356,11 @@ const App = () => {
     <BrowserRouter>
       <CurrentUserContext.Provider value={currentUser}>
         <CurrentTemperatureUnitContext.Provider
-          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+          value={{
+            currentTemperatureUnit,
+            handleToggleSwitchChange,
+            parseWeatherData,
+          }}
         >
           <Header
             parseWeatherData={parseWeatherData}
@@ -348,11 +374,12 @@ const App = () => {
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
-                onCardClick={handleCardClick}
+                // onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
                 onCardLike={handleLikeClick}
+                onCardUnlike={handleLikeClick}
               />
             </Route>
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
@@ -364,6 +391,7 @@ const App = () => {
                 editClick={handleEditClick}
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
+                onUnlike={handleLikeClick}
               />
             </ProtectedRoute>
           </Switch>

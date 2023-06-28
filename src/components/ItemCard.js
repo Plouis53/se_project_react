@@ -14,7 +14,7 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
     if (isLiked) {
       onUnlike(item._id, currentUser);
     } else {
-      onLike(item._id, currentUser);
+      onLike({ id: item._id, isLiked, user: currentUser });
     }
   };
 
