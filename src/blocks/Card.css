@@ -58,7 +58,7 @@
   margin-top: 8px;  */
 }
 
-.card__like-button {
+.card__like-button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
