@@ -297,7 +297,7 @@ const App = () => {
   // };
 
   const handleLikeClick = (id, isLiked) => {
-    console.log(isLiked);
+    console.log(id);
     const token = localStorage.getItem("jwt");
 
     if (isLiked) {
