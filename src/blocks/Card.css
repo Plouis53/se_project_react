@@ -63,6 +63,20 @@
   cursor: pointer;
 }
 
+.card__unlike-button {
+  position: absolute;
+  left: 65.82%;
+  top: 5.5%;
+  bottom: 61.68%;
+  height: 15px;
+  width: 18px;
+}
+
+.card__unlike-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .card {
     width: 164px;
