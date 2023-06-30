@@ -203,21 +203,36 @@ const App = () => {
 
   // review this
   const handleEditSubmit = ({ name, avatarUrl }) => {
+    console.log(name);
+    // setIsLoading(true);
+    // updateCurrentUser({ name, avatarUrl }, token)
+    //   .then(() => {
+    //     setCurrentUser({
+    //       data: {
+    //         ...currentUser.data,
+    //         name: name,
+    //         avatar: avatarUrl,
+    //       },
+    //     });
+    //     handleCloseModal();
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
     setIsLoading(true);
-    updateCurrentUser({ name, avatarUrl }, token)
+    userApi
+      .updateCurrentUser({ name, avatarUrl })
       .then(() => {
-        setCurrentUser({
-          data: {
-            ...currentUser.data,
-            name: name,
-            avatar: avatarUrl,
-          },
-        });
-        handleCloseModal();
+        // Handle success
         setIsLoading(false);
+        handleCloseModal();
       })
       .catch((error) => {
+        // Handle error
         console.log(error);
+        setIsLoading(false);
       });
   };
 
@@ -225,76 +240,7 @@ const App = () => {
     // where is the modal call?
     // setIsLoading(true);
     setActiveModal("confirm");
-
-    // itemsApi
-    //   .remove(itemId)
-    //   .then(() => {
-    //     console.log("Item deleted successfully");
-    //     setClothingItems((clothingItems) =>
-    //       clothingItems.filter((item) => item._id !== itemId)
-    //     );
-    //     handleCloseModal();
-    //   })
-
-    //   .catch((error) => {
-    //     console.log("Error deleting item:", error);
-    //   })
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
   };
-
-  // const handleLikeClick = ({ id, isLiked, user }) => {
-  //   console.log(id, isLiked, user);
-  //   const token = localStorage.getItem("jwt");
-
-  //   const addLike = ({ id, isLiked, user }) => {
-  //     console.log(`Adding like for item with id=${id}`);
-  //   };
-
-  //   const removeLike = ({ id, isLiked, user }) => {
-  //     console.log(`Removing like for item with id=${id}`);
-  //   };
-
-  //   if (id) {
-  //     if (isLiked) {
-  //       removeLike();
-  //     } else {
-  //       addLike();
-  //     }
-  //   }
-  // };
-
-  // const handleLikeClick = ({ id, isLiked, user }) => {
-  //   console.log(id, isLiked, user);
-  //   const token = localStorage.getItem("jwt");
-
-  //   if (id) {
-  //     if (isLiked) {
-  //       itemsApi
-  //         .unlike(id)
-  //         .then((response) => {
-  //           console.log(`Unlike successful for item with id=${id}`);
-  //           // Update your state or perform any other necessary actions
-  //         })
-  //         .catch((error) => {
-  //           console.error(`Error unliking item with id=${id}`, error);
-  //           // Handle the error appropriately
-  //         });
-  //     } else {
-  //       itemsApi
-  //         .like(id)
-  //         .then((response) => {
-  //           console.log(`Like successful for item with id=${id}`);
-  //           // Update your state or perform any other necessary actions
-  //         })
-  //         .catch((error) => {
-  //           console.error(`Error liking item with id=${id}`, error);
-  //           // Handle the error appropriately
-  //         });
-  //     }
-  //   }
-  // };
 
   const handleLikeClick = (id, isLiked) => {
     console.log(id);

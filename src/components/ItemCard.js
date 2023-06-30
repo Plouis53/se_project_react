@@ -34,6 +34,14 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
         />
         {isLoggedIn ? (
           <img
+            src={isLiked ? filledHeart : heart}
+            alt="like button"
+            className={isLiked ? "card__unlike-button" : "card__like-button"}
+            onClick={handleLike}
+          />
+        ) : null}
+        {/* {isLoggedIn ? (
+          <img
             src={isLiked || heart}
             alt="like button"
             className="card__like-button"
@@ -47,7 +55,7 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
             className="card__unlike-button"
             onClick={handleLike}
           />
-        ) : null}
+        ) : null} */}
       </div>
     </div>
   );
