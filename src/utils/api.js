@@ -47,6 +47,16 @@ const itemsApi = {
       },
     }).then(checkResponse);
   },
+  // unlike: (id) => {
+  //   return fetch(`${baseUrl}/items/${id}/likes`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${getItem("jwt")}`,
+  //     },
+  //   }).then(checkResponse);
+  // },
+
   unlike: (id) => {
     return fetch(`${baseUrl}/items/${id}/likes`, {
       method: "DELETE",
@@ -54,7 +64,12 @@ const itemsApi = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-    }).then(checkResponse);
+    })
+      .then(checkResponse)
+      .catch((error) => {
+        console.log("Error unliking item:", error);
+        throw error;
+      });
   },
 };
 
