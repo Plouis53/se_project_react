@@ -37,8 +37,9 @@ const itemsApi = {
       },
     }).then(checkResponse);
   },
-  like: (data) => {
-    return fetch(`${baseUrl}/items/${data.id}/likes`, {
+  like: (id) => {
+    console.log(id);
+    return fetch(`${baseUrl}/items/${id}/likes`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

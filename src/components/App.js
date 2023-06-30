@@ -225,6 +225,29 @@ const App = () => {
     setActiveModal("confirm");
   };
 
+  // const handleLikeClick = (id, isLiked) => {
+  //   console.log(id);
+  //   const token = localStorage.getItem("jwt");
+
+  //   if (isLiked) {
+  //     itemsApi
+  //       .unlike(id)
+  //       .then((updatedCard) => {
+  //         // Handle the updated card data
+  //         console.log("Card unliked:", updatedCard);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   } else {
+  //     itemsApi
+  //       .like(id)
+  //       .then((updatedCard) => {
+  //         // Handle the updated card data
+  //         console.log("Card liked:", updatedCard);
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
+  // };
+
   const handleLikeClick = (id, isLiked) => {
     console.log(id);
     const token = localStorage.getItem("jwt");
@@ -235,6 +258,9 @@ const App = () => {
         .then((updatedCard) => {
           // Handle the updated card data
           console.log("Card unliked:", updatedCard);
+          setClothingItems((prevItems) =>
+            prevItems.map((item) => (item._id === id ? updatedCard : item))
+          );
         })
         .catch((err) => console.log(err));
     } else {
@@ -243,6 +269,9 @@ const App = () => {
         .then((updatedCard) => {
           // Handle the updated card data
           console.log("Card liked:", updatedCard);
+          setClothingItems((prevItems) =>
+            prevItems.map((item) => (item._id === id ? updatedCard : item))
+          );
         })
         .catch((err) => console.log(err));
     }
