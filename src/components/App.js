@@ -204,23 +204,6 @@ const App = () => {
   // review this
   const handleEditSubmit = ({ name, avatarUrl }) => {
     console.log(name);
-    // setIsLoading(true);
-    // updateCurrentUser({ name, avatarUrl }, token)
-    //   .then(() => {
-    //     setCurrentUser({
-    //       data: {
-    //         ...currentUser.data,
-    //         name: name,
-    //         avatar: avatarUrl,
-    //       },
-    //     });
-    //     handleCloseModal();
-    //     setIsLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
     setIsLoading(true);
     userApi
       .updateCurrentUser({ name, avatarUrl })
