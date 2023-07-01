@@ -53,7 +53,7 @@ const App = () => {
         }
       })
       .then((response) => {
-        setCurrentUser(response);
+        setCurrentUser(response.data);
         setIsLoggedIn(true);
         history.push("/profile");
       })
@@ -71,7 +71,7 @@ const App = () => {
       .signUp(user)
       .then((response) => {
         if (response) {
-          setCurrentUser(response);
+          setCurrentUser(response.data);
           handleSignIn(user);
         } else {
           console.log("User registration failed:", response.error);
@@ -249,13 +249,14 @@ const App = () => {
   // };
 
   const handleLikeClick = (id, isLiked) => {
-    console.log(id);
+    console.log(id, isLiked);
+
     const token = localStorage.getItem("jwt");
 
     if (isLiked) {
       itemsApi
         .unlike(id)
-        .then((updatedCard) => {
+        .then(({ data: updatedCard }) => {
           // Handle the updated card data
           console.log("Card unliked:", updatedCard);
           setClothingItems((prevItems) =>
@@ -302,7 +303,7 @@ const App = () => {
       checkTokenValidity(token)
         .then((data) => {
           setIsLoggedIn(true);
-          setCurrentUser(data);
+          setCurrentUser(data.data);
         })
         .catch((error) => {
           console.error("Error checking token validity:", error);

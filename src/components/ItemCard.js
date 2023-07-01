@@ -8,7 +8,8 @@ import "../blocks/Profile.css";
 const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
-    item.likes && item.likes.some((user) => user._id === currentUser._id);
+    item.likes && item.likes.some((user) => user === currentUser._id);
+  console.log(currentUser, item.likes);
 
   // const handleLike = () => {
   //   if (isLiked) {
@@ -20,9 +21,9 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
 
   const handleLike = () => {
     if (isLiked) {
-      onUnlike(item._id);
+      onUnlike(item._id, isLiked);
     } else {
-      onLike(item._id);
+      onLike(item._id, isLiked);
     }
   };
 
@@ -35,7 +36,7 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
       <div className="card__container">
         <p className="card__name">{item.name}</p>
         <img
-          src={item?.link || item?.imageUrl || ""} //review it later 
+          src={item?.link || item?.imageUrl || ""} //review it later
           className="card__image"
           onClick={onClick}
           alt={item.name}

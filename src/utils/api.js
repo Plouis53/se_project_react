@@ -58,7 +58,7 @@ const itemsApi = {
   // },
 
   unlike: (id) => {
-    const token = localStorage.getItem("jwt"); //New 6/30/23
+    // const token = localStorage.getItem("jwt"); //New 6/30/23
     return fetch(`${baseUrl}/items/${id}/likes`, {
       method: "DELETE",
       headers: {
