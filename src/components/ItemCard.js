@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import heart from "../images/heart.svg";
+import heart from "../images/Heart.svg";
 import filledHeart from "../images/filledHeart.svg";
 import "../blocks/Card.css";
 import "../blocks/Profile.css";
