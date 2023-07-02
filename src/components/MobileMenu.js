@@ -37,15 +37,15 @@ const MobileMenu = ({
               + Add clothes
             </button>
             <NavLink to="/profile" className="menu__link" onClick={onClose}>
-              <p className="menu__name">{currentUser.data.name}</p>
-              {currentUser.data.avatar ? (
+              <p className="menu__name">{currentUser.name}</p>
+              {currentUser.avatar ? (
                 <img
                   className="header__avatar"
-                  src={currentUser.data.avatar}
+                  src={currentUser.avatar}
                   alt="User avatar"
                 />
               ) : (
-                <p className="header__letter">{currentUser.data.name[0]}</p>
+                <p className="header__letter">{currentUser.name[0]}</p>
               )}
             </NavLink>
           </>

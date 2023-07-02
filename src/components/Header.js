@@ -16,9 +16,7 @@ const Header = ({
 }) => {
   const currentUser = useContext(CurrentUserContext);
 
-  const userData = currentUser.data
-    ? currentUser.data
-    : { name: "", avatar: "" };
+  const userData = currentUser ? currentUser : { name: "", avatar: "" };
 
   if (!parseWeatherData) return null;
 

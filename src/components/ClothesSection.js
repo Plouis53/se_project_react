@@ -14,9 +14,7 @@ const ClothesSection = ({
   const currentUser = useContext(CurrentUserContext);
 
   const filteredCards = cards.filter(
-    (card) =>
-      card.owner ===
-      (currentUser.data === undefined ? "" : currentUser.data._id)
+    (card) => card.owner === (currentUser === undefined ? "" : currentUser._id)
   );
 
   return (

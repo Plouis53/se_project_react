@@ -301,9 +301,10 @@ const App = () => {
     const token = localStorage.getItem("jwt");
     if (token) {
       checkTokenValidity(token)
-        .then((data) => {
+        .then((res) => { 
+          debugger;
           setIsLoggedIn(true);
-          setCurrentUser(data.data);
+          setCurrentUser(res.data);
         })
         .catch((error) => {
           console.error("Error checking token validity:", error);
