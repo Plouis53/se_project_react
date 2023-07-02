@@ -302,7 +302,6 @@ const App = () => {
     if (token) {
       checkTokenValidity(token)
         .then((res) => { 
-          debugger;
           setIsLoggedIn(true);
           setCurrentUser(res.data);
         })
