@@ -190,7 +190,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems((items) => [response, ...items]);
+        setClothingItems((items) => [response.data, ...items]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -301,7 +301,7 @@ const App = () => {
     const token = localStorage.getItem("jwt");
     if (token) {
       checkTokenValidity(token)
-        .then((res) => { 
+        .then((res) => {
           setIsLoggedIn(true);
           setCurrentUser(res.data);
         })
