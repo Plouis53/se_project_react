@@ -52,6 +52,7 @@ const LoginModal = ({
       onOutClick={handleOutClick}
       handleSubmit={handleSubmit}
       buttonClass={buttonClasses}
+      altButtonClick={handleRegisterClick}
       // altButtonClick={handleSigninClick}
       // title="Log in"
       // name="Login"
