@@ -7,6 +7,14 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
   const [name, setName] = useState(currentUser?.name || "");
   const [avatarUrl, setAvatarUrl] = useState(currentUser?.avatar || "");
 
+  // const onNameChange = (evt) => {
+  //   setName(evt.target.value);
+  // };
+
+  // const onAvatarChange = (evt) => {
+  //   setAvatarUrl(evt.target.value);
+  // };
+
   const buttonClasses = {
     mainButton: "modal__add",
     altButton: "modal__leave",
@@ -45,6 +53,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           maxLength="300"
           value={name}
           onChange={(evt) => setName(evt.target.value)}
+          // onChange={onNameChange}
         />
       </label>
       <label className="modal__label">
@@ -59,6 +68,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           maxLength="300"
           value={avatarUrl}
           onChange={(evt) => setAvatarUrl(evt.target.value)}
+          // onChange={onAvatarChange}
         />
       </label>
     </ModalWithForm>

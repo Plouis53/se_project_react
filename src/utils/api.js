@@ -47,15 +47,6 @@ const itemsApi = {
       },
     }).then(checkResponse);
   },
-  // unlike: (id) => {
-  //   return fetch(`${baseUrl}/items/${id}/likes`, {
-  //     method: "DELETE",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${getItem("jwt")}`,
-  //     },
-  //   }).then(checkResponse);
-  // },
 
   unlike: (id) => {
     // const token = localStorage.getItem("jwt"); //New 6/30/23
