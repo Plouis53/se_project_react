@@ -9,7 +9,6 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
     item.likes && item.likes.some((user) => user === currentUser._id);
-  console.log(currentUser, item.likes);
 
   const handleLike = () => {
     if (isLiked) {

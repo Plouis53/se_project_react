@@ -41,7 +41,6 @@ const App = () => {
   const [token, setToken] = React.useState("");
   const history = useHistory();
   const [isLoading, setIsLoading] = React.useState(false);
-  console.log(history);
   const handleSignIn = ({ email, password }) => {
     setIsLoading(true);
 
@@ -88,7 +87,6 @@ const App = () => {
     setCurrentUser({});
     setIsLoggedIn(false);
     localStorage.removeItem("jwt");
-    // history.push("/");
   };
 
   const handleCardClick = (card) => {
@@ -125,8 +123,6 @@ const App = () => {
   };
 
   const handleDeleteClick = (card) => {
-    console.log(card._id);
-
     itemsApi
       .remove(card._id)
       .then(() => {
@@ -158,13 +154,9 @@ const App = () => {
 
   const handleCloseModal = () => {
     setActiveModal("");
-    // setClothingItems(prevItems);
-    // setPrevItems([]);
-    // setNewItem({});
   };
 
   const handleSelectedCard = (card) => {
-    console.log(card);
     setActiveModal("image");
     setSelectedCard(card);
   };
@@ -201,69 +193,32 @@ const App = () => {
       });
   };
 
-  // review this
-//   const handleEditSubmit = ({ name, avatarUrl }) => {
-//     console.log(name);
-//     setIsLoading(true);
-//     userApi
-//       .updateCurrentUser({ name, avatarUrl })
-//       .then((data) => {
-//         // Handle success
-//         setIsLoading(false);
-// // call setCurrentUser here        
-//         handleCloseModal();
-//       })
-//       .catch((error) => {
-//         // Handle error
-//         console.log(error);
-//         setIsLoading(false);
-//       });
-//   };
-
-const handleEditSubmit = ({ name, avatarUrl }) => {
-  console.log(name);
-  setIsLoading(true);
-  userApi
-    .updateCurrentUser({ name, avatarUrl })
-    .then((data) => {
-      // Handle success
-      setIsLoading(false);
-      setCurrentUser((currentUser) => ({
-        ...currentUser,
-        data: {
-          ...currentUser.data,
-          name: data.name,
-          avatar: data.avatarUrl,
-        },
-      }));
-      handleCloseModal();
-    })
-    .catch((error) => {
-      // Handle error
-      console.log(error);
-      setIsLoading(false);
-    });
-};
-
-
+  const handleEditSubmit = ({ name, avatarUrl }) => {
+    setIsLoading(true);
+    userApi
+      .updateCurrentUser({ name, avatarUrl })
+      .then((data) => {
+        setIsLoading(false);
+        setCurrentUser(data);
+        handleCloseModal();
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(false);
+      });
+  };
 
   const handleDelete = (itemId) => {
-    // where is the modal call?
-    // setIsLoading(true);
     setActiveModal("confirm");
   };
 
   const handleLikeClick = (id, isLiked) => {
-    console.log(id, isLiked);
-
     const token = localStorage.getItem("jwt");
 
     if (isLiked) {
       itemsApi
         .unlike(id)
         .then(({ data: updatedCard }) => {
-          // Handle the updated card data
-          console.log("Card unliked:", updatedCard);
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))
           );
@@ -273,8 +228,7 @@ const handleEditSubmit = ({ name, avatarUrl }) => {
       itemsApi
         .like(id)
         .then((updatedCard) => {
-          // Handle the updated card data
-          console.log("Card liked:", updatedCard);
+
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))
           );
@@ -292,7 +246,6 @@ const handleEditSubmit = ({ name, avatarUrl }) => {
         itemsApi
           .get()
           .then((response) => {
-            console.log(response);
             setClothingItems(response);
           })
           .catch((error) => {

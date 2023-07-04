@@ -38,7 +38,6 @@ const itemsApi = {
     }).then(checkResponse);
   },
   like: (id) => {
-    console.log(id);
     return fetch(`${baseUrl}/items/${id}/likes`, {
       method: "PUT",
       headers: {
