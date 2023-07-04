@@ -86,17 +86,6 @@
   padding: 0;
 }
 
-/* .modal__close {
-  background-image: url(../images/Union.svg);
-  border: none;
-  background-color: white;
-  height: 16px;
-  position: absolute;
-  right: 36px;
-  top: 26px;
-  width: 16px;
-} */
-
 .modal__close:hover {
   cursor: pointer;
   opacity: 0.6;
@@ -290,36 +279,16 @@
     max-width: 343px;
   }
 
-  /* .modal__container-form {
-    align-items: flex-end;
-  } */
-
   .modal__form {
     width: 375px;
     display: flex;
     width: 100%;
-    /* align-content: center;
-    display: flex;
-    justify-content: center; */
-    /* height: 455px;
-    border-radius: 0px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px; */
   }
   .modal__fieldset {
     width: 275px;
-    /* height: 455px;
-     border-radius: 0px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px; */
   }
 
   .modal__input {
-    /* border: none;
-    border-bottom: 1px solid black;
-    font-size: 14px;
-    height: 20px;
-    margin: 8px 36px 0 0;  */
     width: 340px;
   }
 

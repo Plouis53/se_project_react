@@ -38,19 +38,6 @@ const ModalWithDeleteConfirm = ({
         >
           Yes, delete item
         </button>
-        {/* <button
-          className="popup__confirmation-close"
-          onClick={onClose}
-        ></button> */}
-        {/* <div className="popup__confirmation-buttons">
-          <button
-            className="popup__button_confirm"
-            type="button"
-            aria-label="Confirm"
-            onClick={onClose}
-          >
-            Yes, delete item
-          </button> */}
         <button
           className="modal__button_cancel"
           type="button"

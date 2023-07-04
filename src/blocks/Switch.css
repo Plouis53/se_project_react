@@ -54,12 +54,6 @@
   font-weight: 700;
 }
 
-/* .switch__slider-F {
-} */
-
-/* .switch__slider-C {
-} */
-
 .switch__temp-F {
   z-index: 100;
   color: rgba(0, 0, 0, 0.5);
@@ -85,7 +79,6 @@
   left: 34px;
   top: 0%;
   bottom: 0%;
-  /* font-family: "Cabinet Grotesk"; */
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -96,9 +89,6 @@
 }
 
 .switch__active {
-  /* z-index: 100;
-  right: 2px; */
   font-size: 15px;
   color: #fff;
-  /* position: absolute; */
 }

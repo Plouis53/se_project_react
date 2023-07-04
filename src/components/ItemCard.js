@@ -27,7 +27,7 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
       <div className="card__container">
         <p className="card__name">{item.name}</p>
         <img
-          src={item?.link || item?.imageUrl || ""} //review it later
+          src={item?.link || item?.imageUrl || ""} 
           className="card__image"
           onClick={onClick}
           alt={item.name}

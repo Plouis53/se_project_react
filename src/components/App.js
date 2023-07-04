@@ -265,7 +265,6 @@ const App = () => {
         })
         .catch((error) => {
           console.error("Error checking token validity:", error);
-          // Handle error scenario or log out the user
         });
     }
   }, []);
@@ -292,7 +291,6 @@ const App = () => {
             <Route exact path="/">
               <Main
                 weatherTemp={temp}
-                // onCardClick={handleCardClick}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}

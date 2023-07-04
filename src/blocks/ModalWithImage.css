@@ -36,7 +36,6 @@
 }
 
 .modal__close {
-  /* background-image: url(../images/Union.svg); */
   background-color: rgba(0, 0, 0, 0);
   border: none;
   height: 16px;
@@ -146,23 +145,6 @@
   opacity: 0.6;
   cursor: pointer;
 }
-
-/* .modal__confirmation-close {
-  background-image: url(../images/Union.svg);
-  background-color: white;
-  border: none;
-  height: 16px;
-  position: absolute;
-  right: 10px;
-  top: 22px;
-  width: 16px;
-  margin-right: 20px;
-}
-
-.modal__confirmation-close:hover {
-  opacity: 0.6;
-  cursor: pointer;
-} */
 
 @media screen and (min-width: 375px) and (max-width: 822px) {
   .modal__photo {

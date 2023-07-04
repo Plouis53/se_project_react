@@ -20,9 +20,7 @@ const Profile = ({
           editClick={editClick}
           logoutClick={logoutClick}
         />
-        <div className="profile__info">
-          {/* Render the profile information */}
-        </div>
+        <div className="profile__info"></div>
         <ClothesSection
           cards={items}
           onCardClick={onCardClick}
