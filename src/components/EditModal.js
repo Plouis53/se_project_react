@@ -11,7 +11,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
   //   setName(evt.target.value);
   // };
 
-  // const onAvatarChange = (evt) => {
+  // const onAvatarUrlChange = (evt) => {
   //   setAvatarUrl(evt.target.value);
   // };
 
@@ -68,7 +68,7 @@ const EditModal = ({ handleCloseModal, handleOutClick, handleEdit }) => {
           maxLength="300"
           value={avatarUrl}
           onChange={(evt) => setAvatarUrl(evt.target.value)}
-          // onChange={onAvatarChange}
+          // onChange={onAvatarUrlChange}
         />
       </label>
     </ModalWithForm>

@@ -202,22 +202,50 @@ const App = () => {
   };
 
   // review this
-  const handleEditSubmit = ({ name, avatarUrl }) => {
-    console.log(name);
-    setIsLoading(true);
-    userApi
-      .updateCurrentUser({ name, avatarUrl })
-      .then(() => {
-        // Handle success
-        setIsLoading(false);
-        handleCloseModal();
-      })
-      .catch((error) => {
-        // Handle error
-        console.log(error);
-        setIsLoading(false);
-      });
-  };
+//   const handleEditSubmit = ({ name, avatarUrl }) => {
+//     console.log(name);
+//     setIsLoading(true);
+//     userApi
+//       .updateCurrentUser({ name, avatarUrl })
+//       .then((data) => {
+//         // Handle success
+//         setIsLoading(false);
+// // call setCurrentUser here        
+//         handleCloseModal();
+//       })
+//       .catch((error) => {
+//         // Handle error
+//         console.log(error);
+//         setIsLoading(false);
+//       });
+//   };
+
+const handleEditSubmit = ({ name, avatarUrl }) => {
+  console.log(name);
+  setIsLoading(true);
+  userApi
+    .updateCurrentUser({ name, avatarUrl })
+    .then((data) => {
+      // Handle success
+      setIsLoading(false);
+      setCurrentUser((currentUser) => ({
+        ...currentUser,
+        data: {
+          ...currentUser.data,
+          name: data.name,
+          avatar: data.avatarUrl,
+        },
+      }));
+      handleCloseModal();
+    })
+    .catch((error) => {
+      // Handle error
+      console.log(error);
+      setIsLoading(false);
+    });
+};
+
+
 
   const handleDelete = (itemId) => {
     // where is the modal call?
