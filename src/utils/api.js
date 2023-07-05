@@ -10,12 +10,16 @@ const getItem = (key) => {
   }
 };
 
+function request(url, options) {
+  return fetch(url, options).then(checkResponse);
+}
+
 const itemsApi = {
   get: () => {
-    return fetch(`${baseUrl}/items`).then(checkResponse);
+    return request(`${baseUrl}/items`);
   },
   add: ({ name, imageUrl, weather }) => {
-    return fetch(`${baseUrl}/items`, {
+    const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,36 +30,38 @@ const itemsApi = {
         imageUrl,
         weather,
       }),
-    }).then(checkResponse);
+    };
+    return request(`${baseUrl}/items`, options);
   },
   remove: (id) => {
-    return fetch(`${baseUrl}/items/${id}`, {
+    const options = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-    }).then(checkResponse);
+    };
+    return request(`${baseUrl}/items/${id}`, options);
   },
   like: (id) => {
-    return fetch(`${baseUrl}/items/${id}/likes`, {
+    const options = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-    }).then(checkResponse);
+    };
+    return request(`${baseUrl}/items/${id}/likes`, options);
   },
-
   unlike: (id) => {
-    return fetch(`${baseUrl}/items/${id}/likes`, {
+    const options = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-    })
-      .then(checkResponse)
+    };
+    return request(`${baseUrl}/items/${id}/likes`, options)
       .catch((error) => {
         console.log("Error unliking item:", error);
         throw error;
@@ -64,6 +70,62 @@ const itemsApi = {
 };
 
 export default itemsApi;
+
+
+// 7/5/23 const itemsApi = {
+//   get: () => {
+//     return fetch(`${baseUrl}/items`).then(checkResponse);
+//   },
+//   add: ({ name, imageUrl, weather }) => {
+//     return fetch(`${baseUrl}/items`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${getItem("jwt")}`,
+//       },
+//       body: JSON.stringify({
+//         name,
+//         imageUrl,
+//         weather,
+//       }),
+//     }).then(checkResponse);
+//   },
+//   remove: (id) => {
+//     return fetch(`${baseUrl}/items/${id}`, {
+//       method: "DELETE",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${getItem("jwt")}`,
+//       },
+//     }).then(checkResponse);
+//   },
+//   like: (id) => {
+//     return fetch(`${baseUrl}/items/${id}/likes`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${getItem("jwt")}`,
+//       },
+//     }).then(checkResponse);
+//   },
+
+//   unlike: (id) => {
+//     return fetch(`${baseUrl}/items/${id}/likes`, {
+//       method: "DELETE",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${getItem("jwt")}`,
+//       },
+//     })
+//       .then(checkResponse)
+//       .catch((error) => {
+//         console.log("Error unliking item:", error);
+//         throw error;
+//       });
+//   },
+// };
+
+// export default itemsApi;
 
 const userApi = {
   signup: (avatar, name, email, password) => {
