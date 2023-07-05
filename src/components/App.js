@@ -132,7 +132,6 @@ const App = () => {
           clothingItems.filter((item) => item._id !== card._id)
         );
         handleCloseModal();
-        // setActiveModal("");
       })
 
       .catch((error) => {
