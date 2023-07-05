@@ -33,7 +33,7 @@ const ClothesSection = ({
       <ul className="profile__cards">
         {filteredCards.map((card) => (
           <ItemCard
-            key={card.id}
+            key={card._id}
             item={card}
             onSelectCard={onCardClick}
             onLike={onLike}
@@ -47,7 +47,3 @@ const ClothesSection = ({
 };
 
 export default ClothesSection;
-
-
-
-
