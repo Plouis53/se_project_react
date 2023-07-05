@@ -11,4 +11,4 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 - [WTWR Backend Link](http://localhost:3001)
 
--[Backend Repo Link](https://github.com/Plouis53/se_project_express.git) 
+- [Backend Repo Link](https://github.com/Plouis53/se_project_express.git) 
