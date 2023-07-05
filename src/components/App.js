@@ -224,9 +224,9 @@ const App = () => {
       });
   };
 
-  const handleSubmit(request) {
+  const handleSubmit = (request) => {
     setIsLoading(true); // Start loading
-  
+
     request()
       .then(() => {
         handleCloseModal(); // Close modal on successful request
@@ -237,8 +237,7 @@ const App = () => {
       .finally(() => {
         setIsLoading(false); // Stop loading
       });
-  }
-  
+  };
 
   const handleDelete = (itemId) => {
     setActiveModal("confirm");
