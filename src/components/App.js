@@ -58,7 +58,7 @@ const App = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        handleCloseModal();
+        handleCloseModal(); // Without this, signin modal will not close
         setIsLoading(false);
       });
   };
