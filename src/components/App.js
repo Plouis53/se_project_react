@@ -53,12 +53,12 @@ const App = () => {
       })
       .then((response) => {
         setCurrentUser(response.data);
+        handleCloseModal();
         setIsLoggedIn(true);
         history.push("/profile");
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        handleCloseModal(); // Without this, signin modal will not close
         setIsLoading(false);
       });
   };
@@ -72,6 +72,7 @@ const App = () => {
         if (response) {
           setCurrentUser(response.data);
           handleSignIn(user);
+          handleCloseModal();
         } else {
           console.log("User registration failed:", response.error);
         }
@@ -130,8 +131,8 @@ const App = () => {
         setClothingItems((clothingItems) =>
           clothingItems.filter((item) => item._id !== card._id)
         );
-        // handleCloseModal();
-        setActiveModal("");
+        handleCloseModal();
+        // setActiveModal("");
       })
 
       .catch((error) => {
