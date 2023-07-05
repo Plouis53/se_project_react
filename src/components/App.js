@@ -58,7 +58,7 @@ const App = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        handleCloseModal();
+        // handleCloseModal();
         setIsLoading(false);
       });
   };
@@ -78,7 +78,7 @@ const App = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        handleCloseModal();
+        // handleCloseModal();
         setIsLoading(false);
       });
   };
@@ -130,7 +130,7 @@ const App = () => {
         setClothingItems((clothingItems) =>
           clothingItems.filter((item) => item._id !== card._id)
         );
-        handleCloseModal();
+        // handleCloseModal();
         setActiveModal("");
       })
 
@@ -155,6 +155,18 @@ const App = () => {
   const handleCloseModal = () => {
     setActiveModal("");
   };
+
+  useEffect(() => {
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+
+    document.addEventListener("keydown", closeByEscape);
+
+    return () => document.removeEventListener("keydown", closeByEscape);
+  }, []);
 
   const handleSelectedCard = (card) => {
     setActiveModal("image");
@@ -198,13 +210,17 @@ const App = () => {
     userApi
       .updateCurrentUser({ name, avatarUrl })
       .then((data) => {
-        setIsLoading(false);
+        // setIsLoading(false);
         setCurrentUser(data);
-        handleCloseModal();
+        // handleCloseModal();
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false);
+        // setIsLoading(false);
+      })
+      .finally(() => {
+        setIsLoading(false); // Set isLoading to false in the finally block
+        handleCloseModal(); // Close the popup regardless of success or error
       });
   };
 
@@ -228,7 +244,6 @@ const App = () => {
       itemsApi
         .like(id)
         .then((updatedCard) => {
-
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))
           );
