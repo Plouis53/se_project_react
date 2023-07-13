@@ -12,7 +12,7 @@ export function checkResponse(res) {
 
 // export const baseUrl = "http://localhost:3001";
 export const baseUrl =
-  process.env.NODE__ENV === "production"
+  process.env.NODE_ENV === "production"
     ? "https://api.sweaterweather.umhl.com"
     : "http://localhost:3001";
 
