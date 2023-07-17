@@ -2,7 +2,7 @@
   "name": "se_project_react.git",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PLouis53.github.io/se_project_react",
+  "homepage": "https://styleguide.umhl.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,12 +15,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3001 &&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && scp -r ./build/* PLouis53@styleguide.umhl.com:/home/plouis53/frontend"
   },
   "eslintConfig": {
     "extends": [
