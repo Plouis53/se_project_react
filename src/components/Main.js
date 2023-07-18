@@ -40,20 +40,42 @@ function Main({
             Today is {currentTempString} / You may want to wear:
           </p>
           <ul className="main__cards">
-            {clothingItems.map((item) => (
-              <ItemCard
-                key={item._id}
-                item={item}
-                onSelectCard={onSelectCard}
-                onLike={onCardLike}
-                onUnlike={onCardUnlike}
-                isLoggedIn={isLoggedIn}
-              />
-            ))}
+            {Array.isArray(clothingItems) ? (
+              clothingItems.map((item) => (
+                <ItemCard
+                  key={item._id}
+                  item={item}
+                  onSelectCard={onSelectCard}
+                  onLike={onCardLike}
+                  onUnlike={onCardUnlike}
+                  isLoggedIn={isLoggedIn}
+                />
+              ))
+            ) : (
+              <p>Loading...</p> // or an error message
+            )}
           </ul>
         </section>
       </div>
     </main>
   );
-}
+ }
+// {
+//             {clothingItems.map((item) => (
+//               <ItemCard
+//                 key={item._id}
+//                 item={item}
+//                 onSelectCard={onSelectCard}
+//                 onLike={onCardLike}
+//                 onUnlike={onCardUnlike}
+//                 isLoggedIn={isLoggedIn}
+//               />
+//             ))}
+//           </ul>
+//         </section>
+//       </div>
+//     </main>
+//   );
+// }
+
 export default Main;
