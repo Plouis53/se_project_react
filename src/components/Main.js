@@ -40,7 +40,7 @@ function Main({
             Today is {currentTempString} / You may want to wear:
           </p>
           <ul className="main__cards">
-            {Array.isArray(clothingItems) ? (
+            {Array.isArray(clothingItems) &&
               clothingItems.map((item) => (
                 <ItemCard
                   key={item._id}
@@ -50,16 +50,45 @@ function Main({
                   onUnlike={onCardUnlike}
                   isLoggedIn={isLoggedIn}
                 />
-              ))
-            ) : (
-              <p>Loading...</p> // or an error message
-            )}
+              ))}
           </ul>
         </section>
       </div>
     </main>
   );
- }
+}
+export default Main;
+
+//   return (
+//     <main className="main">
+//       <div className="main__container">
+//         <WeatherCard day={true} type="sunny" weatherTemp={weatherTemp} />
+//         <section className="main__clothing">
+//           <p className="main__text">
+//             Today is {currentTempString} / You may want to wear:
+//           </p>
+//           <ul className="main__cards">
+//             {Array.isArray(clothingItems) && (
+//               clothingItems.map((item) => (
+//                 <ItemCard
+//                   key={item._id}
+//                   item={item}
+//                   onSelectCard={onSelectCard}
+//                   onLike={onCardLike}
+//                   onUnlike={onCardUnlike}
+//                   isLoggedIn={isLoggedIn}
+//                 />
+//               ))
+//             ) : (
+//               <p>Loading...</p> // or an error message
+//             )}
+//           </ul>
+//         </section>
+//       </div>
+//     </main>
+//   );
+// };
+
 // {
 //             {clothingItems.map((item) => (
 //               <ItemCard
@@ -78,4 +107,4 @@ function Main({
 //   );
 // }
 
-export default Main;
+// export default Main
