@@ -18,7 +18,7 @@ const AddItemModal = ({
     altButton: "modal__leave",
   };
 
-  const buttonTexts = {
+ const buttonTexts = {
     button: isLoading ? "Saving..." : "Add Garment",
     other: null,
   };
