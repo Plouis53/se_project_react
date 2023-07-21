@@ -1,8 +1,8 @@
-import { checkResponse } from "../utils/constants";
+import { checkResponse } from "./constants";
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.styleguide.umhl.com"
+    ? "https://api.styleguide.mooo.com"
     : "http://localhost:3001";
 
 export const signUp = (user) => {
