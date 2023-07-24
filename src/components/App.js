@@ -57,10 +57,10 @@ const App = () => {
         setIsLoggedIn(true);
         history.push("/profile");
       })
-      .catch((error) => console.log(error))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .catch((error) => console.log(error));
+    console.log(auth.signIn).finally(() => {
+      setIsLoading(false);
+    });
   };
 
   const handleRegister = (user) => {
