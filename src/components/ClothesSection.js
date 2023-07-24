@@ -15,10 +15,7 @@ const ClothesSection = ({
 
   // Add a check to ensure cards is an array before filtering
   const filteredCards = Array.isArray(cards)
-    ? cards.filter(
-        (card) =>
-          card.owner === (currentUser === undefined ? "" : currentUser._id)
-      )
+    ? cards.filter((card) => card.owner === (currentUser && currentUser._id))
     : [];
 
   return (

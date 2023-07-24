@@ -194,7 +194,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems([clothingItems.data, newItem]);
+        setClothingItems([...clothingItems.data, newItem]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -276,7 +276,7 @@ const App = () => {
         itemsApi
           .get()
           .then((response) => {
-            setClothingItems(response);
+            setClothingItems(response.data);
           })
           .catch((error) => {
             console.log("Error adding item:", error);
