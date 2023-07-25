@@ -359,7 +359,6 @@ const App = () => {
               onClose={handleCloseModal}
               onDeleteClick={handleDelete}
               onOutClick={handleOutClick}
-              isLoggedIn={isLoggedIn}
             />
           )}
           {activeModal === "confirm" && (
