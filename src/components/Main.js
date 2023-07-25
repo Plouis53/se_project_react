@@ -8,8 +8,8 @@ import "../blocks/Card.css";
 import itemsApi from "../utils/api";
 
 function Main({
-  onCardLike,
-  onCardUnlike,
+  // onCardLike,
+  // onCardUnlike,
   weatherTemp,
   onSelectCard,
   clothingItems,
@@ -33,15 +33,15 @@ function Main({
   const currentTempString = currentTemp[currentTemperatureUnit];
 
   const handleLike = (itemId) => {
-    onCardLike(itemId);
-    // itemsApi
-    //   .like(itemId)
-    //   .then((response) => {
-    //     console.log("Item liked successfully:", response);
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error liking item:", error);
-    //   });
+    // onCardLike(itemId);
+    itemsApi
+      .like(itemId)
+      .then((response) => {
+        console.log("Item liked successfully:", response);
+      })
+      .catch((error) => {
+        console.log("Error liking item:", error);
+      });
   };
 
   const handleUnlike = (itemId) => {

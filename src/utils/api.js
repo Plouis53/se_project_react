@@ -48,29 +48,29 @@ const itemsApi = {
     };
     return request(`${baseUrl}/items/${id}`, options);
   },
-  like: (id, userId) => {
+  like: (id) => {
     const options = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-      body: JSON.stringify({
-        userId,
-      }),
+      // body: JSON.stringify({
+      //   userId,
+      // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options);
   },
-  unlike: (id, userId) => {
+  unlike: (id) => {
     const options = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-      body: JSON.stringify({
-        userId,
-      }),
+      // body: JSON.stringify({
+      //   userId,
+      // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options).catch((error) => {
       console.log("Error unliking item:", error);
