@@ -194,7 +194,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems([...clothingItems.data, ...newItem]);
+       setClothingItems((items) => [response.data, ...items]); 
         handleCloseModal();
       })
       .catch((error) => {
@@ -239,7 +239,7 @@ const App = () => {
   //     });
   // };
 
-  const handleDelete = (itemId) => {
+  const handleDelete = () => {
     setActiveModal("confirm");
   };
 
@@ -326,8 +326,8 @@ const App = () => {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
-                onCardLike={handleLikeClick}
-                onCardUnlike={handleLikeClick}
+                // onCardLike={handleLikeClick}
+                // onCardUnlike={handleLikeClick}
               />
             </Route>
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
