@@ -7,7 +7,7 @@ import "../blocks/Profile.css";
 
 const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isLiked = item.likes && item.likes.includes(currentUser._id);
+  const isLiked = item.likes && item.likes.includes(currentUser.id);
 
   const handleLike = () => {
     if (isLiked) {

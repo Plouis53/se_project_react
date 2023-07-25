@@ -194,7 +194,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-        setClothingItems([...clothingItems, newItem]);
+        setClothingItems([...clothingItems.data, ...newItem]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -225,20 +225,20 @@ const App = () => {
       });
   };
 
-  const handleSubmit = (request) => {
-    setIsLoading(true); // Start loading
+  // const handleSubmit = (request) => {
+  //   setIsLoading(true); // Start loading
 
-    request()
-      .then(() => {
-        handleCloseModal(); // Close modal on successful request
-      })
-      .catch((error) => {
-        console.error(error); // Handle and log errors
-      })
-      .finally(() => {
-        setIsLoading(false); // Stop loading
-      });
-  };
+  //   request()
+  //     .then(() => {
+  //       handleCloseModal(); // Close modal on successful request
+  //     })
+  //     .catch((error) => {
+  //       console.error(error); // Handle and log errors
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false); // Stop loading
+  //     });
+  // };
 
   const handleDelete = (itemId) => {
     setActiveModal("confirm");
