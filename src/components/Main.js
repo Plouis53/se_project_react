@@ -8,8 +8,8 @@ import "../blocks/Card.css";
 import itemsApi from "../utils/api";
 
 function Main({
-  // onCardLike,
-  // onCardUnlike,
+  // onLike,
+  // onUnlike,
   weatherTemp,
   onSelectCard,
   clothingItems,
@@ -54,6 +54,7 @@ function Main({
         console.log("Error unliking item:", error);
       });
   };
+  
 
   return (
     <main className="main">

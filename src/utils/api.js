@@ -56,7 +56,7 @@ const itemsApi = {
         Authorization: `Bearer ${getItem("jwt")}`,
       },
       // body: JSON.stringify({
-      //   userId,
+      //   itemId,
       // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options);
@@ -69,7 +69,7 @@ const itemsApi = {
         Authorization: `Bearer ${getItem("jwt")}`,
       },
       // body: JSON.stringify({
-      //   userId,
+      //   itemId,
       // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options).catch((error) => {
