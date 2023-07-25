@@ -206,6 +206,7 @@ const App = () => {
   };
 
   const handleEditSubmit = ({ name, avatarUrl }) => {
+    console.log(name, avatarUrl);
     setIsLoading(true);
     userApi
       .updateCurrentUser({ name, avatarUrl })

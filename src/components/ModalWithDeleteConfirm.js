@@ -8,6 +8,7 @@ const ModalWithDeleteConfirm = ({
   card,
   onClose,
   onCancel,
+  isLoading,
 }) => {
   const handleDelete = () => {
     onDelete(card);
@@ -36,7 +37,7 @@ const ModalWithDeleteConfirm = ({
           aria-label="Confirm"
           onClick={handleDelete}
         >
-          Yes, delete item
+          {isLoading ? "Saving..." : "Yes, delete item"}
         </button>
         <button
           className="modal__button_cancel"
