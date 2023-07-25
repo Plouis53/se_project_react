@@ -206,7 +206,6 @@ const App = () => {
   };
 
   const handleEditSubmit = ({ name, avatarUrl }) => {
-    console.log(name, avatarUrl);
     setIsLoading(true);
     userApi
       .updateCurrentUser({ name, avatarUrl })
@@ -247,9 +246,11 @@ const App = () => {
   const handleLikeClick = (id, isLiked) => {
     const token = localStorage.getItem("jwt");
 
+    console.log(currentUser);
+
     if (isLiked) {
       itemsApi
-        .unlike(id)
+        .unlike(id, currentUser?._id)
         .then(({ data: updatedCard }) => {
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))
@@ -258,7 +259,7 @@ const App = () => {
         .catch((err) => console.log(err));
     } else {
       itemsApi
-        .like(id)
+        .like(id, currentUser?._id)
         .then((updatedCard) => {
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))

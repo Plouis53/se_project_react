@@ -33,14 +33,15 @@ function Main({
   const currentTempString = currentTemp[currentTemperatureUnit];
 
   const handleLike = (itemId) => {
-    itemsApi
-      .like(itemId)
-      .then((response) => {
-        console.log("Item liked successfully:", response);
-      })
-      .catch((error) => {
-        console.log("Error liking item:", error);
-      });
+    onCardLike(itemId);
+    // itemsApi
+    //   .like(itemId)
+    //   .then((response) => {
+    //     console.log("Item liked successfully:", response);
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error liking item:", error);
+    //   });
   };
 
   const handleUnlike = (itemId) => {
