@@ -405,7 +405,6 @@ const App = () => {
               handleCloseModal={handleCloseModal}
               handleOutClick={handleOutClick}
               handleEdit={handleEditSubmit}
-              isLoading={isLoading}
             />
           )}
           {activeModal === "logout" && (
