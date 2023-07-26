@@ -8,13 +8,13 @@ import "../blocks/Card.css";
 import itemsApi from "../utils/api";
 
 function Main({
-  // onLike,
+  onLike,
   // onUnlike,
   weatherTemp,
   onSelectCard,
   clothingItems,
   isLoggedIn,
-  setClothingItems,
+  // setClothingItems,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -51,23 +51,23 @@ function Main({
   //     });
   // };
 
-  const handleLike = (itemId) => {
-    itemsApi
-      .like(itemId)
-      .then((response) => {
-        setClothingItems((prevItems) =>
-          prevItems.map((clothingItem) =>
-            clothingItem._id === itemId
-              ? { ...clothingItem, likes: true }
-              : clothingItem
-          )
-        );
-        console.log("Item liked successfully:", response);
-      })
-      .catch((error) => {
-        console.log("Error liking item:", error);
-      });
-  };
+  // const handleLike = (itemId) => {
+  //   itemsApi
+  //     .like(itemId)
+  //     .then((response) => {
+  //       setClothingItems((prevItems) =>
+  //         prevItems.map((clothingItem) =>
+  //           clothingItem._id === itemId
+  //             ? { ...clothingItem, likes: true }
+  //             : clothingItem
+  //         )
+  //       );
+  //       console.log("Item liked successfully:", response);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error liking item:", error);
+  //     });
+  // };
 
   // const handleUnlike = (itemId) => {
   //   itemsApi
@@ -80,23 +80,23 @@ function Main({
   //     });
   // };
 
-  const handleUnlike = (itemId) => {
-    itemsApi
-      .unlike(itemId)
-      .then((response) => {
-        setClothingItems((prevItems) =>
-          prevItems.map((clothingItem) =>
-            clothingItem._id === itemId
-              ? { ...clothingItem, likes: false }
-              : clothingItem
-          )
-        );
-        console.log("Item unliked successfully:", response);
-      })
-      .catch((error) => {
-        console.log("Error unliking item:", error);
-      });
-  };
+  // const handleUnlike = (itemId) => {
+  //   itemsApi
+  //     .unlike(itemId)
+  //     .then((response) => {
+  //       setClothingItems((prevItems) =>
+  //         prevItems.map((clothingItem) =>
+  //           clothingItem._id === itemId
+  //             ? { ...clothingItem, likes: false }
+  //             : clothingItem
+  //         )
+  //       );
+  //       console.log("Item unliked successfully:", response);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error unliking item:", error);
+  //     });
+  // };
 
   return (
     <main className="main">
@@ -113,8 +113,8 @@ function Main({
                   key={item._id}
                   item={item}
                   onSelectCard={onSelectCard}
-                  onLike={handleLike}
-                  onUnlike={handleUnlike}
+                  onLike={onLike}
+                  // onUnlike={handleUnlike}
                   isLoggedIn={isLoggedIn}
                 />
               ))}

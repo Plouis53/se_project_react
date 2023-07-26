@@ -59,14 +59,18 @@ const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
     item.likes && item.likes.some((user) => user === currentUser._id);
-    // const isLiked = item.likes && Array.isArray(item.likes) && item.likes.includes(currentUser.id);
+  // const isLiked = item.likes && Array.isArray(item.likes) && item.likes.includes(currentUser.id);
+
+  // const handleLike = () => {
+  //   if (isLiked) {
+  //     onUnlike(item._id, isLiked);
+  //   } else {
+  //     onLike(item._id, isLiked);
+  //   }
+  // };
 
   const handleLike = () => {
-    if (isLiked) {
-      onUnlike(item._id, isLiked);
-    } else {
-      onLike(item._id, isLiked);
-    }
+    onLike(item._id, isLiked);
   };
 
   const onClick = () => {

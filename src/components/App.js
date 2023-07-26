@@ -260,7 +260,7 @@ const App = () => {
     } else {
       itemsApi
         .like(id, currentUser?._id)
-        .then((updatedCard) => {
+        .then(({ data: updatedCard }) => {
           setClothingItems((prevItems) =>
             prevItems.map((item) => (item._id === id ? updatedCard : item))
           );
@@ -326,7 +326,8 @@ const App = () => {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
-                setClothingItems={setClothingItems}
+                onLike={handleLikeClick}
+                // setClothingItems={setClothingItems}
                 // onCardLike={handleLikeClick}
                 // onCardUnlike={handleLikeClick}
               />
