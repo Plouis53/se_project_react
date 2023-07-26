@@ -7,8 +7,8 @@ The idea of the application is pretty simple - we make a call to an API, which t
 ## Links
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
-- [WTWR Website Link](https://plouis53.github.io/se_project_react/)
+- [WTWR Website Link](https://styleguide.mooo.com/)
 
 - [WTWR Backend Link](http://localhost:3001)
 
-- [Backend Repo Link](https://github.com/Plouis53/se_project_express.git) 
+- [Backend Repo Link](https://github.com/Plouis53/se_project_express.git)
