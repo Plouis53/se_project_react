@@ -14,6 +14,7 @@ function Main({
   onSelectCard,
   clothingItems,
   isLoggedIn,
+  setClothingItems,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -32,11 +33,35 @@ function Main({
   const currentTemp = temperature(weatherTemp);
   const currentTempString = currentTemp[currentTemperatureUnit];
 
+  // const handleLike = (itemId) => {
+  //   // onCardLike(itemId);
+  //   itemsApi
+  //     .like(itemId)
+  //     .then((response) => {
+  //       //set clothing items by
+  //       const newitems = clothingItems.map(
+  //         (clothingItem) => clothingItem._id != itemId
+  //       );
+  //       setClothingItems([...newitems, response.data]);
+  //       console.log(clothingItems);
+  //       console.log("Item liked successfully:", response);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error liking item:", error);
+  //     });
+  // };
+
   const handleLike = (itemId) => {
-    // onCardLike(itemId);
     itemsApi
       .like(itemId)
       .then((response) => {
+        setClothingItems((prevItems) =>
+          prevItems.map((clothingItem) =>
+            clothingItem._id === itemId
+              ? { ...clothingItem, likes: true }
+              : clothingItem
+          )
+        );
         console.log("Item liked successfully:", response);
       })
       .catch((error) => {
@@ -44,17 +69,34 @@ function Main({
       });
   };
 
+  // const handleUnlike = (itemId) => {
+  //   itemsApi
+  //     .unlike(itemId)
+  //     .then((response) => {
+  //       console.log("Item unliked successfully:", response);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error unliking item:", error);
+  //     });
+  // };
+
   const handleUnlike = (itemId) => {
     itemsApi
       .unlike(itemId)
       .then((response) => {
+        setClothingItems((prevItems) =>
+          prevItems.map((clothingItem) =>
+            clothingItem._id === itemId
+              ? { ...clothingItem, likes: false }
+              : clothingItem
+          )
+        );
         console.log("Item unliked successfully:", response);
       })
       .catch((error) => {
         console.log("Error unliking item:", error);
       });
   };
-  
 
   return (
     <main className="main">

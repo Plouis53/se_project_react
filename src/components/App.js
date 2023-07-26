@@ -194,7 +194,7 @@ const App = () => {
       .add(newItem)
       .then((response) => {
         console.log("Item added successfully:", response);
-       setClothingItems((items) => [response.data, ...items]); 
+        setClothingItems((items) => [response.data, ...items]);
         handleCloseModal();
       })
       .catch((error) => {
@@ -326,6 +326,7 @@ const App = () => {
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
+                setClothingItems={setClothingItems}
                 // onCardLike={handleLikeClick}
                 // onCardUnlike={handleLikeClick}
               />

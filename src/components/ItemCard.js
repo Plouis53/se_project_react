@@ -54,9 +54,12 @@ import "../blocks/Card.css";
 import "../blocks/Profile.css";
 
 const ItemCard = ({ item, onSelectCard, onLike, onUnlike, isLoggedIn }) => {
+  console.log("item.likes:", item.likes);
+  // console.log("currentUser._id:", currentUser._id);
   const currentUser = useContext(CurrentUserContext);
   const isLiked =
     item.likes && item.likes.some((user) => user === currentUser._id);
+    // const isLiked = item.likes && Array.isArray(item.likes) && item.likes.includes(currentUser.id);
 
   const handleLike = () => {
     if (isLiked) {
