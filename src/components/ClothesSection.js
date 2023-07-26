@@ -9,11 +9,9 @@ const ClothesSection = ({
   onAddClick,
   isLoggedIn,
   onLike,
-  onUnlike,
 }) => {
   const currentUser = useContext(CurrentUserContext);
 
-  // Add a check to ensure cards is an array before filtering
   const filteredCards = Array.isArray(cards)
     ? cards.filter((card) => card.owner === (currentUser && currentUser._id))
     : [];
@@ -38,7 +36,6 @@ const ClothesSection = ({
             item={card}
             onSelectCard={onCardClick}
             onLike={onLike}
-            onUnlike={onUnlike}
             isLoggedIn={isLoggedIn}
           />
         ))}

@@ -10,12 +10,6 @@ export function checkResponse(res) {
   }
 }
 
-// export const baseUrl = "http://localhost:3001";
-// export const baseUrl =
-//   process.env.NODE_ENV === "production"
-//     ? "https://api.styleguide.umhl.com"
-//     : "http://localhost:3001";
-
 export const defaultClothingItems = [
   {
     id: 0,

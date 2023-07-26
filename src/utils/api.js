@@ -55,9 +55,6 @@ const itemsApi = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-      // body: JSON.stringify({
-      //   itemId,
-      // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options);
   },
@@ -68,9 +65,6 @@ const itemsApi = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${getItem("jwt")}`,
       },
-      // body: JSON.stringify({
-      //   itemId,
-      // }),
     };
     return request(`${baseUrl}/items/${id}/likes`, options).catch((error) => {
       console.log("Error unliking item:", error);

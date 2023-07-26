@@ -79,7 +79,6 @@ const App = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        // handleCloseModal();
         setIsLoading(false);
       });
   };
@@ -210,13 +209,10 @@ const App = () => {
     userApi
       .updateCurrentUser({ name, avatarUrl })
       .then((data) => {
-        // setIsLoading(false);
         setCurrentUser(data);
-        // handleCloseModal();
       })
       .catch((error) => {
         console.log(error);
-        // setIsLoading(false);
       })
       .finally(() => {
         setIsLoading(false); // Set isLoading to false in the finally block
@@ -224,29 +220,12 @@ const App = () => {
       });
   };
 
-  // const handleSubmit = (request) => {
-  //   setIsLoading(true); // Start loading
-
-  //   request()
-  //     .then(() => {
-  //       handleCloseModal(); // Close modal on successful request
-  //     })
-  //     .catch((error) => {
-  //       console.error(error); // Handle and log errors
-  //     })
-  //     .finally(() => {
-  //       setIsLoading(false); // Stop loading
-  //     });
-  // };
-
   const handleDelete = () => {
     setActiveModal("confirm");
   };
 
   const handleLikeClick = (id, isLiked) => {
     const token = localStorage.getItem("jwt");
-
-    console.log(currentUser);
 
     if (isLiked) {
       itemsApi
@@ -327,9 +306,6 @@ const App = () => {
                 clothingItems={clothingItems}
                 isLoggedIn={isLoggedIn}
                 onLike={handleLikeClick}
-                // setClothingItems={setClothingItems}
-                // onCardLike={handleLikeClick}
-                // onCardUnlike={handleLikeClick}
               />
             </Route>
             <ProtectedRoute path="/profile" isLoggedIn={isLoggedIn}>
@@ -341,7 +317,6 @@ const App = () => {
                 editClick={handleEditClick}
                 logoutClick={handleSignoutClick}
                 onLike={handleLikeClick}
-                onUnlike={handleLikeClick}
               />
             </ProtectedRoute>
           </Switch>

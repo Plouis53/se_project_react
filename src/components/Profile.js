@@ -10,7 +10,6 @@ const Profile = ({
   editClick,
   logoutClick,
   onLike,
-  onUnlike,
 }) => {
   return (
     <section className="profile">
@@ -27,7 +26,6 @@ const Profile = ({
           onAddClick={onAddClick}
           isLoggedIn={isLoggedIn}
           onLike={onLike}
-          onUnlike={onUnlike}
         />
       </div>
     </section>
