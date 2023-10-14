@@ -16,7 +16,7 @@ const getItem = (key) => {
 };
 
 function request(url, options) {
-  return fetch(url, options).then(checkResponse);
+  return fetch(url, options).then(checkResponse); 
 }
 
 const itemsApi = {
