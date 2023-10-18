@@ -40,5 +40,11 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  /* .weather__image {
+    width: 375px;
+  } */
+}
+
 /* @media screen and (min-width: 823px) and (max-width: 1440px) {
 } */

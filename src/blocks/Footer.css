@@ -20,16 +20,6 @@
   margin: 0 54px 0 0;
 }
 
-@media screen and (min-width: 375px) and (max-width: 822px) {
-  .footer__author {
-    margin: 0 0 0 10px;
-  }
-
-  .footer__year {
-    margin: 0 20px 0 0;
-  }
-}
-
 @media screen and (min-width: 823px) and (max-width: 1440px) {
   .footer {
     max-width: 768px;
@@ -45,3 +35,15 @@
     margin: 0 20px 0 0;
   }
 }
+
+@media screen and (min-width: 375px) and (max-width: 822px) {
+  .footer__author {
+    margin: 0 0 0 10px;
+  }
+
+  .footer__year {
+    margin: 0 20px 0 0;
+  }
+}
+
+
