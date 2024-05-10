@@ -29,16 +29,16 @@ import "../blocks/ModalConfirm.css";
 const App = () => {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
-  const [newItem, setNewItem] = useState({});
-  const [prevItems, setPrevItems] = useState([]);
-  const [weatherData, setWeatherData] = useState([]);
-  const [weatherImage, setWeatherImage] = useState("");
+  // const [newItem, setNewItem] = useState({});
+  // const [prevItems, setPrevItems] = useState([]);
+  // const [weatherData, setWeatherData] = useState([]);
+  // const [weatherImage, setWeatherImage] = useState("");
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState({});
-  const [token, setToken] = React.useState("");
+  const [token] = React.useState("");
   const history = useHistory();
   const [isLoading, setIsLoading] = React.useState(false);
   const handleSignIn = ({ email, password }) => {
@@ -225,7 +225,7 @@ const App = () => {
   };
 
   const handleLikeClick = (id, isLiked) => {
-    const token = localStorage.getItem("jwt");
+    // const token = localStorage.getItem("jwt");
 
     if (isLiked) {
       itemsApi
@@ -409,6 +409,6 @@ const App = () => {
 
 export default App;
 
-function updateCurrentUser(arg0, token) {
-  throw new Error("Function not implemented.");
-}
+// function updateCurrentUser(arg0, token) {
+//   throw new Error("Function not implemented.");
+// }
