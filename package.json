@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* PLouis53@styleguide.mooo.com:/home/plouis53/frontend"
+    "deploy": "npm run build && scp -r ./build/* plouis53@styleguide.mooo.com:/home/plouis53/frontend"
   },
   "eslintConfig": {
     "extends": [
